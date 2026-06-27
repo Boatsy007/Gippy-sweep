@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-cream text-asphalt font-sans overflow-x-hidden;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-orange-500;
+  }
+
+  /* Smooth scroll with reduced motion override */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-20 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.2em] uppercase text-orange-500;
+  }
+
+  .display-xl {
+    @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tightest leading-none;
+  }
+
+  .display-lg {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-headline leading-tight;
+  }
+
+  .display-md {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-headline leading-tight;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white font-semibold px-8 py-4 text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center gap-2 border-2 border-asphalt hover:border-orange-500 hover:text-orange-500 text-asphalt font-semibold px-8 py-4 text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asphalt focus-visible:ring-offset-2;
+  }
+}
