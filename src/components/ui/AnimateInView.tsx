@@ -26,8 +26,8 @@ export function AnimateInView({
 
   const offsets = {
     up: { y: 40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
+    left: { y: 0, x: 20 },
+    right: { y: 0, x: -20 },
     none: { y: 0, x: 0 },
   }
 

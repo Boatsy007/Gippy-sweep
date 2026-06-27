@@ -37,7 +37,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="section-pad bg-white" aria-labelledby="services-heading">
+    <section id="services" className="section-pad bg-white overflow-x-clip" aria-labelledby="services-heading">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 

@@ -52,8 +52,8 @@ export function Hero() {
                 <motion.span
                   key={word}
                   className="block"
-                  initial={{ opacity: 0, y: 60, x: -20 }}
-                  animate={{ opacity: 1, y: 0, x: 0 }}
+                  initial={{ opacity: 0, y: 60 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 + i * 0.12, ease }}
                   style={word === 'CLEAN.' ? { color: '#F97316' } : undefined}
                 >
@@ -114,8 +114,8 @@ export function Hero() {
           {/* Right — image placeholder */}
           <motion.div
             className="relative lg:flex items-center"
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease }}
           >
             <div className="relative w-full">

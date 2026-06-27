@@ -39,7 +39,7 @@ const benefits = [
 
 export function FoundationClients() {
   return (
-    <section id="contact" className="section-pad bg-cream" aria-labelledby="foundation-heading">
+    <section id="contact" className="section-pad bg-cream overflow-x-clip" aria-labelledby="foundation-heading">
       <div className="section-container">
 
         {/* Header */}

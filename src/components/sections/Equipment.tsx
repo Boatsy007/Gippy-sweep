@@ -81,7 +81,7 @@ export function Equipment() {
                   ))}
                 </div>
               </div>
-              <div className="lg:min-h-[480px] relative">
+              <div className="min-h-[240px] lg:min-h-[480px] relative">
                 <ImagePlaceholder
                   label="RCM Mille ride-on sweeper — arriving soon"
                   aspectRatio="fill"

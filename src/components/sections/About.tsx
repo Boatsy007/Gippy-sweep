@@ -10,7 +10,7 @@ const milestones = [
 
 export function About() {
   return (
-    <section id="about" className="section-pad bg-cream" aria-labelledby="about-heading">
+    <section id="about" className="section-pad bg-cream overflow-x-clip" aria-labelledby="about-heading">
       <div className="section-container">
 
         {/* Header */}
@@ -84,13 +84,20 @@ export function About() {
             </div>
 
             {/* Owner quote */}
-            <blockquote className="mt-8 pl-6 border-l-4 border-orange-500">
-              <p className="text-zinc-600 italic leading-relaxed mb-3">
-                "I started this business because I wanted Gippsland to look as good as it feels
-                to live in. Fifteen years later, that's still the reason I show up every day."
+            <blockquote className="mt-8">
+              <div
+                className="text-7xl font-extrabold text-orange-500/20 leading-none mb-1 select-none"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </div>
+              <p className="text-zinc-600 italic leading-relaxed mb-5">
+                I started this business because I wanted Gippsland to look as good as it feels
+                to live in. Fifteen years later, that's still the reason I show up every day.
               </p>
-              <footer className="text-sm font-semibold text-asphalt">
-                — [Owner Name], Founder & Director, Gippy Sweep
+              <footer className="flex items-center gap-3 text-sm font-semibold text-asphalt">
+                <span className="w-8 h-px bg-orange-500 shrink-0" aria-hidden="true" />
+                [Owner Name], Founder &amp; Director, Gippy Sweep
               </footer>
             </blockquote>
           </AnimateInView>
