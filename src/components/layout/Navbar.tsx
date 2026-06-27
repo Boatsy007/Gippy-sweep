@@ -38,7 +38,7 @@ export function Navbar() {
         <div className="section-container">
           <div className="flex items-center justify-between h-18 py-4">
             <a href="#" aria-label="Gippy Sweep — Home">
-              <Logo size="sm" />
+              <Logo size="sm" inverted={!scrolled} />
             </a>
 
             {/* Desktop nav */}
@@ -47,7 +47,11 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-semibold text-asphalt/70 hover:text-asphalt tracking-wide transition-colors duration-150"
+                  className={`text-sm font-semibold tracking-wide transition-colors duration-200 ${
+                    scrolled
+                      ? 'text-asphalt/70 hover:text-asphalt'
+                      : 'text-white/70 hover:text-white'
+                  }`}
                 >
                   {link.label}
                 </a>
@@ -57,7 +61,9 @@ export function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="tel:+61412345678"
-                className="flex items-center gap-2 text-sm font-semibold text-asphalt/70 hover:text-asphalt transition-colors duration-150"
+                className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
+                  scrolled ? 'text-asphalt/70 hover:text-asphalt' : 'text-white/70 hover:text-white'
+                }`}
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
                 0412 345 678
@@ -69,7 +75,9 @@ export function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="lg:hidden p-2 -mr-2 text-asphalt"
+              className={`lg:hidden p-2 -mr-2 transition-colors duration-200 ${
+                scrolled ? 'text-asphalt' : 'text-white'
+              }`}
               onClick={() => setOpen(!open)}
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}

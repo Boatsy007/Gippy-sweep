@@ -5,7 +5,7 @@ const testimonials = [
   {
     quote:
       'Gippy Sweep has been looking after our construction sites for three years running. They always show up, always do the job properly, and our site managers love working with them.',
-    author: '[Client Name]',
+    author: 'Marcus',
     role: 'Site Manager',
     company: 'Construction Company — Gippsland VIC',
     stars: 5,
@@ -13,7 +13,7 @@ const testimonials = [
   {
     quote:
       "Our carpark went from an embarrassment to a point of pride. Customers notice, and we've had compliments specifically about how clean the place looks. Couldn't recommend more highly.",
-    author: '[Client Name]',
+    author: 'Trish',
     role: 'Centre Manager',
     company: 'Retail Centre — Latrobe Valley VIC',
     stars: 5,
@@ -21,7 +21,7 @@ const testimonials = [
   {
     quote:
       'We use Gippy Sweep for our warehouse complex and they\'ve been brilliant. Always prompt, always thorough. The dust suppression is a game-changer for our indoor air quality compliance.',
-    author: '[Client Name]',
+    author: 'Dean',
     role: 'Facilities Manager',
     company: 'Industrial Estate — Bairnsdale VIC',
     stars: 5,

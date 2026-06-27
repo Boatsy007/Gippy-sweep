@@ -7,7 +7,7 @@ const frequencies = [
     label: 'Weekly',
     badge: 'Most Popular',
     description: 'For high-traffic sites that demand consistent cleanliness. Ideal for shopping centres, carparks, and busy industrial estates.',
-    price: 'From $X/visit',
+    price: 'From $275/visit',
     highlight: true,
   },
   {
@@ -15,7 +15,7 @@ const frequencies = [
     label: 'Fortnightly',
     badge: null,
     description: 'Perfect for medium-traffic sites with moderate debris accumulation. Construction sites and smaller commercial properties.',
-    price: 'From $X/visit',
+    price: 'From $300/visit',
     highlight: false,
   },
   {
@@ -23,7 +23,7 @@ const frequencies = [
     label: 'Monthly',
     badge: null,
     description: 'Great for lower-traffic areas and scheduled maintenance programs. Ideal for government facilities and rural properties.',
-    price: 'From $X/visit',
+    price: 'From $400/visit',
     highlight: false,
   },
 ]
