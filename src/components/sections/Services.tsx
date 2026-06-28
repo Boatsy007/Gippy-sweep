@@ -1,6 +1,8 @@
 import { Check, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { AnimateInView } from '../ui/AnimateInView'
-import { ImagePlaceholder } from '../ui/ImagePlaceholder'
+
+const ease = [0.22, 1, 0.36, 1] as const
 
 const services = [
   {
@@ -53,11 +55,31 @@ export function Services() {
               Gippy Sweep operates commercial-grade mechanical sweepers purpose-built for
               Gippsland's industrial, construction, and retail environments.
             </p>
-            <ImagePlaceholder
-              label="Sweeping machine working on carpark surface"
-              aspectRatio="3/4"
-              className="w-full"
-            />
+            <div className="relative w-full aspect-[3/4] overflow-hidden">
+              <motion.div
+                className="absolute inset-0 cursor-default"
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1.0 }}
+                whileHover={{ scale: 1.03 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  opacity: { duration: 0.8, ease },
+                  scale: { duration: 0.6, ease },
+                }}
+              >
+                <img
+                  src="/services-carpark.png"
+                  alt="Aerial view of RCM Mille commercial sweeper working in a car park — before and after sweep clearly visible"
+                  className="w-full h-full object-cover object-[45%_35%]"
+                  loading="lazy"
+                />
+              </motion.div>
+              <div
+                className="absolute inset-0 pointer-events-none z-10"
+                style={{ background: 'rgba(0,0,0,0.18)' }}
+                aria-hidden="true"
+              />
+            </div>
           </AnimateInView>
 
           {/* Right — service list */}
