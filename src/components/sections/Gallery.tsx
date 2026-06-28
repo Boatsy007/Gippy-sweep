@@ -1,8 +1,9 @@
+import { motion } from 'framer-motion'
 import { AnimateInView } from '../ui/AnimateInView'
 import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
-const galleryItems = [
-  { label: 'Carpark before and after — Traralgon', ratio: '4/3' },
+const galleryItems: { label: string; ratio: string; src?: string }[] = [
+  { label: 'Carpark before and after — Traralgon', ratio: '4/3', src: '/results-before-after.png' },
   { label: 'Construction site sweep — Sale', ratio: '3/4' },
   { label: 'Warehouse floor — Morwell', ratio: '4/3' },
   { label: 'Shopping centre carpark — Bairnsdale', ratio: '3/4' },
@@ -45,11 +46,27 @@ export function Gallery() {
               className="break-inside-avoid mb-3"
             >
               <div role="listitem">
-                <ImagePlaceholder
-                  label={item.label}
-                  aspectRatio={item.ratio}
-                  className="w-full"
-                />
+                {item.src ? (
+                  <div
+                    className="w-full overflow-hidden"
+                    style={{ aspectRatio: item.ratio }}
+                  >
+                    <motion.img
+                      src={item.src}
+                      alt={item.label}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    />
+                  </div>
+                ) : (
+                  <ImagePlaceholder
+                    label={item.label}
+                    aspectRatio={item.ratio}
+                    className="w-full"
+                  />
+                )}
               </div>
             </AnimateInView>
           ))}
