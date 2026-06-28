@@ -6,34 +6,54 @@ const ease = [0.22, 1, 0.36, 1] as const
 
 const services = [
   {
-    title: 'Car Park & Driveway Sweeping',
+    title: 'Commercial Carpark Sweeping',
     description:
-      'Thorough mechanical sweeping removes debris, gravel, and litter from all hard-surface car parks and driveways — keeping your premises safe and professional.',
+      'Thorough mechanical sweeping removes debris, grit and litter from all commercial car parks across South East Queensland — keeping your premises safe and professional.',
   },
   {
-    title: 'Warehouse & Factory Floors',
+    title: 'Industrial Sweeping',
     description:
-      'Industrial environments generate significant dust, grit, and debris. We keep your internal floors compliant, safe, and clean — around your operating schedule.',
+      'Heavy-duty sweeping for factories, depots and industrial facilities across the Gold Coast and Brisbane. We work around your operations, day or night.',
   },
   {
-    title: 'Construction Site Cleaning',
+    title: 'Warehouse Sweeping',
     description:
-      'Post-construction and during-build sweeping to manage dust, concrete rubble, and site waste. We coordinate directly with site managers.',
+      'Industrial environments generate significant dust and grit. We keep your internal floors compliant, safe and clean — scheduled around your operating hours.',
   },
   {
-    title: 'Shopping Centre & Retail',
+    title: 'Construction Site Sweeping',
     description:
-      'Early-morning or late-night sweeping programs that keep your centre presented at its best before customers arrive.',
+      'During-build and post-construction site management to control dust, concrete rubble and site waste. We coordinate directly with site managers.',
   },
   {
-    title: 'Roads, Driveways & Paths',
+    title: 'Retail Centre Sweeping',
     description:
-      'From council roads to private estate driveways — debris-free surfaces that meet safety standards and look immaculate.',
+      'Early-morning or overnight sweeping programs that keep your centre looking its best before customers arrive.',
   },
   {
-    title: 'Event Venue Preparation',
+    title: 'Council Sweeping',
     description:
-      'Pre-event and post-event site preparation. We\'ll have your venue clean and ready on time, every time.',
+      'Roads, paths, carparks and civic spaces maintained to local government standards across South East Queensland.',
+  },
+  {
+    title: 'Body Corporate Sweeping',
+    description:
+      'Strata complexes, apartment car parks and residential estate driveways kept presentation-ready on a scheduled program.',
+  },
+  {
+    title: 'Resort Sweeping',
+    description:
+      'Hotel car parks, arrival forecourts and guest areas cleaned to the highest standard — before guests arrive and after they leave.',
+  },
+  {
+    title: 'Vacuum Sweeping',
+    description:
+      'High-powered vacuum sweeping for fine debris, sand and leaf litter where conventional sweeping is not sufficient.',
+  },
+  {
+    title: 'Scheduled Maintenance Programs',
+    description:
+      'Tailored weekly, fortnightly or monthly service schedules for ongoing site maintenance — with fixed pricing and priority scheduling.',
   },
 ]
 
@@ -52,8 +72,8 @@ export function Services() {
               Done right.
             </h2>
             <p className="text-zinc-500 text-base leading-relaxed mb-10 max-w-md">
-              Gippy Sweep operates commercial-grade mechanical sweepers purpose-built for
-              Gippsland's industrial, construction, and retail environments.
+              SWEPT operates commercial-grade mechanical sweepers designed for South East
+              Queensland's industrial, construction, retail and council environments.
             </p>
             <div className="relative w-full aspect-[3/4] overflow-hidden">
               <motion.div

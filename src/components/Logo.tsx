@@ -7,65 +7,58 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: { text: 'text-lg', svg: 'w-7 h-10' },
-  md: { text: 'text-2xl', svg: 'w-9 h-12' },
-  lg: { text: 'text-3xl', svg: 'w-11 h-14' },
+  sm: { fontSize: '1.25rem', arcW: 'w-5', arcH: 'h-6' },
+  md: { fontSize: '1.75rem', arcW: 'w-7', arcH: 'h-8' },
+  lg: { fontSize: '2.25rem', arcW: 'w-9', arcH: 'h-10' },
 }
 
 export function Logo({ className = '', inverted = false, size = 'md' }: LogoProps) {
-  const { text, svg } = sizes[size]
+  const { fontSize, arcW, arcH } = sizes[size]
   const primaryColor = inverted ? '#FAFAF9' : '#0B0B0B'
 
   return (
-    <div className={`flex items-center gap-1 ${className}`} aria-label="Gippy Sweep">
+    <div className={`flex items-center gap-1 ${className}`} aria-label="SWEPT">
       {/* Wordmark */}
-      <div className="flex flex-col leading-none">
-        <span
-          className={`${text} font-extrabold tracking-tightest leading-none`}
-          style={{ color: primaryColor }}
-        >
-          GIPPY
-        </span>
-        <span
-          className={`${text} font-extrabold tracking-tightest leading-none text-orange-500`}
-        >
-          SWEEP
-        </span>
-      </div>
+      <span
+        className="font-extrabold tracking-tightest leading-none"
+        style={{ color: primaryColor, fontSize, letterSpacing: '-0.055em' }}
+      >
+        SWEPT
+      </span>
 
       {/* Sweep arc mark */}
       <svg
-        viewBox="0 0 36 52"
+        viewBox="0 0 24 36"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={svg}
+        className={`${arcW} ${arcH}`}
         aria-hidden="true"
       >
         {/* Outer orange arc */}
         <path
-          d="M6 4 C20 4 30 16 26 44"
+          d="M5 3 C16 3 20 13 17 32"
           stroke="#F97316"
-          strokeWidth="4"
+          strokeWidth="3.5"
           strokeLinecap="round"
           fill="none"
         />
         {/* Middle orange arc */}
         <path
-          d="M14 2 C30 2 40 18 33 48"
+          d="M12 2 C24 2 28 15 23 33"
           stroke="#F97316"
-          strokeWidth="2.5"
+          strokeWidth="2"
           strokeLinecap="round"
           fill="none"
-          opacity="0.7"
+          opacity="0.55"
         />
-        {/* Inner dark arc */}
+        {/* Inner primary arc */}
         <path
-          d="M2 8 C14 8 22 20 18 46"
+          d="M1 6 C10 6 14 17 10 34"
           stroke={primaryColor}
-          strokeWidth="2.5"
+          strokeWidth="2"
           strokeLinecap="round"
           fill="none"
-          opacity="0.5"
+          opacity="0.35"
         />
       </svg>
     </div>

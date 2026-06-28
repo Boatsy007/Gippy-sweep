@@ -2,10 +2,10 @@ import { AnimateInView } from '../ui/AnimateInView'
 import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
 const milestones = [
-  { year: '2014', event: 'Founded in Gippsland by a local tradesman with a single sweeper.' },
-  { year: '2017', event: 'Expanded to serve construction and industrial clients across the region.' },
-  { year: '2020', event: 'Upgraded to commercial-grade fleet with dust suppression capability.' },
-  { year: '2024', event: 'Serving 50+ regular clients from Bairnsdale to the Latrobe Valley.' },
+  { year: '2018', event: 'Founded on the Gold Coast with a commitment to commercial-grade mechanical sweeping.' },
+  { year: '2020', event: 'Expanded to serve construction and industrial clients across South East Queensland.' },
+  { year: '2022', event: 'Upgraded to modern commercial sweeping equipment with advanced dust suppression capability.' },
+  { year: '2025', event: 'Serving clients across the Gold Coast, Brisbane, Logan and Moreton Bay regions.' },
 ]
 
 export function About() {
@@ -15,9 +15,9 @@ export function About() {
 
         {/* Header */}
         <AnimateInView className="max-w-xl mb-20">
-          <p className="eyebrow mb-5">About Gippy Sweep</p>
+          <p className="eyebrow mb-5">About SWEPT</p>
           <h2 id="about-heading" className="display-md text-asphalt">
-            A Gippsland business,<br />built by Gippslanders.
+            Built for South East<br />Queensland.
           </h2>
         </AnimateInView>
 
@@ -27,22 +27,19 @@ export function About() {
           <AnimateInView direction="left">
             <div className="prose prose-zinc max-w-none">
               <p className="text-lg text-zinc-600 leading-relaxed mb-6">
-                Gippy Sweep was started by someone who grew up in this region and cared
-                about how it looked. We saw too many construction sites leaving debris on
-                public roads, and too many businesses putting up with carparks that gave
-                visitors the wrong first impression.
+                SWEPT delivers professional commercial sweeping services across South East
+                Queensland using modern mechanical sweeping equipment and reliable scheduled
+                maintenance programs.
               </p>
               <p className="text-zinc-500 leading-relaxed mb-6">
-                So we started small — one machine, one operator, one commitment: show up
-                when we say we will, and clean the way a site should be cleaned. That
-                approach earned us long-term clients across construction, retail, local
-                government, and industrial sectors.
+                We're proudly Gold Coast owned and committed to helping businesses present
+                cleaner, safer, more professional properties every day. We saw too many sites
+                where sweeping was an afterthought — and set out to change that.
               </p>
               <p className="text-zinc-500 leading-relaxed mb-10">
-                Today, Gippy Sweep is one of the most trusted mechanical sweeping contractors
-                in Gippsland. We've grown, upgraded our equipment, and expanded our coverage —
-                but the core hasn't changed. We're still local, still owner-operated, and still
-                answerable directly to you.
+                Today, SWEPT services clients across the Gold Coast, Brisbane, Logan, Ipswich,
+                Redlands, Moreton Bay and Northern NSW — delivering the same owner-operated
+                standard on every job, every time.
               </p>
             </div>
 
@@ -69,7 +66,7 @@ export function About() {
           <AnimateInView direction="right">
             <div className="grid grid-cols-2 gap-3">
               <ImagePlaceholder
-                label="Owner operator portrait — Gippsland"
+                label="Owner operator portrait — Gold Coast"
                 aspectRatio="3/4"
                 className="col-span-2"
               />
@@ -78,7 +75,7 @@ export function About() {
                 aspectRatio="1/1"
               />
               <ImagePlaceholder
-                label="Gippsland landscape — local roots"
+                label="South East Queensland — local roots"
                 aspectRatio="1/1"
               />
             </div>
@@ -92,12 +89,13 @@ export function About() {
                 &ldquo;
               </div>
               <p className="text-zinc-600 italic leading-relaxed mb-5">
-                I started this business because I wanted Gippsland to look as good as it feels
-                to live in. Fifteen years later, that's still the reason I show up every day.
+                We built SWEPT because South East Queensland deserves a sweeping service
+                that actually shows up, does the job properly, and makes your property
+                look the way it should. That standard hasn't changed.
               </p>
               <footer className="flex items-center gap-3 text-sm font-semibold text-asphalt">
                 <span className="w-8 h-px bg-orange-500 shrink-0" aria-hidden="true" />
-                [Owner Name], Founder &amp; Director, Gippy Sweep
+                [Owner Name], Founder &amp; Director, SWEPT
               </footer>
             </blockquote>
           </AnimateInView>

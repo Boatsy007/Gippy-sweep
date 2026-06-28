@@ -3,24 +3,24 @@ import { AnimateInView } from '../ui/AnimateInView'
 
 const items = [
   {
+    icon: MapPin,
+    label: 'Gold Coast Owned',
+    detail: 'Gold Coast, Queensland',
+  },
+  {
     icon: ShieldCheck,
-    label: 'Fully Insured',
+    label: 'Fully Licensed & Insured',
     detail: 'Public liability & workers comp',
   },
   {
     icon: Clock,
-    label: 'On-Time Guarantee',
-    detail: 'Or we make it right',
-  },
-  {
-    icon: MapPin,
-    label: 'Gippsland Based',
-    detail: 'Local crew, local knowledge',
+    label: 'Flexible Scheduling',
+    detail: 'Day, night & weekends',
   },
   {
     icon: Star,
-    label: '5-Star Rated',
-    detail: 'Consistently top-rated in the region',
+    label: 'South East Queensland',
+    detail: "SEQ's commercial sweeping specialist",
   },
 ]
 

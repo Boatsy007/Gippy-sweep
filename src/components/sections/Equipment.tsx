@@ -8,7 +8,7 @@ const specs = [
   { label: 'Dust Suppression', value: 'Multi-stage filtration' },
   { label: 'Debris Collection', value: 'Wet & dry capability' },
   { label: 'Operating Hours', value: 'Day or night shifts' },
-  { label: 'Area Coverage', value: 'All of Gippsland VIC' },
+  { label: 'Area Coverage', value: 'All of South East QLD' },
 ]
 
 const highlights = [
@@ -43,7 +43,7 @@ export function Equipment() {
           </h2>
           <p className="mt-5 text-zinc-500 text-base leading-relaxed">
             We operate commercial-grade mechanical sweepers built for Australian conditions —
-            heavy-duty, efficient, and capable across every surface type we encounter in Gippsland.
+            heavy-duty, efficient, and capable across every surface type we encounter in South East Queensland.
           </p>
         </AnimateInView>
 

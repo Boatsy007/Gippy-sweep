@@ -4,10 +4,10 @@ import { AnimateInView } from '../ui/AnimateInView'
 const testimonials = [
   {
     quote:
-      'Gippy Sweep has been looking after our construction sites for three years running. They always show up, always do the job properly, and our site managers love working with them.',
+      'SWEPT has been looking after our construction sites for over a year. They always show up, always do the job properly, and our site managers love working with them.',
     author: 'Marcus',
     role: 'Site Manager',
-    company: 'Construction Company — Gippsland VIC',
+    company: 'Construction Company — Gold Coast QLD',
     stars: 5,
   },
   {
@@ -15,15 +15,15 @@ const testimonials = [
       "Our carpark went from an embarrassment to a point of pride. Customers notice, and we've had compliments specifically about how clean the place looks. Couldn't recommend more highly.",
     author: 'Trish',
     role: 'Centre Manager',
-    company: 'Retail Centre — Latrobe Valley VIC',
+    company: 'Retail Centre — Brisbane QLD',
     stars: 5,
   },
   {
     quote:
-      'We use Gippy Sweep for our warehouse complex and they\'ve been brilliant. Always prompt, always thorough. The dust suppression is a game-changer for our indoor air quality compliance.',
+      "We use SWEPT for our warehouse complex and they've been brilliant. Always prompt, always thorough. The dust suppression is a game-changer for our indoor air quality compliance.",
     author: 'Dean',
     role: 'Facilities Manager',
-    company: 'Industrial Estate — Bairnsdale VIC',
+    company: 'Industrial Estate — Logan QLD',
     stars: 5,
   },
 ]
@@ -47,7 +47,7 @@ export function Testimonials() {
             What Clients Say
           </p>
           <h2 id="testimonials-heading" className="display-md text-white">
-            Trusted across<br />Gippsland.
+            Trusted across<br />South East Queensland.
           </h2>
           <p className="mt-5 text-white/40 text-sm">
             These are placeholder testimonials. Real reviews will be displayed here once collected.

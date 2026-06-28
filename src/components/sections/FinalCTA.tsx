@@ -12,7 +12,7 @@ export function FinalCTA() {
         <span
           className="text-[clamp(80px,15vw,180px)] font-extrabold text-white/[0.025] tracking-tightest leading-none whitespace-nowrap"
         >
-          GIPPY SWEEP
+          SWEPT
         </span>
       </div>
 
@@ -31,7 +31,7 @@ export function FinalCTA() {
             id="cta-heading"
             className="display-lg text-white max-w-4xl mx-auto leading-tight"
           >
-            Let's keep Gippsland<br />
+            Let's keep South East Queensland<br />
             <span className="text-orange-500">looking its best.</span>
           </h2>
         </AnimateInView>
@@ -46,7 +46,7 @@ export function FinalCTA() {
         <AnimateInView delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
             <a
-              href="mailto:info@gippysweep.com.au"
+              href="mailto:info@swept.au"
               className="btn-primary text-base px-10 py-5"
             >
               Request a Free Quote
@@ -67,7 +67,7 @@ export function FinalCTA() {
             {[
               'No lock-in contracts',
               'Response within 1 business day',
-              'Gippsland-based crew',
+              'Gold Coast-based crew',
               'Fully insured',
             ].map((point) => (
               <span key={point} className="flex items-center gap-2 text-white/40 text-sm">

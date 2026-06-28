@@ -2,21 +2,21 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react
 import { Logo } from '../Logo'
 
 const services = [
-  'Car Parks & Driveways',
-  'Warehouses & Factories',
-  'Construction Sites',
-  'Shopping Centres',
-  'Roads & Highways',
-  'Event Venues',
+  'Commercial Carpark Sweeping',
+  'Industrial Sweeping',
+  'Warehouse Sweeping',
+  'Construction Site Sweeping',
+  'Body Corporate Sweeping',
+  'Scheduled Maintenance Programs',
 ]
 
 const industries = [
-  'Construction',
-  'Retail & Commercial',
-  'Industrial & Logistics',
-  'Local Government',
-  'Events & Hospitality',
-  'Property Management',
+  'Shopping Centres',
+  'Industrial Facilities',
+  'Construction Sites',
+  'Body Corporates',
+  'Resorts & Hotels',
+  'Distribution Centres',
 ]
 
 const quickLinks = [
@@ -38,7 +38,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Logo inverted size="sm" />
             <p className="mt-6 text-sm leading-relaxed text-white/50 max-w-xs">
-              Professional commercial sweeping services across Gippsland, Victoria.
+              Professional commercial sweeping services across South East Queensland.
               Reliable, punctual, and built to the highest industry standards.
             </p>
             <div className="flex gap-4 mt-8">
@@ -122,18 +122,18 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@gippysweep.com.au"
+                  href="mailto:info@swept.au"
                   className="flex items-start gap-3 text-sm hover:text-white transition-colors duration-150"
                 >
                   <Mail className="w-4 h-4 mt-0.5 text-orange-500 shrink-0" aria-hidden="true" />
-                  info@gippysweep.com.au
+                  info@swept.au
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 text-orange-500 shrink-0" aria-hidden="true" />
                 <span>
-                  Serving all of Gippsland<br />
-                  Victoria, Australia
+                  Gold Coast, Queensland<br />
+                  Australia
                 </span>
               </li>
             </ul>
@@ -149,7 +149,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Gippy Sweep. All rights reserved. ABN 00 000 000 000
+            &copy; {new Date().getFullYear()} SWEPT. All rights reserved. ABN 00 000 000 000
           </p>
           <div className="flex gap-6">
             {quickLinks.slice(0, 4).map((link) => (

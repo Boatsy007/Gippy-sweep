@@ -37,7 +37,7 @@ export function Navbar() {
       >
         <div className="section-container">
           <div className="flex items-center justify-between h-18 py-4">
-            <a href="#" aria-label="Gippy Sweep — Home">
+            <a href="#" aria-label="SWEPT — Home">
               <Logo size="sm" inverted={!scrolled} />
             </a>
 

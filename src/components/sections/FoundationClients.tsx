@@ -22,7 +22,7 @@ const frequencies = [
     id: 'monthly',
     label: 'Monthly',
     badge: null,
-    description: 'Great for lower-traffic areas and scheduled maintenance programs. Ideal for government facilities and rural properties.',
+    description: 'Great for lower-traffic areas and scheduled maintenance programs. Ideal for government facilities and body corporate properties.',
     price: 'From $400/visit',
     highlight: false,
   },
@@ -56,7 +56,7 @@ export function FoundationClients() {
             Lock in your rate.
           </h2>
           <p className="mt-5 text-zinc-500 text-lg leading-relaxed max-w-2xl">
-            Gippy Sweep is growing its regular client base across Gippsland.
+            SWEPT is growing its regular client base across South East Queensland.
             Sign up for a recurring plan now and lock in a founding-client rate —
             price-protected for the life of your agreement.
           </p>
@@ -126,7 +126,7 @@ export function FoundationClients() {
                 Tell us about your site — size, location, frequency needed —
                 and we'll get back to you within one business day with a clear, itemised quote.
               </p>
-              <a href="mailto:info@gippysweep.com.au" className="btn-primary w-full justify-center">
+              <a href="mailto:info@swept.au" className="btn-primary w-full justify-center">
                 Request a Quote
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>

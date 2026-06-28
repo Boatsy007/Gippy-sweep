@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const headlineWords = ['PROUDLY', 'KEEPING', 'GIPPSLAND', 'CLEAN.']
+const headlineWords = ['COMMERCIAL', 'SWEEPING', 'DONE', 'RIGHT.']
 
 export function Hero() {
   return (
@@ -94,12 +94,12 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45, ease }}
             >
-              Commercial Sweeping — Gippsland, VIC
+              Commercial Sweeping — South East Queensland
             </motion.p>
 
             <h1
               className="display-xl text-white mb-0"
-              aria-label="Proudly keeping Gippsland clean."
+              aria-label="Commercial sweeping done right."
             >
               {headlineWords.map((word, i) => (
                 <motion.span
@@ -108,7 +108,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 60 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 + i * 0.12, ease }}
-                  style={word === 'CLEAN.' ? { color: '#F97316' } : undefined}
+                  style={word === 'RIGHT.' ? { color: '#F97316' } : undefined}
                 >
                   {word}
                 </motion.span>
@@ -121,9 +121,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.06, ease }}
             >
-              Reliable mechanical sweeping for construction sites, carparks,
-              warehouses, and public spaces across the Gippsland region —
-              done right, every time.
+              Professional commercial sweeping across South East Queensland.
+              Shopping centres. Industrial sites. Construction projects.
+              Councils. Warehouses. Body corporates.
             </motion.p>
 
             <motion.div
@@ -133,11 +133,11 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 1.16, ease }}
             >
               <a href="#contact" className="btn-primary">
-                Get a Free Quote
+                Get a Quote
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <a href="#services" className="btn-outline-light">
-                Explore Services
+                Our Services
               </a>
             </motion.div>
 
@@ -151,7 +151,7 @@ export function Hero() {
               {[
                 { value: '10+', label: 'Years Experience' },
                 { value: '500+', label: 'Sites Cleaned' },
-                { value: '100%', label: 'Gippsland Based' },
+                { value: '100%', label: 'Gold Coast Owned' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-3xl font-extrabold text-white tracking-tightest leading-none">
@@ -177,8 +177,8 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 1.9, ease }}
       >
-        <p className="text-xs font-bold tracking-[0.15em] uppercase">Locally Owned</p>
-        <p className="text-xs text-white/70 mt-0.5">Gippsland, Victoria</p>
+        <p className="text-xs font-bold tracking-[0.15em] uppercase">Gold Coast Owned</p>
+        <p className="text-xs text-white/70 mt-0.5">Queensland, Australia</p>
       </motion.div>
 
       {/* ── SCROLL INDICATOR ─────────────────────────────────────────────── */}
