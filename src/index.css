@@ -68,14 +68,14 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2;
+    @apply inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2;
   }
 
   .btn-outline-light {
-    @apply inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white font-semibold px-8 py-4 text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2;
+    @apply inline-flex items-center gap-2 border border-white/25 hover:border-white/60 hover:bg-white/10 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2;
   }
 
   .btn-outline-dark {
-    @apply inline-flex items-center gap-2 border-2 border-asphalt hover:border-orange-500 hover:text-orange-500 text-asphalt font-semibold px-8 py-4 text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asphalt focus-visible:ring-offset-2;
+    @apply inline-flex items-center gap-2 border-2 border-asphalt hover:border-orange-500 hover:text-orange-500 text-asphalt font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asphalt focus-visible:ring-offset-2;
   }
 }

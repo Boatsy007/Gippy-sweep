@@ -21,7 +21,7 @@ export function FinalCTA() {
 
       <div className="section-container relative py-28 lg:py-36 text-center">
         <AnimateInView>
-          <p className="eyebrow mb-8" style={{ color: '#F97316' }}>
+          <p className="eyebrow mb-8" style={{ color: '#3BAEE9' }}>
             Ready to Get Started?
           </p>
         </AnimateInView>

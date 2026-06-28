@@ -116,7 +116,7 @@ export function FoundationClients() {
 
           <AnimateInView direction="right">
             <div className="bg-asphalt p-8 lg:p-10">
-              <p className="eyebrow mb-4" style={{ color: '#F97316' }}>
+              <p className="eyebrow mb-4" style={{ color: '#3BAEE9' }}>
                 Get Your Quote Today
               </p>
               <h3 className="text-2xl font-extrabold text-white tracking-headline leading-tight mb-4">

@@ -50,7 +50,7 @@ export function WhyChoose() {
     <section className="section-pad bg-asphalt" aria-labelledby="why-heading">
       <div className="section-container">
         <AnimateInView className="max-w-2xl mb-16">
-          <p className="eyebrow mb-5" style={{ color: '#F97316' }}>
+          <p className="eyebrow mb-5" style={{ color: '#3BAEE9' }}>
             Why SWEPT
           </p>
           <h2 id="why-heading" className="display-md text-white">

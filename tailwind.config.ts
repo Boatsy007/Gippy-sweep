@@ -5,8 +5,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        asphalt: '#0B0B0B',
-        cream: '#FAFAF9',
+        asphalt: '#111827',
+        cream: '#FFFFFF',
+        orange: {
+          400: '#60C3F0',
+          500: '#3BAEE9',
+          600: '#2090CC',
+        },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],

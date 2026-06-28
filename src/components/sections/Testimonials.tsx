@@ -40,10 +40,10 @@ function StarRating({ count }: { count: number }) {
 
 export function Testimonials() {
   return (
-    <section className="section-pad bg-zinc-900" aria-labelledby="testimonials-heading">
+    <section className="section-pad bg-asphalt" aria-labelledby="testimonials-heading">
       <div className="section-container">
         <AnimateInView className="text-center max-w-2xl mx-auto mb-16">
-          <p className="eyebrow mb-5" style={{ color: '#F97316' }}>
+          <p className="eyebrow mb-5" style={{ color: '#3BAEE9' }}>
             What Clients Say
           </p>
           <h2 id="testimonials-heading" className="display-md text-white">
@@ -57,7 +57,7 @@ export function Testimonials() {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <AnimateInView key={t.company} delay={i * 0.12} direction="up">
-              <figure className="bg-zinc-800 p-8 h-full flex flex-col">
+              <figure className="bg-gray-800 p-8 h-full flex flex-col">
                 <StarRating count={t.stars} />
                 <blockquote className="mt-5 flex-1">
                   <p className="text-white/70 text-sm leading-relaxed italic">"{t.quote}"</p>

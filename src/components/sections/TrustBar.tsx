@@ -26,7 +26,7 @@ const items = [
 
 export function TrustBar() {
   return (
-    <section className="bg-zinc-900" aria-label="Trust indicators">
+    <section className="bg-asphalt" aria-label="Trust indicators">
       <div className="section-container py-10 lg:py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
           {items.map((item, i) => (

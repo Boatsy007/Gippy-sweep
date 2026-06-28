@@ -50,14 +50,14 @@ export function Hero() {
         {/* Desktop: left-edge gradient blends image into solid asphalt text column */}
         <div
           className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none hidden lg:block"
-          style={{ background: 'linear-gradient(to right, #0B0B0B, transparent)' }}
+          style={{ background: 'linear-gradient(to right, #111827, transparent)' }}
         />
 
         {/* Mobile: top gradient — dark behind text, clears toward bottom so
             machine is visible in the lower third of the screen */}
         <div
           className="absolute inset-x-0 top-0 h-3/4 z-10 pointer-events-none lg:hidden"
-          style={{ background: 'linear-gradient(to bottom, rgba(11,11,11,0.82) 0%, rgba(11,11,11,0.55) 45%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.85) 0%, rgba(17,24,39,0.55) 45%, transparent 100%)' }}
         />
       </div>
 
@@ -108,7 +108,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 60 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 + i * 0.12, ease }}
-                  style={word === 'RIGHT.' ? { color: '#F97316' } : undefined}
+                  style={word === 'RIGHT.' ? { color: '#3BAEE9' } : undefined}
                 >
                   {word}
                 </motion.span>
