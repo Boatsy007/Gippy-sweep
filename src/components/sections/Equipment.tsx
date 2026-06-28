@@ -1,6 +1,6 @@
+import { motion } from 'framer-motion'
 import { Zap, Clock, Leaf } from 'lucide-react'
 import { AnimateInView } from '../ui/AnimateInView'
-import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
 const specs = [
   { label: 'Sweeping Width', value: 'Up to 2.4m' },
@@ -81,12 +81,17 @@ export function Equipment() {
                   ))}
                 </div>
               </div>
-              <div className="min-h-[240px] lg:min-h-[480px] relative">
-                <ImagePlaceholder
-                  label="RCM Mille ride-on sweeper — arriving soon"
-                  aspectRatio="fill"
-                  dark
+              <div className="min-h-[240px] lg:min-h-[480px] relative overflow-hidden">
+                <motion.img
+                  src="/equipment-rcm-mille.png"
+                  alt="RCM Mille ride-on sweeper in a polished warehouse facility"
+                  className="absolute inset-0 w-full h-full object-cover object-[55%_50%]"
+                  loading="lazy"
+                  draggable={false}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
                 />
+                <div className="absolute inset-0 bg-black/12 pointer-events-none" aria-hidden="true" />
               </div>
             </div>
           </div>
