@@ -2,14 +2,28 @@ import { motion } from 'framer-motion'
 import { AnimateInView } from '../ui/AnimateInView'
 import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
-const galleryItems: { label: string; ratio: string; src?: string }[] = [
+const galleryItems: {
+  label: string
+  ratio: string
+  src?: string
+  objectPosition?: string
+  hoverDuration?: number
+  entryScale?: boolean
+}[] = [
   { label: 'Carpark before and after — Traralgon', ratio: '4/3', src: '/results-before-after.png' },
   { label: 'Construction site sweep — Sale', ratio: '3/4' },
   { label: 'Warehouse floor — Morwell', ratio: '4/3' },
   { label: 'Shopping centre carpark — Bairnsdale', ratio: '3/4' },
   { label: 'Road sweeping — Latrobe Valley', ratio: '16/9' },
   { label: 'Industrial estate — Moe', ratio: '4/3' },
-  { label: 'Grain shed yard — Leongatha', ratio: '3/4' },
+  {
+    label: 'Grain shed yard — Leongatha',
+    ratio: '3/4',
+    src: '/gallery-grain-shed.png',
+    objectPosition: '50% 45%',
+    hoverDuration: 0.6,
+    entryScale: true,
+  },
   { label: 'Event venue preparation', ratio: '4/3' },
   { label: 'Sweeper detail shot', ratio: '1/1' },
   { label: 'Night sweep — commercial precinct', ratio: '16/9' },
@@ -55,9 +69,20 @@ export function Gallery() {
                       src={item.src}
                       alt={item.label}
                       className="w-full h-full object-cover"
+                      style={{ objectPosition: item.objectPosition ?? 'center' }}
                       loading="lazy"
+                      {...(item.entryScale
+                        ? {
+                            initial: { opacity: 0, scale: 0.98 },
+                            whileInView: { opacity: 1, scale: 1.0 },
+                            viewport: { once: true, amount: 0.2 },
+                          }
+                        : {})}
                       whileHover={{ scale: 1.03 }}
-                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                      transition={{
+                        opacity: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+                        scale: { duration: item.hoverDuration ?? 0.5, ease: 'easeOut' },
+                      }}
                     />
                   </div>
                 ) : (
