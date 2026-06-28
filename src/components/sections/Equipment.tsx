@@ -4,11 +4,18 @@ import { AnimateInView } from '../ui/AnimateInView'
 
 const specs = [
   { label: 'Sweeping Width', value: 'Up to 2.4m' },
-  { label: 'Hopper Capacity', value: 'Commercial grade' },
+  { label: 'Debris Capacity', value: 'Commercial-grade hopper' },
   { label: 'Dust Suppression', value: 'Multi-stage filtration' },
   { label: 'Debris Collection', value: 'Wet & dry capability' },
-  { label: 'Operating Hours', value: 'Day or night shifts' },
-  { label: 'Area Coverage', value: 'All of South East QLD' },
+  { label: 'Operating Hours', value: 'Day & night service' },
+  { label: 'Service Area', value: 'South East Queensland' },
+]
+
+const statStrip = [
+  'Italian Engineered',
+  'Commercial Grade',
+  'Low Dust Operation',
+  'Professional Results',
 ]
 
 const highlights = [
@@ -47,7 +54,7 @@ export function Equipment() {
           </p>
         </AnimateInView>
 
-        {/* Arriving Soon callout — RCM Mille */}
+        {/* RCM Mille feature callout */}
         <AnimateInView className="mb-16">
           <div className="relative bg-asphalt overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03]"
@@ -59,20 +66,20 @@ export function Equipment() {
             />
             <div className="relative grid lg:grid-cols-2 gap-0">
               <div className="p-10 lg:p-14 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 bg-orange-500/15 text-orange-400 text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1.5 mb-6 self-start">
-                  <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-pulse" aria-hidden="true" />
-                  Arriving Soon
-                </div>
                 <h3 className="text-3xl font-extrabold text-white tracking-headline leading-tight mb-4">
                   RCM Mille<br />
-                  <span className="text-orange-500">Next-Generation</span> Sweeper
+                  Commercial Ride-On<br />
+                  <span className="text-orange-500">Sweeper</span>
                 </h3>
                 <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-md">
-                  We're investing in the RCM Mille — a premium Italian-engineered ride-on sweeper
-                  renowned for its performance on large hard-surface areas. More capacity, better
-                  dust control, and even faster results for our clients.
+                  We operate a professional RCM Mille ride-on sweeper, trusted worldwide for its
+                  exceptional performance on large commercial hard surfaces. Designed in Italy and
+                  built for demanding environments, it delivers powerful dust control, efficient
+                  debris collection and outstanding results across shopping centres, industrial
+                  facilities, warehouses, construction sites and large car parks throughout South
+                  East Queensland.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 mb-8">
                   {specs.map((spec) => (
                     <div key={spec.label} className="border border-white/10 px-4 py-3">
                       <p className="text-[10px] text-white/30 uppercase tracking-widest mb-1">{spec.label}</p>
@@ -80,6 +87,21 @@ export function Equipment() {
                     </div>
                   ))}
                 </div>
+                <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+                  {statStrip.map((s) => (
+                    <span key={s} className="flex items-center gap-2 text-white/50 text-xs">
+                      <span className="w-1 h-1 bg-orange-500 rounded-full shrink-0" aria-hidden="true" />
+                      {s}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href="#gallery"
+                  className="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors duration-150 self-start"
+                >
+                  See the RCM Mille in Action
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
               <div className="min-h-[240px] lg:min-h-[480px] relative overflow-hidden">
                 <motion.img
