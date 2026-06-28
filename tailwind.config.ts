@@ -17,6 +17,13 @@ export default {
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'ken-burns': 'ken-burns 25s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        'ken-burns': {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.05)' },
+        },
       },
     },
   },
