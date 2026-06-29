@@ -69,7 +69,7 @@ export function Navbar() {
               style={{ top: '50%', translateY: '-50%' }}
               initial={{ x: -90 }}
               animate={{ x: vw + 20 }}
-              transition={{ duration: 1.1, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1] }}
               onAnimationComplete={() => {
                 sessionStorage.setItem(INTRO_KEY, '1')
                 setSweepDone(true)
@@ -84,7 +84,7 @@ export function Navbar() {
         <motion.div
           initial={shouldAnimate ? { clipPath: 'inset(0 100% 0 0)' } : false}
           animate={{ clipPath: 'inset(0 0% 0 0)' }}
-          transition={shouldAnimate ? { duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] } : { duration: 0 }}
+          transition={shouldAnimate ? { duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] } : { duration: 0 }}
         >
           <div className="section-container">
             <div className="flex items-center justify-between h-18 py-4">
