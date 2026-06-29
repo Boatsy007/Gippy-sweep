@@ -40,14 +40,7 @@ export function Navbar() {
         <div className="section-container">
           <div className="flex items-center justify-between h-18 py-4">
             <a href="#" aria-label="SWEPT — Home">
-              {/* Desktop: white on transparent hero, dark when scrolled */}
-              <span className="hidden lg:block">
-                <Logo size="sm" inverted={!scrolled} />
-              </span>
-              {/* Mobile/tablet: always dark text logo */}
-              <span className="lg:hidden">
-                <Logo size="sm" inverted={false} />
-              </span>
+              <Logo size="sm" inverted={!scrolled && !open} />
             </a>
 
             {/* Desktop nav */}
