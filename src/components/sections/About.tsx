@@ -2,10 +2,10 @@ import { AnimateInView } from '../ui/AnimateInView'
 import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
 const milestones = [
-  { year: '2018', event: 'Founded on the Gold Coast with a commitment to commercial-grade mechanical sweeping.' },
-  { year: '2020', event: 'Expanded to serve construction and industrial clients across South East Queensland.' },
-  { year: '2022', event: 'Upgraded to modern commercial sweeping equipment with advanced dust suppression capability.' },
-  { year: '2025', event: 'Serving clients across the Gold Coast, Brisbane, Logan and Moreton Bay regions.' },
+  { year: '2004', event: 'Established on the Gold Coast, providing commercial sweeping services to businesses across South East Queensland.' },
+  { year: '2010', event: 'Expanded service area to cover Brisbane, Logan, Ipswich and the broader South East Queensland corridor.' },
+  { year: '2018', event: 'Invested in modern commercial-grade mechanical sweeping equipment with advanced dust suppression capability.' },
+  { year: '2025', event: 'Serving clients across the Gold Coast, Brisbane, Logan, Ipswich, Redlands and Moreton Bay through commercial sweeping, pressure cleaning and grounds maintenance.' },
 ]
 
 export function About() {
@@ -27,19 +27,19 @@ export function About() {
           <AnimateInView direction="left">
             <div className="prose prose-zinc max-w-none">
               <p className="text-lg text-zinc-600 leading-relaxed mb-6">
-                SWEPT delivers professional commercial sweeping services across South East
-                Queensland using modern mechanical sweeping equipment and reliable scheduled
-                maintenance programs.
+                For over 20 years, Swept has been helping businesses across South East
+                Queensland maintain cleaner, safer and more professional commercial properties.
               </p>
               <p className="text-zinc-500 leading-relaxed mb-6">
-                We're proudly Gold Coast owned and committed to helping businesses present
-                cleaner, safer, more professional properties every day. We saw too many sites
-                where sweeping was an afterthought — and set out to change that.
+                Built on long-term client relationships and reliable service, Swept continues
+                to provide commercial sweeping, pressure cleaning and exterior property
+                maintenance for shopping centres, warehouses, industrial facilities, body
+                corporates and commercial sites throughout the region.
               </p>
               <p className="text-zinc-500 leading-relaxed mb-10">
-                Today, SWEPT services clients across the Gold Coast, Brisbane, Logan, Ipswich,
-                Redlands, Moreton Bay and Northern NSW — delivering the same owner-operated
-                standard on every job, every time.
+                Proudly Gold Coast owned and operated — keeping commercial properties clean
+                across the Gold Coast, Brisbane, Logan, Ipswich, Redlands, Moreton Bay and
+                Northern NSW.
               </p>
             </div>
 

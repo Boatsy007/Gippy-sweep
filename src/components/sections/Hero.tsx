@@ -149,7 +149,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 1.32, ease }}
             >
               {[
-                { value: '10+', label: 'Years Experience' },
+                { value: '20+', label: 'Years Serving SEQ' },
                 { value: '500+', label: 'Sites Cleaned' },
                 { value: '100%', label: 'Gold Coast Owned' },
               ].map((stat) => (
