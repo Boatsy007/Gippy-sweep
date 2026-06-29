@@ -7,29 +7,29 @@ interface LogoProps {
 }
 
 // Logo PNGs are 1080×1080 square exports from Canva.
-// Content sits at ~33%–68% vertically and ~3%–90% horizontally.
+// "Swept. SERVICES" content spans ~22–73% vertically (centre ≈ 47.2%).
 // We scale the image to fill the container width (W×W rendered),
-// then shift up by (W−H)/2 so the logo centre aligns with the
-// container centre. overflow-hidden clips the whitespace bands.
+// then shift up so the content centre aligns with the container centre.
+// marginTop = -(contentCentre * W - H/2)
 const sizes = {
-  sm: { w: 124, h: 42 },
-  md: { w: 155, h: 52 },
-  lg: { w: 186, h: 62 },
+  sm: { w: 110, h: 62 },
+  md: { w: 138, h: 78 },
+  lg: { w: 165, h: 93 },
 }
 
 export function Logo({ className = '', inverted = false, size = 'md' }: LogoProps) {
   const { w, h } = sizes[size]
-  const marginTop = -Math.round((w - h) / 2)
+  const marginTop = -Math.round(0.472 * w - h / 2)
 
   return (
     <div
       className={`overflow-hidden shrink-0 ${className}`}
       style={{ width: w, height: h }}
-      aria-label="SWEPT"
+      aria-label="Swept. Services"
     >
       <img
         src={inverted ? '/logo-white.png' : '/logo-dark.png'}
-        alt="SWEPT"
+        alt="Swept. Services"
         width={w}
         height={w}
         style={{ display: 'block', width: w, height: 'auto', marginTop }}
