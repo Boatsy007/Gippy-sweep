@@ -1,5 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
 import { Logo } from '../Logo'
 
@@ -12,33 +11,9 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
-const INTRO_KEY = 'swept-intro-v1'
-
-function Sweeper() {
-  return (
-    <img
-      src="/sweeper-icon.png"
-      alt=""
-      aria-hidden="true"
-      width={72}
-      height={72}
-      style={{ display: 'block' }}
-      draggable={false}
-    />
-  )
-}
-
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-
-  const shouldAnimate = useMemo(() => (
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
-    !sessionStorage.getItem(INTRO_KEY)
-  ), [])
-
-  const vw = useMemo(() => window.innerWidth, [])
-  const [sweepDone, setSweepDone] = useState(!shouldAnimate)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -61,84 +36,58 @@ export function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        {/* Sweeper — enters from left, exits right, plays once */}
-        {!sweepDone && (
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10" aria-hidden="true">
-            <motion.div
-              className="absolute"
-              style={{ top: '50%', translateY: '-50%' }}
-              initial={{ x: -90 }}
-              animate={{ x: vw + 20 }}
-              transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1] }}
-              onAnimationComplete={() => {
-                sessionStorage.setItem(INTRO_KEY, '1')
-                setSweepDone(true)
-              }}
-            >
-              <Sweeper />
-            </motion.div>
-          </div>
-        )}
+        <div className="section-container">
+          <div className="flex items-center justify-between h-18 py-4">
+            <a href="#" aria-label="SWEPT — Home">
+              <Logo size="sm" inverted={!scrolled && !open} />
+            </a>
 
-        {/* Header content — reveals left-to-right as sweeper passes */}
-        <motion.div
-          initial={shouldAnimate ? { clipPath: 'inset(0 100% 0 0)' } : false}
-          animate={{ clipPath: 'inset(0 0% 0 0)' }}
-          transition={shouldAnimate ? { duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] } : { duration: 0 }}
-        >
-          <div className="section-container">
-            <div className="flex items-center justify-between h-18 py-4">
-              <a href="#" aria-label="SWEPT — Home">
-                <Logo size="sm" inverted={!scrolled && !open} />
-              </a>
-
-              {/* Desktop nav */}
-              <nav className="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className={`text-sm font-semibold tracking-wide transition-colors duration-200 ${
-                      scrolled
-                        ? 'text-asphalt/70 hover:text-asphalt'
-                        : 'text-white/70 hover:text-white'
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </nav>
-
-              <div className="hidden lg:flex items-center gap-4">
+            {/* Desktop nav */}
+            <nav className="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
+              {navLinks.map((link) => (
                 <a
-                  href="tel:+61412345678"
-                  className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
-                    scrolled ? 'text-asphalt/70 hover:text-asphalt' : 'text-white/70 hover:text-white'
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-semibold tracking-wide transition-colors duration-200 ${
+                    scrolled
+                      ? 'text-asphalt/70 hover:text-asphalt'
+                      : 'text-white/70 hover:text-white'
                   }`}
                 >
-                  <Phone className="w-4 h-4" aria-hidden="true" />
-                  0412 345 678
+                  {link.label}
                 </a>
-                <a href="#contact" className="btn-primary text-xs px-6 py-3">
-                  Get a Quote
-                </a>
-              </div>
+              ))}
+            </nav>
 
-              {/* Mobile hamburger */}
-              <button
-                className={`lg:hidden p-2 -mr-2 transition-colors duration-200 ${
-                  scrolled ? 'text-asphalt' : 'text-white'
+            <div className="hidden lg:flex items-center gap-4">
+              <a
+                href="tel:+61412345678"
+                className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
+                  scrolled ? 'text-asphalt/70 hover:text-asphalt' : 'text-white/70 hover:text-white'
                 }`}
-                onClick={() => setOpen(!open)}
-                aria-label={open ? 'Close menu' : 'Open menu'}
-                aria-expanded={open}
-                aria-controls="mobile-menu"
               >
-                {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                0412 345 678
+              </a>
+              <a href="#contact" className="btn-primary text-xs px-6 py-3">
+                Get a Quote
+              </a>
             </div>
+
+            {/* Mobile hamburger */}
+            <button
+              className={`lg:hidden p-2 -mr-2 transition-colors duration-200 ${
+                scrolled ? 'text-asphalt' : 'text-white'
+              }`}
+              onClick={() => setOpen(!open)}
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+            >
+              {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-        </motion.div>
+        </div>
       </header>
 
       {/* Mobile menu overlay */}
