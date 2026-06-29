@@ -43,6 +43,11 @@ const washdServices = [
     description:
       'Targeted high-pressure treatment for oil spills, grime and persistent surface staining on commercial and industrial properties.',
   },
+  {
+    title: 'Graffiti Removal',
+    description:
+      'Professional graffiti removal from commercial surfaces including rendered walls, concrete, brick, cladding and signage — restoring your property\'s professional presentation.',
+  },
 ]
 
 export function Washd() {
@@ -61,9 +66,9 @@ export function Washd() {
             </h2>
             <p className="text-zinc-500 text-base leading-relaxed mb-10 max-w-md">
               Swept is more than mechanical sweeping. Through Washd by Swept, we provide commercial
-              pressure cleaning and wash-down services for sites that need a deeper clean — from
-              basement car parks and loading docks to bin bays, resort complexes, warehouse floors
-              and retail centres across South East Queensland.
+              pressure cleaning, wash-downs and graffiti removal for sites that need a deeper clean —
+              from basement car parks and loading docks to bin bays, resort complexes, warehouse
+              floors, retail centres and commercial facades across South East Queensland.
             </p>
             <div className="relative w-full aspect-[3/4] overflow-hidden">
               <ImagePlaceholder
