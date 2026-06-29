@@ -4,6 +4,7 @@ import { Hero } from './components/sections/Hero'
 import { TrustBar } from './components/sections/TrustBar'
 import { FoundationClients } from './components/sections/FoundationClients'
 import { Services } from './components/sections/Services'
+import { Washd } from './components/sections/Washd'
 import { Industries } from './components/sections/Industries'
 import { WhyChoose } from './components/sections/WhyChoose'
 import { Equipment } from './components/sections/Equipment'
@@ -27,6 +28,7 @@ export default function App() {
         <TrustBar />
         <FoundationClients />
         <Services />
+        <Washd />
         <Industries />
         <WhyChoose />
         <Equipment />

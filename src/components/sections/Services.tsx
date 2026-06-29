@@ -55,6 +55,16 @@ const services = [
     description:
       'Tailored weekly, fortnightly or monthly service schedules for ongoing site maintenance — with fixed pricing and priority scheduling.',
   },
+  {
+    title: 'Commercial Pressure Cleaning',
+    description:
+      'Commercial pressure cleaning for car parks, loading docks, bin bays and hard surfaces — delivered through Washd by Swept, our specialist pressure cleaning division.',
+  },
+  {
+    title: 'Wash-Down Services',
+    description:
+      'Industrial and commercial wash-down programs for warehouse floors, resort complexes and body corporate properties — scheduled through Washd by Swept.',
+  },
 ]
 
 export function Services() {

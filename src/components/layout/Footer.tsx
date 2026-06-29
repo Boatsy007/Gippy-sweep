@@ -2,12 +2,14 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react
 import { Logo } from '../Logo'
 
 const services = [
-  'Commercial Carpark Sweeping',
-  'Industrial Sweeping',
-  'Warehouse Sweeping',
-  'Construction Site Sweeping',
-  'Body Corporate Sweeping',
-  'Scheduled Maintenance Programs',
+  { label: 'Commercial Carpark Sweeping', href: '#services' },
+  { label: 'Industrial Sweeping', href: '#services' },
+  { label: 'Warehouse Sweeping', href: '#services' },
+  { label: 'Construction Site Sweeping', href: '#services' },
+  { label: 'Body Corporate Sweeping', href: '#services' },
+  { label: 'Scheduled Maintenance Programs', href: '#services' },
+  { label: 'Washd by Swept', href: '#washd' },
+  { label: 'Pressure Cleaning', href: '#washd' },
 ]
 
 const industries = [
@@ -79,12 +81,12 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {services.map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <a
-                    href="#services"
+                    href={s.href}
                     className="text-sm hover:text-white transition-colors duration-150"
                   >
-                    {s}
+                    {s.label}
                   </a>
                 </li>
               ))}
