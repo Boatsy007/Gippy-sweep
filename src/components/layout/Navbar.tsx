@@ -4,12 +4,11 @@ import { Logo } from '../Logo'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
-  { label: 'Washd', href: '#washd' },
-  { label: 'Grounds', href: '#grounds' },
   { label: 'Industries', href: '#industries' },
   { label: 'Equipment', href: '#equipment' },
-  { label: 'About', href: '#about' },
   { label: 'Gallery', href: '#gallery' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export function Navbar() {
