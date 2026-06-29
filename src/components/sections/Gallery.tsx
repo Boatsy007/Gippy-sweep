@@ -13,7 +13,14 @@ const galleryItems: {
   { label: 'Carpark before and after — Traralgon', ratio: '4/3', src: '/results-before-after.png' },
   { label: 'Construction site sweep — Sale', ratio: '3/4' },
   { label: 'Warehouse floor — Morwell', ratio: '4/3' },
-  { label: 'Shopping centre carpark — Bairnsdale', ratio: '3/4' },
+  {
+    label: 'Shopping centre carpark — Bairnsdale',
+    ratio: '3/4',
+    src: '/gallery-shopping-centre.png',
+    objectPosition: '50% 40%',
+    hoverDuration: 0.6,
+    entryScale: true,
+  },
   { label: 'Road sweeping — Latrobe Valley', ratio: '16/9' },
   { label: 'Industrial estate — Moe', ratio: '4/3' },
   {
