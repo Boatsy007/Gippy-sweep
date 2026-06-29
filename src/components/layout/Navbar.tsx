@@ -16,26 +16,15 @@ const INTRO_KEY = 'swept-intro-v1'
 
 function Sweeper() {
   return (
-    <svg viewBox="0 0 160 58" width={140} height={50} aria-hidden="true" style={{ display: 'block' }}>
-      {/* Hopper */}
-      <rect x="2" y="10" width="40" height="32" rx="2" fill="white" />
-      {/* Cab */}
-      <rect x="30" y="6" width="36" height="26" rx="2" fill="white" />
-      {/* Main body */}
-      <rect x="10" y="20" width="128" height="18" rx="2" fill="white" />
-      {/* Front section */}
-      <rect x="120" y="22" width="32" height="16" rx="2" fill="white" />
-      {/* Rear wheel */}
-      <circle cx="22" cy="47" r="8" fill="white" />
-      {/* Front wheel */}
-      <circle cx="108" cy="47" r="7" fill="white" />
-      {/* Side brush */}
-      <circle cx="146" cy="47" r="8" fill="none" stroke="white" strokeWidth="2" />
-      <line x1="146" y1="39" x2="146" y2="55" stroke="white" strokeWidth="1.5" />
-      <line x1="138" y1="47" x2="154" y2="47" stroke="white" strokeWidth="1.5" />
-      <line x1="140.3" y1="41.3" x2="151.7" y2="52.7" stroke="white" strokeWidth="1.5" />
-      <line x1="151.7" y1="41.3" x2="140.3" y2="52.7" stroke="white" strokeWidth="1.5" />
-    </svg>
+    <img
+      src="/sweeper-icon.png"
+      alt=""
+      aria-hidden="true"
+      width={72}
+      height={72}
+      style={{ display: 'block' }}
+      draggable={false}
+    />
   )
 }
 
@@ -78,7 +67,7 @@ export function Navbar() {
             <motion.div
               className="absolute"
               style={{ top: '50%', translateY: '-50%' }}
-              initial={{ x: -160 }}
+              initial={{ x: -90 }}
               animate={{ x: vw + 20 }}
               transition={{ duration: 1.1, ease: [0.4, 0, 0.2, 1] }}
               onAnimationComplete={() => {
