@@ -5,6 +5,7 @@ import { TrustBar } from './components/sections/TrustBar'
 import { FoundationClients } from './components/sections/FoundationClients'
 import { Services } from './components/sections/Services'
 import { Washd } from './components/sections/Washd'
+import { Grounds } from './components/sections/Grounds'
 import { Industries } from './components/sections/Industries'
 import { WhyChoose } from './components/sections/WhyChoose'
 import { Equipment } from './components/sections/Equipment'
@@ -29,6 +30,7 @@ export default function App() {
         <FoundationClients />
         <Services />
         <Washd />
+        <Grounds />
         <Industries />
         <WhyChoose />
         <Equipment />

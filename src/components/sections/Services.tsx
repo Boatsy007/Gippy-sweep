@@ -65,6 +65,21 @@ const services = [
     description:
       'Industrial and commercial wash-down programs for warehouse floors, resort complexes and body corporate properties — scheduled through Washd by Swept.',
   },
+  {
+    title: 'Commercial Grounds Maintenance',
+    description:
+      'Litter picking, leaf blowing, weed control and external site tidy-ups for commercial properties across South East Queensland — delivered through Grounds by Swept.',
+  },
+  {
+    title: 'Litter & Leaf Control',
+    description:
+      'Systematic litter removal and leaf blowing for car parks, walkways and shared outdoor areas — keeping your site presentable between major cleans.',
+  },
+  {
+    title: 'Weed Control',
+    description:
+      'Professional weed management for kerbs, expansion joints and hardstand edges — preventing growth that undermines property presentation and safety.',
+  },
 ]
 
 export function Services() {
