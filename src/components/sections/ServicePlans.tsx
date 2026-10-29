@@ -5,18 +5,18 @@ const frequencies = [
   {
     id: 'weekly',
     label: 'Weekly',
-    badge: 'Most Popular',
+    badge: null,
     description: 'For high-traffic sites that demand consistent cleanliness. Ideal for shopping centres, carparks, and busy industrial estates.',
     price: 'From $275/visit',
-    highlight: true,
+    highlight: false,
   },
   {
     id: 'fortnightly',
     label: 'Fortnightly',
-    badge: null,
+    badge: 'Most Popular',
     description: 'Perfect for medium-traffic sites with moderate debris accumulation. Construction sites and smaller commercial properties.',
     price: 'From $300/visit',
-    highlight: false,
+    highlight: true,
   },
   {
     id: 'monthly',
