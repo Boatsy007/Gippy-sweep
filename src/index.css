@@ -78,8 +78,8 @@
      edge and a soft drop shadow. Tint/edge/shadow transition; blur never
      toggles, so switching states never pops. */
   .glass {
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(170%);
+    backdrop-filter: blur(12px) saturate(170%);
     border-bottom: 1px solid transparent;
     transition:
       background-color 500ms ease-out,
@@ -88,13 +88,13 @@
   }
 
   .glass-dark {
-    background-color: rgb(17 24 39 / 0.28);
+    background-color: rgb(17 24 39 / 0.12);
     border-color: rgb(255 255 255 / 0.12);
     box-shadow: 0 8px 32px rgb(0 0 0 / 0.12);
   }
 
   .glass-light {
-    background-color: rgb(255 255 255 / 0.6);
+    background-color: rgb(255 255 255 / 0.28);
     border-color: rgb(17 24 39 / 0.08);
     box-shadow: 0 8px 32px rgb(17 24 39 / 0.08);
   }
