@@ -12,7 +12,6 @@ import {
   Truck,
   Car,
 } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 
 const industries = [
   {
@@ -81,7 +80,7 @@ export function Industries() {
   return (
     <section id="industries" className="section-pad bg-cream" aria-labelledby="industries-heading">
       <div className="section-container">
-        <AnimateInView className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="eyebrow mb-5">Industries We Serve</p>
           <h2 id="industries-heading" className="display-md text-asphalt">
             Built for South East<br />Queensland's industries.
@@ -90,11 +89,11 @@ export function Industries() {
             From construction sites to shopping centres — if it's hard-surface and in South East Queensland,
             we sweep it.
           </p>
-        </AnimateInView>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {industries.map((industry, i) => (
-            <AnimateInView key={industry.title} delay={(i % 4) * 0.06} direction="up">
+          {industries.map((industry) => (
+            <div key={industry.title}>
               <div className="group bg-white border border-zinc-100 p-6 hover:border-brand-500/30 hover:shadow-md hover:shadow-brand-500/5 transition-all duration-200 h-full">
                 <div className="w-10 h-10 bg-brand-500/10 flex items-center justify-center mb-4 group-hover:bg-brand-500/15 transition-colors duration-200">
                   <industry.icon
@@ -107,7 +106,7 @@ export function Industries() {
                 </h3>
                 <p className="text-xs text-zinc-500 leading-relaxed">{industry.description}</p>
               </div>
-            </AnimateInView>
+            </div>
           ))}
         </div>
       </div>

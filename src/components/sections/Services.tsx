@@ -1,6 +1,5 @@
 import { Check, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { AnimateInView } from '../ui/AnimateInView'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -64,7 +63,7 @@ export function Services() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           {/* Left — sticky image */}
-          <AnimateInView direction="left" className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28">
             <p className="eyebrow mb-5">What We Do</p>
             <h2 id="services-heading" className="display-md text-asphalt mb-6">
               Every surface.<br />
@@ -89,7 +88,7 @@ export function Services() {
                   height={1086}
                   alt="Aerial view of RCM Mille commercial sweeper working in a car park — before and after sweep clearly visible"
                   className="w-full h-full object-cover object-[45%_35%]"
-                  loading="lazy"
+                  loading="eager"
                 />
               </motion.div>
               <div
@@ -98,12 +97,12 @@ export function Services() {
                 aria-hidden="true"
               />
             </div>
-          </AnimateInView>
+          </div>
 
           {/* Right — service list */}
           <div className="space-y-0 divide-y divide-zinc-100">
             {services.map((service) => (
-              <AnimateInView key={service.title} direction="up">
+              <div key={service.title}>
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
                     <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">
@@ -117,10 +116,10 @@ export function Services() {
                     </div>
                   </div>
                 </div>
-              </AnimateInView>
+              </div>
             ))}
 
-            <AnimateInView>
+            <div>
               <div className="pt-8">
                 <p className="text-sm text-zinc-500 mb-5">
                   Need a deeper clean or ongoing grounds care? See{' '}
@@ -136,7 +135,7 @@ export function Services() {
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
-            </AnimateInView>
+            </div>
           </div>
         </div>
       </div>

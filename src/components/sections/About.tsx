@@ -1,4 +1,3 @@
-import { AnimateInView } from '../ui/AnimateInView'
 import { site } from '../../site'
 
 const milestones = [
@@ -14,17 +13,17 @@ export function About() {
       <div className="section-container">
 
         {/* Header */}
-        <AnimateInView className="max-w-xl mb-20">
+        <div className="max-w-xl mb-20">
           <p className="eyebrow mb-5">About SWEPT</p>
           <h2 id="about-heading" className="display-md text-asphalt">
             Built for South East<br />Queensland.
           </h2>
-        </AnimateInView>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           {/* Left — story */}
-          <AnimateInView direction="left">
+          <div>
             <div className="">
               <p className="text-lg text-zinc-600 leading-relaxed mb-6">
                 For over 20 years, Swept has been helping businesses across South East
@@ -58,10 +57,10 @@ export function About() {
                   </div>
               ))}
             </div>
-          </AnimateInView>
+          </div>
 
           {/* Right — key facts + owner quote */}
-          <AnimateInView direction="right">
+          <div>
             <div className="grid grid-cols-3 gap-px bg-zinc-200 border border-zinc-200 mb-4">
               {[
                 { value: '20+', label: 'Years in business' },
@@ -93,7 +92,7 @@ export function About() {
                 {site.ownerName && `${site.ownerName}, `}Founder &amp; Director, SWEPT
               </footer>
             </blockquote>
-          </AnimateInView>
+          </div>
         </div>
       </div>
     </section>

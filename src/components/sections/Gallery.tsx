@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { AnimateInView } from '../ui/AnimateInView'
 
 const galleryItems = [
   {
@@ -26,7 +25,7 @@ export function Gallery() {
   return (
     <section id="gallery" className="section-pad bg-zinc-50" aria-labelledby="gallery-heading">
       <div className="section-container">
-        <AnimateInView className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="eyebrow mb-5">Our Work</p>
           <h2 id="gallery-heading" className="display-md text-asphalt">
             Results speak<br />for themselves.
@@ -34,12 +33,12 @@ export function Gallery() {
           <p className="mt-5 text-zinc-500 text-base leading-relaxed">
             Every job we complete is an example of what professional sweeping looks like.
           </p>
-        </AnimateInView>
+        </div>
 
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {galleryItems.map((item, i) => (
+          {galleryItems.map((item) => (
             <li key={item.name}>
-              <AnimateInView delay={i * 0.08} direction="up">
+              <div>
                 <figure>
                   <div className="aspect-[4/3] overflow-hidden bg-zinc-200">
                     <motion.img
@@ -51,7 +50,7 @@ export function Gallery() {
                       alt={item.alt}
                       className="w-full h-full object-cover"
                       style={{ objectPosition: item.objectPosition }}
-                      loading="lazy"
+                      loading="eager"
                       decoding="async"
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -59,7 +58,7 @@ export function Gallery() {
                   </div>
                   <figcaption className="mt-3 text-sm font-semibold text-asphalt">{item.caption}</figcaption>
                 </figure>
-              </AnimateInView>
+              </div>
             </li>
           ))}
         </ul>

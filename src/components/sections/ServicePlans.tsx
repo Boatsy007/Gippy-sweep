@@ -1,5 +1,4 @@
 import { Check, ArrowRight, Phone } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 import { site, phoneHref } from '../../site'
 
 const frequencies = [
@@ -44,7 +43,7 @@ export function ServicePlans() {
       <div className="section-container">
 
         {/* Header */}
-        <AnimateInView className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-16">
           <p className="eyebrow mb-5">Regular Service Plans</p>
           <h2 id="plans-heading" className="display-md text-asphalt">
             Book it once.<br />
@@ -55,12 +54,12 @@ export function ServicePlans() {
             Choose how often you need us and we'll lock your site into the roster —
             the more often we visit, the less you pay per visit.
           </p>
-        </AnimateInView>
+        </div>
 
         {/* Frequency cards */}
         <div className="grid md:grid-cols-3 gap-5 mb-16">
-          {frequencies.map((f, i) => (
-            <AnimateInView key={f.id} delay={i * 0.1} direction="up">
+          {frequencies.map((f) => (
+            <div key={f.id}>
               <div
                 className={`relative h-full border-2 p-8 transition-all duration-200 flex flex-col ${
                   f.highlight
@@ -87,13 +86,13 @@ export function ServicePlans() {
                   <p className="text-[11px] text-zinc-500 mt-0.5">Final price confirmed after a site assessment</p>
                 </div>
               </div>
-            </AnimateInView>
+            </div>
           ))}
         </div>
 
         {/* Benefits + CTAs */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <AnimateInView direction="left">
+          <div>
             <h3 className="text-xl font-bold text-asphalt mb-6">
               What regular clients get
             </h3>
@@ -107,9 +106,9 @@ export function ServicePlans() {
                 </li>
               ))}
             </ul>
-          </AnimateInView>
+          </div>
 
-          <AnimateInView direction="right">
+          <div>
             <div className="bg-asphalt p-8 lg:p-10">
               <p className="eyebrow text-brand-500 mb-4">
                 Get Your Quote Today
@@ -132,7 +131,7 @@ export function ServicePlans() {
                 </a>
               )}
             </div>
-          </AnimateInView>
+          </div>
         </div>
       </div>
     </section>

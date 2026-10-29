@@ -1,5 +1,4 @@
 import { ShieldCheck, Clock, MapPin, Star } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 
 const items = [
   {
@@ -29,8 +28,8 @@ export function TrustBar() {
     <section className="bg-asphalt" aria-label="Trust indicators">
       <div className="section-container py-10 lg:py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
-          {items.map((item, i) => (
-            <AnimateInView key={item.label} delay={i * 0.08} direction="up">
+          {items.map((item) => (
+            <div key={item.label}>
               <div className="flex flex-col lg:flex-row items-start lg:items-center gap-3 lg:gap-4 lg:px-8">
                 <item.icon
                   className="w-7 h-7 text-brand-500 shrink-0"
@@ -41,7 +40,7 @@ export function TrustBar() {
                   <p className="text-white/60 text-xs mt-0.5 leading-snug">{item.detail}</p>
                 </div>
               </div>
-            </AnimateInView>
+            </div>
           ))}
         </div>
       </div>

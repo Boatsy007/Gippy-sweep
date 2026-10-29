@@ -49,7 +49,7 @@ export function Navbar() {
         {/* Background layer fades in as a whole, so the colour, blur, border and
             shadow arrive together instead of each snapping on separately */}
         <div
-          className={`absolute inset-0 bg-cream/90 backdrop-blur-md border-b border-zinc-200/60 shadow-sm ${fade} ${
+          className={`absolute inset-0 bg-cream/95 border-b border-zinc-200/60 shadow-sm ${fade} ${
             scrolled ? 'opacity-100' : 'opacity-0'
           }`}
           aria-hidden="true"

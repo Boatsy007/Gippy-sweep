@@ -1,5 +1,4 @@
 import { ChevronDown } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 
 // Keep in sync with the FAQPage schema in index.html
 export const faqs = [
@@ -29,12 +28,12 @@ export function Faq() {
   return (
     <section id="faq" className="section-pad bg-white" aria-labelledby="faq-heading">
       <div className="section-container max-w-3xl">
-        <AnimateInView className="text-center mb-12">
+        <div className="text-center mb-12">
           <p className="eyebrow mb-5">FAQ</p>
           <h2 id="faq-heading" className="display-md text-asphalt">
             Common questions.
           </h2>
-        </AnimateInView>
+        </div>
 
         <div className="divide-y divide-zinc-200 border-y border-zinc-200">
           {faqs.map((f) => (

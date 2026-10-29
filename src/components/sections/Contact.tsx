@@ -1,6 +1,5 @@
 import { useState, FormEvent } from 'react'
 import { ArrowRight, Phone, Mail, CheckCircle2 } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 import { site, phoneHref } from '../../site'
 
 const serviceOptions = [
@@ -80,25 +79,25 @@ export function Contact() {
 
           {/* Left — pitch */}
           <div>
-            <AnimateInView>
+            <div>
               <p className="eyebrow text-brand-500 mb-8">Get a Free Quote</p>
-            </AnimateInView>
+            </div>
 
-            <AnimateInView delay={0.1}>
+            <div>
               <h2 id="cta-heading" className="display-lg text-white leading-tight">
                 Let's keep South East Queensland{' '}
                 <span className="text-brand-500">looking its best.</span>
               </h2>
-            </AnimateInView>
+            </div>
 
-            <AnimateInView delay={0.2}>
+            <div>
               <p className="mt-8 text-white/60 text-lg max-w-xl leading-relaxed">
                 Tell us about your site and we'll assess it, recommend a schedule, and have
                 a clear, itemised price to you within one business day.
               </p>
-            </AnimateInView>
+            </div>
 
-            <AnimateInView delay={0.3}>
+            <div>
               <ul className="mt-10 space-y-4">
                 {site.phone && (
                   <li>
@@ -129,11 +128,11 @@ export function Contact() {
                   </span>
                 ))}
               </div>
-            </AnimateInView>
+            </div>
           </div>
 
           {/* Right — form */}
-          <AnimateInView delay={0.2}>
+          <div>
             {status === 'sent' ? (
               <div className="bg-white/5 border border-white/10 rounded-md p-10 text-center" role="status">
                 <CheckCircle2 className="w-10 h-10 text-brand-500 mx-auto" aria-hidden="true" />
@@ -192,7 +191,7 @@ export function Contact() {
                 </button>
               </form>
             )}
-          </AnimateInView>
+          </div>
         </div>
       </div>
     </section>

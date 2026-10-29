@@ -14,12 +14,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden; /* required for iOS Safari — body-only is not enough */
+    /* clip (not hidden) so the page never becomes its own scroll container —
+       hidden breaks iOS momentum scrolling and position: sticky */
+    overflow-x: clip;
   }
 
   body {
     @apply bg-cream text-asphalt font-sans;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100%;
   }
 

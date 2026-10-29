@@ -1,4 +1,3 @@
-import { AnimateInView } from '../ui/AnimateInView'
 
 const reasons = [
   {
@@ -49,18 +48,18 @@ export function WhyChoose() {
   return (
     <section className="section-pad bg-asphalt" aria-labelledby="why-heading">
       <div className="section-container">
-        <AnimateInView className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-16">
           <p className="eyebrow text-brand-500 mb-5">
             Why SWEPT
           </p>
           <h2 id="why-heading" className="display-md text-white">
             Seven reasons clients<br />keep choosing us.
           </h2>
-        </AnimateInView>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
-          {reasons.map((reason, i) => (
-            <AnimateInView key={reason.number} delay={(i % 3) * 0.08} direction="up">
+          {reasons.map((reason) => (
+            <div key={reason.number}>
               <div className="bg-asphalt p-8 lg:p-10 group hover:bg-zinc-900 transition-colors duration-200 h-full">
                 <span
                   className="text-5xl font-extrabold tracking-tightest leading-none text-white/10 group-hover:text-brand-500/20 transition-colors duration-300 block mb-6"
@@ -71,7 +70,7 @@ export function WhyChoose() {
                 <h3 className="text-lg font-bold text-white mb-3">{reason.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{reason.description}</p>
               </div>
-            </AnimateInView>
+            </div>
           ))}
         </div>
       </div>

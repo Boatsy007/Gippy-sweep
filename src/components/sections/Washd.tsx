@@ -1,5 +1,4 @@
 import { Check, ArrowRight } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 
 const washdServices = [
   {
@@ -56,7 +55,7 @@ export function Washd() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           {/* Left — sticky info */}
-          <AnimateInView direction="left" className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28">
             <p className="eyebrow mb-5">Washd by Swept</p>
             <h2 id="washd-heading" className="display-md text-asphalt mb-6">
               Commercial Pressure<br />
@@ -69,12 +68,12 @@ export function Washd() {
               from basement car parks and loading docks to bin bays, resort complexes, warehouse
               floors, retail centres and commercial facades across South East Queensland.
             </p>
-          </AnimateInView>
+          </div>
 
           {/* Right — service list + trust block + CTAs */}
           <div className="space-y-0 divide-y divide-zinc-200">
             {washdServices.map((service) => (
-              <AnimateInView key={service.title} direction="up">
+              <div key={service.title}>
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
                     <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">
@@ -88,10 +87,10 @@ export function Washd() {
                     </div>
                   </div>
                 </div>
-              </AnimateInView>
+              </div>
             ))}
 
-            <AnimateInView>
+            <div>
               <div className="pt-8">
                 <div className="mb-8 p-6 bg-white border border-zinc-200">
                   <p className="text-asphalt font-semibold text-sm mb-2">
@@ -111,7 +110,7 @@ export function Washd() {
                   </a>
                 </div>
               </div>
-            </AnimateInView>
+            </div>
           </div>
         </div>
       </div>

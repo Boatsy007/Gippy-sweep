@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { Zap, Clock, Leaf } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 
 const specs = [
   { label: 'Sweeping Width', value: 'Up to 2.4m' },
@@ -42,7 +41,7 @@ export function Equipment() {
       <div className="section-container">
 
         {/* Header */}
-        <AnimateInView className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-20">
           <p className="eyebrow mb-5">Our Equipment</p>
           <h2 id="equipment-heading" className="display-md text-asphalt">
             Serious machines.<br />
@@ -52,10 +51,10 @@ export function Equipment() {
             We operate commercial-grade mechanical sweepers built for Australian conditions —
             heavy-duty, efficient, and capable across every surface type we encounter in South East Queensland.
           </p>
-        </AnimateInView>
+        </div>
 
         {/* RCM Mille feature callout */}
-        <AnimateInView className="mb-16">
+        <div className="mb-16">
           <div className="relative bg-asphalt overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03]"
               style={{
@@ -112,7 +111,7 @@ export function Equipment() {
                   height={1024}
                   alt="RCM Mille ride-on sweeper in a polished warehouse facility"
                   className="absolute inset-0 w-full h-full object-cover object-[55%_50%]"
-                  loading="lazy"
+                  loading="eager"
                   draggable={false}
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -121,12 +120,12 @@ export function Equipment() {
               </div>
             </div>
           </div>
-        </AnimateInView>
+        </div>
 
         {/* Feature highlights */}
         <div className="grid md:grid-cols-3 gap-8">
-          {highlights.map((h, i) => (
-            <AnimateInView key={h.title} delay={i * 0.1} direction="up">
+          {highlights.map((h) => (
+            <div key={h.title}>
               <div className="flex flex-col gap-4">
                 <div className="w-12 h-12 bg-brand-500/10 flex items-center justify-center">
                   <h.icon className="w-6 h-6 text-brand-500" aria-hidden="true" />
@@ -134,7 +133,7 @@ export function Equipment() {
                 <h3 className="text-base font-bold text-asphalt">{h.title}</h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">{h.description}</p>
               </div>
-            </AnimateInView>
+            </div>
           ))}
         </div>
       </div>

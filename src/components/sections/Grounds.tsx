@@ -1,5 +1,4 @@
 import { Check, ArrowRight } from 'lucide-react'
-import { AnimateInView } from '../ui/AnimateInView'
 
 const groundsServices = [
   {
@@ -61,7 +60,7 @@ export function Grounds() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           {/* Left — sticky info */}
-          <AnimateInView direction="left" className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28">
             <p className="eyebrow mb-5">Grounds by Swept</p>
             <h2 id="grounds-heading" className="display-md text-asphalt mb-6">
               Commercial Grounds<br />
@@ -74,12 +73,12 @@ export function Grounds() {
               and external site maintenance, our team keeps car parks, hardstands, walkways and
               shared outdoor areas looking sharp across South East Queensland.
             </p>
-          </AnimateInView>
+          </div>
 
           {/* Right — service list + trust block + CTAs */}
           <div className="space-y-0 divide-y divide-zinc-100">
             {groundsServices.map((service) => (
-              <AnimateInView key={service.title} direction="up">
+              <div key={service.title}>
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
                     <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">
@@ -93,10 +92,10 @@ export function Grounds() {
                     </div>
                   </div>
                 </div>
-              </AnimateInView>
+              </div>
             ))}
 
-            <AnimateInView>
+            <div>
               <div className="pt-8">
                 <div className="mb-8 p-6 bg-zinc-50 border border-zinc-200">
                   <p className="text-asphalt font-semibold text-sm mb-2">
@@ -116,7 +115,7 @@ export function Grounds() {
                   </a>
                 </div>
               </div>
-            </AnimateInView>
+            </div>
           </div>
         </div>
       </div>
