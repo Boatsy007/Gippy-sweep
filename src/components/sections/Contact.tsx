@@ -4,7 +4,7 @@ import { site, phoneHref } from '../../site'
 
 const serviceOptions = [
   'Commercial sweeping',
-  'Pressure cleaning (Washd)',
+  'Pressure cleaning (Washed)',
   'Grounds maintenance (Grounds)',
   'Regular service plan',
   'Not sure yet',

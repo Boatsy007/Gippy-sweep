@@ -123,7 +123,7 @@ export function Services() {
               <div className="pt-8">
                 <p className="text-sm text-zinc-500 mb-5">
                   Need a deeper clean or ongoing grounds care? See{' '}
-                  <a href="#washd" className="font-semibold text-brand-700 hover:underline">Washd pressure cleaning</a>
+                  <a href="#washd" className="font-semibold text-brand-700 hover:underline">Washed pressure cleaning</a>
                   {' '}and{' '}
                   <a href="#grounds" className="font-semibold text-brand-700 hover:underline">Grounds maintenance</a>.
                 </p>

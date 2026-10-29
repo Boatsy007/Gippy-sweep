@@ -99,7 +99,7 @@ export function Grounds() {
               <div className="pt-8">
                 <div className="mb-8 p-6 bg-zinc-50 border border-zinc-200">
                   <p className="text-asphalt font-semibold text-sm mb-2">
-                    Sweeping handles the surface. Washd handles the deep clean. Grounds keeps the site looking sharp between visits.
+                    Sweeping handles the surface. Washed handles the deep clean. Grounds keeps the site looking sharp between visits.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
                     One team. Three specialist services. Cleaner commercial properties.

@@ -9,7 +9,7 @@ const services = [
   { label: 'Construction Site Sweeping', href: '#services' },
   { label: 'Body Corporate Sweeping', href: '#services' },
   { label: 'Scheduled Maintenance Programs', href: '#services' },
-  { label: 'Washd by Swept', href: '#washd' },
+  { label: 'Washed by Swept', href: '#washd' },
   { label: 'Pressure Cleaning', href: '#washd' },
   { label: 'Grounds by Swept', href: '#grounds' },
   { label: 'Grounds Maintenance', href: '#grounds' },

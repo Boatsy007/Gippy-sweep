@@ -56,14 +56,23 @@ export function Washd() {
 
           {/* Left — sticky info */}
           <div className="lg:sticky lg:top-28">
-            <p className="eyebrow mb-5">Washd by Swept</p>
+            <div className="flex items-end gap-3 mb-6">
+              <img
+                src="/logo-washed.webp"
+                alt="Washed"
+                width={176}
+                height={54}
+                className="h-[54px] w-auto"
+              />
+              <span className="eyebrow pb-1">by Swept</span>
+            </div>
             <h2 id="washd-heading" className="display-md text-asphalt mb-6">
               Commercial Pressure<br />
               Cleaning, Backed<br />
               by Swept.
             </h2>
             <p className="text-zinc-500 text-base leading-relaxed mb-10 max-w-md">
-              Swept is more than mechanical sweeping. Through Washd by Swept, we provide commercial
+              Swept is more than mechanical sweeping. Through Washed by Swept, we provide commercial
               pressure cleaning, wash-downs and graffiti removal for sites that need a deeper clean —
               from basement car parks and loading docks to bin bays, resort complexes, warehouse
               floors, retail centres and commercial facades across South East Queensland.
@@ -97,12 +106,12 @@ export function Washd() {
                     One team. Three specialist services. Cleaner commercial properties.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
-                    Mechanical sweeping for regular maintenance. Washd for deeper commercial cleans. Grounds for everything in between.
+                    Mechanical sweeping for regular maintenance. Washed for deeper commercial cleans. Grounds for everything in between.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a href="#contact" className="btn-primary">
-                    Request Washd Quote
+                    Request Washed Quote
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>
                   <a href="#services" className="btn-outline-dark">
