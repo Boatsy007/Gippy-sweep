@@ -46,11 +46,11 @@ export const serviceBrands: ServiceBrand[] = [
     accent: ['#00E1FF', '#0050FF'],
     heading: ['Commercial', 'Mechanical Sweeping,', 'Done Right.'],
     intro:
-      'SWEPT operates commercial-grade mechanical sweepers for car parks, warehouses, industrial sites, shopping centres and construction projects across the Gold Coast and South East Queensland — keeping hard surfaces safe, clean and presentable on a schedule that suits your site.',
+      'SWEPT provides commercial sweeping across the Gold Coast and South East Queensland, using commercial-grade mechanical sweepers for car parks, warehouses, industrial sites, shopping centres and construction projects — keeping hard surfaces safe, clean and presentable on a schedule that suits your site.',
     summary: 'Mechanical sweeping for car parks, warehouses, industrial sites and shopping centres.',
     items: [
       {
-        title: 'Commercial Carpark Sweeping',
+        title: 'Commercial Car Park Sweeping',
         description:
           'Thorough mechanical sweeping removes debris, grit and litter from all commercial car parks across South East Queensland — keeping your premises safe and professional.',
       },

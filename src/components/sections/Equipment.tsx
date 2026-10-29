@@ -106,7 +106,7 @@ export function Equipment() {
                 <motion.img
                   src="/equipment-rcm-mille-800.webp"
                   srcSet="/equipment-rcm-mille-800.webp 800w, /equipment-rcm-mille.webp 1536w"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 1200px, 100vw"
                   width={1536}
                   height={1024}
                   alt="RCM Mille ride-on sweeper in a polished warehouse facility"

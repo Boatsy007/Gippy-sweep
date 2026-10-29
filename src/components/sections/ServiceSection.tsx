@@ -51,7 +51,8 @@ export function ServiceSection({ brand, tinted = false }: ServiceSectionProps) {
                   <img
                     src={brand.image.src}
                     srcSet={brand.image.srcSet}
-                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    // Cropped to a 3:4 box, so the source must be ~1.8× the box width
+                    sizes="(min-width: 1024px) 1000px, 180vw"
                     width={brand.image.width}
                     height={brand.image.height}
                     alt={brand.image.alt}

@@ -142,7 +142,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/60">
+          <p className="text-xs text-white/60" suppressHydrationWarning>
             &copy; {new Date().getFullYear()} SWEPT. All rights reserved.{site.abn && ` ABN ${site.abn}`}
           </p>
           <div className="flex gap-6">
