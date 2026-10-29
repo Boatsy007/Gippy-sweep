@@ -1,10 +1,10 @@
 /**
- * The four SWEPT service brands. Every place a service appears — the overview
+ * The six SWEPT service identities. Every place a service appears — the overview
  * cards, the service sections, the footer and the quote form — reads from this
  * list, so the brands stay consistent with each other.
  */
 
-export type ServiceId = 'sweeping' | 'washed' | 'grounds' | 'cleaned'
+export type ServiceId = 'sweeping' | 'scrubbed' | 'washed' | 'grounds' | 'cleaned' | 'marked'
 
 export interface ServiceItem {
   title: string
@@ -41,13 +41,13 @@ export const serviceBrands: ServiceBrand[] = [
   {
     id: 'sweeping',
     name: 'SWEPT',
-    label: 'Commercial Sweeping & Floor Scrubbing',
+    label: 'Commercial Sweeping',
     logo: { src: '/logo-dark.webp', aspect: 3.5625, xHeight: 0.444, baseline: 0.725 },
     accent: ['#00E1FF', '#0050FF'],
-    heading: ['Commercial Sweeping', '& Floor Scrubbing,', 'Done Right.'],
+    heading: ['Commercial', 'Mechanical Sweeping,', 'Done Right.'],
     intro:
       'SWEPT operates commercial-grade mechanical sweepers for car parks, warehouses, industrial sites, shopping centres and construction projects across the Gold Coast and South East Queensland — keeping hard surfaces safe, clean and presentable on a schedule that suits your site.',
-    summary: 'Car park, warehouse and industrial sweeping, plus commercial floor scrubbing.',
+    summary: 'Mechanical sweeping for car parks, warehouses, industrial sites and shopping centres.',
     items: [
       {
         title: 'Commercial Carpark Sweeping',
@@ -63,11 +63,6 @@ export const serviceBrands: ServiceBrand[] = [
         title: 'Warehouse Sweeping',
         description:
           'Industrial environments generate significant dust and grit. We keep your internal floors compliant, safe and clean — scheduled around your operating hours.',
-      },
-      {
-        title: 'Commercial Floor Scrubbing',
-        description:
-          'Machine floor scrubbing for warehouse, industrial, showroom and retail floors — lifting ground-in dirt, tyre marks and spills from sealed and concrete surfaces.',
       },
       {
         title: 'Construction Site Sweeping',
@@ -105,8 +100,8 @@ export const serviceBrands: ServiceBrand[] = [
           'Tailored weekly, fortnightly or monthly service schedules for ongoing site maintenance — with fixed pricing and priority scheduling.',
       },
     ],
-    quoteOption: 'Sweeping & floor scrubbing (SWEPT)',
-    crossLink: { before: 'Need a deeper clean? Pair regular sweeping with ', target: 'washed', linkText: 'Washed pressure cleaning', after: '.' },
+    quoteOption: 'Commercial sweeping (SWEPT)',
+    crossLink: { before: 'Hard floors need more than a sweep? Pair regular sweeping with ', target: 'scrubbed', linkText: 'Scrubbed floor scrubbing', after: '.' },
     image: {
       src: '/services-carpark-800.webp',
       srcSet: '/services-carpark-800.webp 800w, /services-carpark.webp 1448w',
@@ -115,6 +110,53 @@ export const serviceBrands: ServiceBrand[] = [
       alt: 'Aerial view of RCM Mille commercial sweeper working in a car park — before and after sweep clearly visible',
       position: '45% 35%',
     },
+  },
+  {
+    id: 'scrubbed',
+    name: 'Scrubbed',
+    label: 'Commercial Floor Scrubbing',
+    logo: { src: '/logo-scrubbed.webp', aspect: 3.2875, xHeight: 0.2938, baseline: 0.6687 },
+    byline: 'by Swept',
+    accent: ['#3FE6D0', '#0E7C99'],
+    heading: ['Commercial Floor', 'Scrubbing for', 'Cleaner Hard Floors.'],
+    intro:
+      'Through Scrubbed by Swept, we provide machine floor scrubbing for warehouses, industrial facilities, shopping centres and commercial hard floors across the Gold Coast and South East Queensland — from one-off deep cleans to scheduled floor maintenance.',
+    summary:
+      'Professional machine floor scrubbing for warehouses, shopping centres, car parks and industrial facilities. Deep cleaning and scheduled maintenance for commercial hard floors.',
+    items: [
+      {
+        title: 'Warehouse Floor Scrubbing',
+        description:
+          'Machine scrubbing for warehouse and distribution centre floors — lifting ground-in dirt, tyre marks and spills from sealed and concrete surfaces.',
+      },
+      {
+        title: 'Industrial Floor Scrubbing',
+        description:
+          'Heavy-duty floor scrubbing for factories, workshops and industrial facilities, removing grime and residue to keep working surfaces safe and presentable.',
+      },
+      {
+        title: 'Shopping Centre Floor Cleaning',
+        description:
+          'Scrubbing for shopping centre walkways, food courts, entries and car park levels — scheduled before opening or after close to avoid disrupting trade.',
+      },
+      {
+        title: 'Commercial Hard-Floor Cleaning',
+        description:
+          'Machine cleaning for polished concrete, vinyl, tiled and sealed hard floors in showrooms, offices and commercial premises.',
+      },
+      {
+        title: 'Machine Scrubbing & Drying',
+        description:
+          'Scrub-and-dry machine cleaning that washes, scrubs and recovers water in one pass — leaving floors clean, dry and ready to use sooner.',
+      },
+      {
+        title: 'Scheduled Floor Maintenance',
+        description:
+          'Weekly, fortnightly or monthly floor scrubbing programs tailored to your site — keeping high-traffic hard floors consistently clean.',
+      },
+    ],
+    quoteOption: 'Floor scrubbing (Scrubbed)',
+    crossLink: { before: 'Keep floors clean between scrubs with regular ', target: 'sweeping', linkText: 'SWEPT commercial sweeping', after: '.' },
   },
   {
     id: 'washed',
@@ -313,6 +355,58 @@ export const serviceBrands: ServiceBrand[] = [
     ],
     quoteOption: 'Commercial cleaning (Cleaned)',
     crossLink: { before: 'Looking after the outside too? Add ', target: 'grounds', linkText: 'Grounds maintenance', after: ' or Washed exterior cleaning.' },
+  },
+  {
+    id: 'marked',
+    name: 'Marked',
+    label: 'Commercial Line Marking',
+    logo: { src: '/logo-marked.webp', aspect: 3.4813, xHeight: 0.375, baseline: 0.7438 },
+    byline: 'by Swept',
+    accent: ['#FFD400', '#FF5A00'],
+    heading: ['Commercial Line', 'Marking for Safer,', 'Clearer Sites.'],
+    intro:
+      'Through Marked by Swept, we arrange line marking for car parks, warehouses and commercial properties across the Gold Coast and South East Queensland — parking bays, pedestrian walkways, directional arrows and safety markings, organised through the same point of contact as your other property services.',
+    summary:
+      'Professional line marking for car parks, warehouses and commercial properties, including parking bays, pedestrian walkways, directional arrows and safety markings.',
+    items: [
+      {
+        title: 'Commercial Car Park Line Marking',
+        description:
+          'Line marking for commercial car parks — bays, aisles, arrows and signage markings laid out to suit your site and traffic flow.',
+      },
+      {
+        title: 'Parking Bay Marking',
+        description:
+          'New and re-marked parking bays, numbering and visitor, staff or loading zone markings for car parks and hardstands.',
+      },
+      {
+        title: 'Warehouse Safety Lines',
+        description:
+          'Floor lines for warehouses and distribution centres — forklift lanes, storage zones, loading areas and keep-clear markings.',
+      },
+      {
+        title: 'Pedestrian Walkways',
+        description:
+          'Clearly marked pedestrian walkways and crossings that separate foot traffic from vehicles across car parks and industrial sites.',
+      },
+      {
+        title: 'Directional Arrows',
+        description:
+          'Directional arrows and traffic flow markings that guide vehicles safely through car parks, driveways and loading areas.',
+      },
+      {
+        title: 'Accessible Parking Bay Markings',
+        description:
+          'Accessible parking bays, symbols and shared zones marked out for car parks and commercial premises.',
+      },
+      {
+        title: 'Line Marking Refreshes',
+        description:
+          'Re-marking of faded or worn lines — ideally after a sweep or pressure clean, so new paint goes down on a clean surface.',
+      },
+    ],
+    quoteOption: 'Line marking (Marked)',
+    crossLink: { before: 'Start with a clean surface — pair line marking with ', target: 'washed', linkText: 'Washed pressure cleaning', after: '.' },
   },
 ]
 

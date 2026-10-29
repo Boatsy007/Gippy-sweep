@@ -18,7 +18,7 @@ const items = [
   },
   {
     icon: Layers,
-    label: 'Four Specialist Services',
+    label: 'Six Specialist Services',
     detail: 'One point of contact',
   },
 ]

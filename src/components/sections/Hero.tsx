@@ -105,9 +105,9 @@ export function Hero() {
             <p
               className="mt-8 text-white/60 text-lg leading-relaxed max-w-md"
             >
-              Commercial sweeping, pressure cleaning, grounds maintenance and commercial
-              cleaning for car parks, warehouses, shopping centres, offices and strata
-              properties — four specialist services, one point of contact.
+              Commercial sweeping, floor scrubbing, pressure cleaning, grounds maintenance,
+              cleaning and line marking for car parks, warehouses, shopping centres, offices
+              and strata properties — six specialist services, one point of contact.
             </p>
 
             <div
@@ -128,7 +128,7 @@ export function Hero() {
             >
               {[
                 { value: '20+', label: 'Years Serving SEQ' },
-                { value: '4', label: 'Specialist Services' },
+                { value: '6', label: 'Specialist Services' },
                 { value: '100%', label: 'Gold Coast Owned' },
               ].map((stat) => (
                 <div key={stat.label}>

@@ -43,8 +43,8 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Logo inverted size="sm" />
             <p className="mt-6 text-sm leading-relaxed text-white/60 max-w-xs">
-              Commercial sweeping, pressure cleaning, grounds maintenance and commercial cleaning
-              across South East Queensland. Gold Coast owned and operated for over 20 years.
+              Commercial sweeping, floor scrubbing, pressure cleaning, grounds maintenance,
+              commercial cleaning and line marking across South East Queensland. Gold Coast owned and operated for over 20 years.
             </p>
             {socialLinks.length > 0 && (
               <div className="flex gap-4 mt-8">
