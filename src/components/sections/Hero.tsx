@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
-const ease = [0.22, 1, 0.36, 1] as const
 const headlineWords = ['COMMERCIAL', 'SWEEPING', 'DONE', 'RIGHT.']
 
 export function Hero() {
@@ -18,13 +17,7 @@ export function Hero() {
       ──────────────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0 lg:left-1/2 z-0 overflow-hidden">
 
-        {/* Initial scale (0.98 → 1.0, 1.6 s) — no fade, so the image paints immediately */}
-        <motion.div
-          className="absolute inset-0"
-          initial={{ scale: 0.98 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.6, ease }}
-        >
+        <div className="absolute inset-0">
           {/* Ken Burns: 1.0 → 1.05 over 25 s, breathes back, infinite */}
           <div className="absolute inset-0 animate-ken-burns transform-gpu will-change-transform">
             <img
@@ -41,10 +34,9 @@ export function Hero() {
               "
               loading="eager"
               fetchPriority="high"
-              decoding="async"
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* ── OVERLAYS ─────────────────────────────────────────────────────── */}
 
@@ -66,11 +58,8 @@ export function Hero() {
       </div>
 
       {/* ── ACCENT LINE ──────────────────────────────────────────────────── */}
-      <motion.div
-        className="absolute top-0 left-0 h-[3px] bg-brand-500 z-30"
-        initial={{ width: 0 }}
-        animate={{ width: '100%' }}
-        transition={{ duration: 1.2, delay: 0.2, ease }}
+      <div
+        className="absolute top-0 inset-x-0 h-[3px] bg-brand-500 z-30"
         aria-hidden="true"
       />
 
@@ -92,48 +81,36 @@ export function Hero() {
           {/* ── Left: text ───────────────────────────────────────────────── */}
           <div className="flex flex-col justify-center">
 
-            <motion.p
+            <p
               className="eyebrow text-brand-500 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45, ease }}
             >
               Commercial Sweeping — South East Queensland
-            </motion.p>
+            </p>
 
             <h1
               className="display-xl text-white mb-0"
               aria-label="Commercial sweeping done right."
             >
-              {headlineWords.map((word, i) => (
-                <motion.span
+              {headlineWords.map((word) => (
+                <span
                   key={word}
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 + i * 0.12, ease }}
                   className={word === 'RIGHT.' ? 'block text-brand-500' : 'block'}
                 >
                   {word}
-                </motion.span>
+                </span>
               ))}
             </h1>
 
-            <motion.p
+            <p
               className="mt-8 text-white/60 text-lg leading-relaxed max-w-md"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.06, ease }}
             >
               Professional commercial sweeping across South East Queensland.
               Shopping centres. Industrial sites. Construction projects.
               Councils. Warehouses. Body corporates.
-            </motion.p>
+            </p>
 
-            <motion.div
+            <div
               className="flex flex-col sm:flex-row gap-4 mt-10"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.16, ease }}
             >
               <a href="#contact" className="btn-primary">
                 Get a Quote
@@ -142,14 +119,11 @@ export function Hero() {
               <a href="#services" className="btn-outline-light">
                 Our Services
               </a>
-            </motion.div>
+            </div>
 
             {/* Stats */}
-            <motion.div
+            <div
               className="flex flex-wrap gap-8 mt-14 pt-10 border-t border-white/10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 1.32, ease }}
             >
               {[
                 { value: '20+', label: 'Years Serving SEQ' },
@@ -165,7 +139,7 @@ export function Hero() {
                   </p>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* ── Right: spacer (image lives behind as absolute) ───────────── */}
@@ -174,22 +148,16 @@ export function Hero() {
       </div>
 
       {/* ── LOCALLY OWNED BADGE ──────────────────────────────────────────── */}
-      <motion.div
+      <div
         className="absolute bottom-16 right-5 sm:right-8 lg:right-10 z-30 bg-brand-500 text-asphalt px-5 py-4 shadow-2xl"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 1.9, ease }}
       >
         <p className="text-xs font-bold tracking-[0.15em] uppercase">Gold Coast Owned</p>
         <p className="text-xs text-asphalt/80 mt-0.5">Since 2004</p>
-      </motion.div>
+      </div>
 
       {/* ── SCROLL INDICATOR ─────────────────────────────────────────────── */}
-      <motion.div
+      <div
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 2.0, ease }}
         aria-hidden="true"
       >
         <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
@@ -199,7 +167,7 @@ export function Hero() {
         >
           <ChevronDown className="w-4 h-4 text-white/60" />
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }
