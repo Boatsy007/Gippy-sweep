@@ -103,7 +103,7 @@ export function Washd() {
               <div className="pt-8">
                 <div className="mb-8 p-6 bg-white border border-zinc-200">
                   <p className="text-asphalt font-semibold text-sm mb-2">
-                    One team. Three specialist services. Cleaner commercial properties.
+                    One team. Four specialist services. Cleaner commercial properties.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
                     Mechanical sweeping for regular maintenance. Washed for deeper commercial cleans. Grounds for everything in between.

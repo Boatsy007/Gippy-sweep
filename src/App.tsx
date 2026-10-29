@@ -7,6 +7,7 @@ import { ServicePlans } from './components/sections/ServicePlans'
 import { Services } from './components/sections/Services'
 import { Washd } from './components/sections/Washd'
 import { Grounds } from './components/sections/Grounds'
+import { Cleaned } from './components/sections/Cleaned'
 import { Industries } from './components/sections/Industries'
 import { WhyChoose } from './components/sections/WhyChoose'
 import { Equipment } from './components/sections/Equipment'
@@ -33,6 +34,7 @@ export default function App() {
           <Services />
           <Washd />
           <Grounds />
+          <Cleaned />
           <Industries />
           <WhyChoose />
           <Equipment />

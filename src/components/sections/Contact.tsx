@@ -6,6 +6,7 @@ const serviceOptions = [
   'Commercial sweeping',
   'Pressure cleaning (Washed)',
   'Grounds maintenance (Grounds)',
+  'Commercial cleaning (Cleaned)',
   'Regular service plan',
   'Not sure yet',
 ]

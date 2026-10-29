@@ -111,7 +111,7 @@ export function Grounds() {
                     Sweeping handles the surface. Washed handles the deep clean. Grounds keeps the site looking sharp between visits.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
-                    One team. Three specialist services. Cleaner commercial properties.
+                    One team. Four specialist services. Cleaner commercial properties.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">

@@ -13,6 +13,8 @@ const services = [
   { label: 'Pressure Cleaning', href: '#washd' },
   { label: 'Grounds by Swept', href: '#grounds' },
   { label: 'Grounds Maintenance', href: '#grounds' },
+  { label: 'Cleaned by Swept', href: '#cleaned' },
+  { label: 'Commercial Cleaning', href: '#cleaned' },
 ]
 
 const industries = [
