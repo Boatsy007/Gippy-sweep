@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Check, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import type { ServiceBrand } from '../../serviceBrands'
+import { BrandLogo } from '../BrandLogo'
 import { preselectQuoteService } from '../../quote'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -29,16 +30,7 @@ export function ServiceSection({ brand, tinted = false }: ServiceSectionProps) {
 
           {/* Left — sticky info */}
           <div className="lg:sticky lg:top-28">
-            <div className="flex items-end gap-3 mb-6">
-              <img
-                src={brand.logo.src}
-                alt={brand.name}
-                width={brand.logo.width}
-                height={brand.logo.height}
-                className="h-[54px] w-auto"
-              />
-              {brand.byline && <span className="eyebrow pb-1">{brand.byline}</span>}
-            </div>
+            <BrandLogo brand={brand} letterHeight={20} byline={brand.byline} className="mb-6" />
             <h2 id={headingId} className="display-md text-asphalt mb-6">
               {brand.heading.map((line, i) => (
                 <Fragment key={line}>

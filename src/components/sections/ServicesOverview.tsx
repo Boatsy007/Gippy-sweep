@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { serviceBrands } from '../../serviceBrands'
+import { BrandLogo } from '../BrandLogo'
 import { preselectQuoteService } from '../../quote'
 
 export function ServicesOverview() {
@@ -27,13 +28,7 @@ export function ServicesOverview() {
                   style={{ background: `linear-gradient(90deg, ${brand.accent[0]}, ${brand.accent[1]})` }}
                   aria-hidden="true"
                 />
-                <img
-                  src={brand.logo.src}
-                  alt={brand.name}
-                  width={brand.logo.width}
-                  height={brand.logo.height}
-                  className="h-10 w-auto self-start mb-5"
-                />
+                <BrandLogo brand={brand} letterHeight={15} className="mb-5" />
                 <h3 className="text-sm font-bold text-asphalt mb-1.5">{brand.label}</h3>
                 <p className="text-xs text-zinc-500 leading-relaxed flex-1">{brand.summary}</p>
                 <div className="mt-6 flex items-center justify-between gap-3 text-sm font-semibold">

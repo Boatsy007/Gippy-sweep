@@ -17,7 +17,11 @@ export interface ServiceBrand {
   name: string
   /** What the brand does, in plain search-friendly words */
   label: string
-  logo: { src: string; width: number; height: number }
+  /**
+   * Logo file plus measurements of its artwork (fractions of image height),
+   * used to render every wordmark at the same lettering size on one baseline.
+   */
+  logo: { src: string; aspect: number; xHeight: number; baseline: number }
   /** Shown beside the logo; SWEPT itself has none */
   byline?: string
   /** Brand colours from the logo artwork, used as a thin accent only */
@@ -38,7 +42,7 @@ export const serviceBrands: ServiceBrand[] = [
     id: 'sweeping',
     name: 'SWEPT',
     label: 'Commercial Sweeping & Floor Scrubbing',
-    logo: { src: '/logo-dark.webp', width: 193, height: 54 },
+    logo: { src: '/logo-dark.webp', aspect: 3.5625, xHeight: 0.444, baseline: 0.725 },
     accent: ['#00E1FF', '#0050FF'],
     heading: ['Commercial Sweeping', '& Floor Scrubbing,', 'Done Right.'],
     intro:
@@ -116,7 +120,7 @@ export const serviceBrands: ServiceBrand[] = [
     id: 'washed',
     name: 'Washed',
     label: 'Commercial Pressure Cleaning',
-    logo: { src: '/logo-washed.webp', width: 176, height: 54 },
+    logo: { src: '/logo-washed.webp', aspect: 3.2625, xHeight: 0.375, baseline: 0.744 },
     byline: 'by Swept',
     accent: ['#00E5FF', '#0062FF'],
     heading: ['Commercial Pressure', 'Cleaning, Backed', 'by Swept.'],
@@ -192,7 +196,7 @@ export const serviceBrands: ServiceBrand[] = [
     id: 'grounds',
     name: 'Grounds',
     label: 'Commercial Grounds Maintenance',
-    logo: { src: '/logo-grounds.webp', width: 180, height: 54 },
+    logo: { src: '/logo-grounds.webp', aspect: 3.3375, xHeight: 0.325, baseline: 0.6625 },
     byline: 'by Swept',
     accent: ['#B5E61D', '#0B6E3A'],
     heading: ['Commercial Grounds', 'Maintenance for', 'Cleaner, Safer Sites.'],
@@ -268,7 +272,7 @@ export const serviceBrands: ServiceBrand[] = [
     id: 'cleaned',
     name: 'Cleaned',
     label: 'Commercial Cleaning',
-    logo: { src: '/logo-cleaned.webp', width: 194, height: 54 },
+    logo: { src: '/logo-cleaned.webp', aspect: 3.59375, xHeight: 0.356, baseline: 0.675 },
     byline: 'by Swept',
     accent: ['#C084FC', '#4F46E5'],
     heading: ['Commercial Cleaning', 'for Gold Coast', 'Workplaces.'],
