@@ -1,7 +1,14 @@
+import type { CSSProperties } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { serviceBrands } from '../../serviceBrands'
 import { BrandLogo } from '../BrandLogo'
 import { preselectQuoteService } from '../../quote'
+
+/** '#RRGGBB' -> 'rgba(r, g, b, alpha)' */
+function rgba(hex: string, alpha: number) {
+  const n = parseInt(hex.slice(1), 16)
+  return `rgba(${n >> 16}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`
+}
 
 export function ServicesOverview() {
   return (
@@ -22,7 +29,11 @@ export function ServicesOverview() {
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4">
           {serviceBrands.map((brand) => (
             <li key={brand.id}>
-              <article className="group relative bg-white border border-zinc-100 p-6 hover:border-brand-500/30 hover:shadow-md hover:shadow-brand-500/5 transition-all duration-200 h-full flex flex-col">
+              <article
+                className="group relative bg-white border border-zinc-100 p-6 hover:border-[color:var(--hover-border)] hover:shadow-[0_8px_24px_-6px_var(--hover-shadow)] transition-all duration-200 h-full flex flex-col"
+                // Hover highlight takes the card's own brand colour
+                style={{ '--hover-border': rgba(brand.accent[1], 0.45), '--hover-shadow': rgba(brand.accent[1], 0.18) } as CSSProperties}
+              >
                 <span
                   className="absolute inset-x-0 top-0 h-[3px]"
                   style={{ background: `linear-gradient(90deg, ${brand.accent[0]}, ${brand.accent[1]})` }}
