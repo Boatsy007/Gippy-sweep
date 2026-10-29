@@ -45,17 +45,15 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50">
-        {/* Background layer fades in as a whole, so the colour, blur, border and
-            shadow arrive together instead of each snapping on separately */}
-        <div
-          className={`absolute inset-0 bg-cream/95 border-b border-zinc-200/60 shadow-sm ${fade} ${
-            scrolled ? 'opacity-100' : 'opacity-0'
-          }`}
-          aria-hidden="true"
-        />
-        <div className="section-container relative">
-          <div className="flex items-center justify-between py-4">
+      <header className="fixed top-0 left-0 right-0 z-50 pt-3">
+        <div className="section-container">
+          {/* Floating glass bar. The blur stays on permanently; only the tint,
+              edge and shadow fade between the dark (over hero) and light states */}
+          <div
+            className={`glass flex items-center justify-between rounded-2xl pl-4 pr-3 py-2.5 sm:pl-5 ${
+              dark ? 'glass-light' : 'glass-dark'
+            }`}
+          >
             <a href="#" aria-label="SWEPT — Home">
               {/* Both logo colours stay mounted and crossfade */}
               <span className="relative block">
@@ -97,7 +95,7 @@ export function Navbar() {
                   {site.phone}
                 </a>
               )}
-              <a href="#contact" className="btn-primary text-xs px-6 py-3">
+              <a href="#contact" className="btn-primary text-xs px-6 py-3 rounded-xl">
                 Get a Quote
               </a>
             </div>
