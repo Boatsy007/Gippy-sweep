@@ -4,12 +4,12 @@
 
 ## Services
 
-- [Commercial Sweeping (SWEPT)](https://www.swept.au/#sweeping): mechanical sweeping for car parks, warehouses, industrial sites, shopping centres, construction sites, body corporates and councils.
-- [Commercial Floor Scrubbing (Scrubbed by Swept)](https://www.swept.au/#scrubbed): machine floor scrubbing for warehouses, industrial facilities, shopping centres and commercial hard floors.
-- [Commercial Pressure Cleaning (Washed by Swept)](https://www.swept.au/#washed): pressure cleaning for car parks, footpaths, building exteriors, loading docks and bin bays.
-- [Commercial Grounds Maintenance (Grounds by Swept)](https://www.swept.au/#grounds): lawn mowing, garden maintenance, hedge trimming, weed management and scheduled grounds upkeep.
-- [Commercial Cleaning (Cleaned by Swept)](https://www.swept.au/#cleaned): office, warehouse, retail, strata common area and amenities cleaning.
-- [Commercial Line Marking (Marked by Swept)](https://www.swept.au/#marked): car park line marking, parking bays, warehouse safety lines, pedestrian walkways and directional arrows.
+- [Commercial Sweeping (SWEPT)](%VITE_SITE_URL%/#sweeping): mechanical sweeping for car parks, warehouses, industrial sites, shopping centres, construction sites, body corporates and councils.
+- [Commercial Floor Scrubbing (Scrubbed by Swept)](%VITE_SITE_URL%/#scrubbed): machine floor scrubbing for warehouses, industrial facilities, shopping centres and commercial hard floors.
+- [Commercial Pressure Cleaning (Washed by Swept)](%VITE_SITE_URL%/#washed): pressure cleaning for car parks, footpaths, building exteriors, loading docks and bin bays.
+- [Commercial Grounds Maintenance (Grounds by Swept)](%VITE_SITE_URL%/#grounds): lawn mowing, garden maintenance, hedge trimming, weed management and scheduled grounds upkeep.
+- [Commercial Cleaning (Cleaned by Swept)](%VITE_SITE_URL%/#cleaned): office, warehouse, retail, strata common area and amenities cleaning.
+- [Commercial Line Marking (Marked by Swept)](%VITE_SITE_URL%/#marked): car park line marking, parking bays, warehouse safety lines, pedestrian walkways and directional arrows.
 
 ## Service area
 
@@ -17,5 +17,5 @@ Gold Coast, Brisbane, Logan, Ipswich, Redlands, Moreton Bay and Northern NSW.
 
 ## Contact
 
-- Quote requests: https://www.swept.au/#contact
+- Quote requests: %VITE_SITE_URL%/#contact
 - Email: info@swept.au
