@@ -63,13 +63,13 @@ export function Grounds() {
           <div className="lg:sticky lg:top-28">
             <div className="flex items-end gap-3 mb-6">
               <img
-                src="/logo-scaped.webp"
-                alt="Scaped"
-                width={182}
-                height={64}
-                className="h-16 w-auto"
+                src="/logo-grounds.webp"
+                alt="Grounds"
+                width={180}
+                height={54}
+                className="h-[54px] w-auto"
               />
-              <span className="eyebrow pb-2.5">by Swept</span>
+              <span className="eyebrow pb-1">by Swept</span>
             </div>
             <h2 id="grounds-heading" className="display-md text-asphalt mb-6">
               Commercial Grounds<br />
@@ -77,7 +77,7 @@ export function Grounds() {
               Cleaner, Safer Sites.
             </h2>
             <p className="text-zinc-500 text-base leading-relaxed mb-10 max-w-md">
-              Through Scaped by Swept, we help commercial properties stay presentable between
+              Through Grounds by Swept, we help commercial properties stay presentable between
               major cleans. From litter picking and leaf blowing to weed control, kerb tidy-ups
               and external site maintenance, our team keeps car parks, hardstands, walkways and
               shared outdoor areas looking sharp across South East Queensland.
@@ -108,7 +108,7 @@ export function Grounds() {
               <div className="pt-8">
                 <div className="mb-8 p-6 bg-zinc-50 border border-zinc-200">
                   <p className="text-asphalt font-semibold text-sm mb-2">
-                    Sweeping handles the surface. Washed handles the deep clean. Scaped keeps the site looking sharp between visits.
+                    Sweeping handles the surface. Washed handles the deep clean. Grounds keeps the site looking sharp between visits.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
                     One team. Three specialist services. Cleaner commercial properties.
@@ -116,7 +116,7 @@ export function Grounds() {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a href="#contact" className="btn-primary">
-                    Request Scaped Quote
+                    Request Grounds Quote
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>
                   <a href="#services" className="btn-outline-dark">
