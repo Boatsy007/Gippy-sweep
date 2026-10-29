@@ -125,7 +125,7 @@ export function Services() {
                   Need a deeper clean or ongoing grounds care? See{' '}
                   <a href="#washd" className="font-semibold text-brand-700 hover:underline">Washed pressure cleaning</a>
                   {' '}and{' '}
-                  <a href="#grounds" className="font-semibold text-brand-700 hover:underline">Grounds maintenance</a>.
+                  <a href="#grounds" className="font-semibold text-brand-700 hover:underline">Scaped grounds maintenance</a>.
                 </p>
                 <a
                   href="#contact"

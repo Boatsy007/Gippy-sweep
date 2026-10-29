@@ -106,7 +106,7 @@ export function Washd() {
                     One team. Three specialist services. Cleaner commercial properties.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
-                    Mechanical sweeping for regular maintenance. Washed for deeper commercial cleans. Grounds for everything in between.
+                    Mechanical sweeping for regular maintenance. Washed for deeper commercial cleans. Scaped for everything in between.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
