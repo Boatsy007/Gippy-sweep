@@ -3,12 +3,12 @@ interface LogoProps {
   /** Use white variant for dark backgrounds */
   inverted?: boolean
   /** Size variant */
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
 // Sunburst + "swept" wordmark, cropped tight to the artwork (≈3.57:1).
 const ratio = 3.57
-const heights = { sm: 36, md: 44, lg: 52 }
+const heights = { sm: 36, md: 44, lg: 52, xl: 60 }
 
 export function Logo({ className = '', inverted = false, size = 'md' }: LogoProps) {
   const h = heights[size]

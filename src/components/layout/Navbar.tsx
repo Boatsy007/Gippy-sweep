@@ -51,13 +51,13 @@ export function Navbar() {
         className={`glass fixed top-0 left-0 right-0 z-50 ${dark ? 'glass-light' : 'glass-dark'}`}
       >
         <div className="section-container">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-3">
             <a href="#" aria-label="SWEPT — Home">
               {/* Both logo colours stay mounted and crossfade */}
               <span className="relative block">
-                <Logo size="sm" className={`${fade} ${dark ? 'opacity-100' : 'opacity-0'}`} />
+                <Logo size="xl" className={`${fade} ${dark ? 'opacity-100' : 'opacity-0'}`} />
                 <Logo
-                  size="sm"
+                  size="xl"
                   inverted
                   className={`absolute inset-0 ${fade} ${dark ? 'opacity-0' : 'opacity-100'}`}
                 />
