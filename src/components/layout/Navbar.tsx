@@ -45,15 +45,13 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 pt-3">
+      {/* Full-width glass bar. The blur stays on permanently; only the tint,
+          edge and shadow fade between the dark (over hero) and light states */}
+      <header
+        className={`glass fixed top-0 left-0 right-0 z-50 ${dark ? 'glass-light' : 'glass-dark'}`}
+      >
         <div className="section-container">
-          {/* Floating glass bar. The blur stays on permanently; only the tint,
-              edge and shadow fade between the dark (over hero) and light states */}
-          <div
-            className={`glass flex items-center justify-between rounded-2xl pl-4 pr-3 py-2.5 sm:pl-5 ${
-              dark ? 'glass-light' : 'glass-dark'
-            }`}
-          >
+          <div className="flex items-center justify-between py-4">
             <a href="#" aria-label="SWEPT — Home">
               {/* Both logo colours stay mounted and crossfade */}
               <span className="relative block">
@@ -95,7 +93,7 @@ export function Navbar() {
                   {site.phone}
                 </a>
               )}
-              <a href="#contact" className="btn-primary text-xs px-6 py-3 rounded-xl">
+              <a href="#contact" className="btn-primary text-xs px-6 py-3">
                 Get a Quote
               </a>
             </div>
