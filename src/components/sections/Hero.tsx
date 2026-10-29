@@ -18,18 +18,22 @@ export function Hero() {
       ──────────────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0 lg:left-1/2 z-0 overflow-hidden">
 
-        {/* Fade-in + initial scale (0.98 → 1.0, 1.6 s) */}
+        {/* Initial scale (0.98 → 1.0, 1.6 s) — no fade, so the image paints immediately */}
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.6, delay: 0.25, ease }}
+          initial={{ scale: 0.98 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.6, ease }}
         >
           {/* Ken Burns: 1.0 → 1.05 over 25 s, breathes back, infinite */}
           <div className="absolute inset-0 animate-ken-burns transform-gpu will-change-transform">
             <img
-              src="/hero-sweeper.png"
-              alt="RCM Mille commercial sweeper operating at Gippsland Business Centre"
+              src="/hero-sweeper.webp"
+              srcSet="/hero-sweeper-800.webp 800w, /hero-sweeper.webp 1122w"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              width={1122}
+              height={1402}
+              alt="RCM Mille commercial ride-on sweeper at work on a commercial site"
               className="
                 w-full h-full object-cover
                 object-[center_45%]
@@ -63,7 +67,7 @@ export function Hero() {
 
       {/* ── ACCENT LINE ──────────────────────────────────────────────────── */}
       <motion.div
-        className="absolute top-0 left-0 h-[3px] bg-orange-500 z-30"
+        className="absolute top-0 left-0 h-[3px] bg-brand-500 z-30"
         initial={{ width: 0 }}
         animate={{ width: '100%' }}
         transition={{ duration: 1.2, delay: 0.2, ease }}
@@ -89,7 +93,7 @@ export function Hero() {
           <div className="flex flex-col justify-center">
 
             <motion.p
-              className="eyebrow mb-8"
+              className="eyebrow text-brand-500 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45, ease }}
@@ -104,11 +108,10 @@ export function Hero() {
               {headlineWords.map((word, i) => (
                 <motion.span
                   key={word}
-                  className="block"
                   initial={{ opacity: 0, y: 60 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 + i * 0.12, ease }}
-                  style={word === 'RIGHT.' ? { color: '#3BAEE9' } : undefined}
+                  className={word === 'RIGHT.' ? 'block text-brand-500' : 'block'}
                 >
                   {word}
                 </motion.span>
@@ -116,7 +119,7 @@ export function Hero() {
             </h1>
 
             <motion.p
-              className="mt-8 text-white/55 text-lg leading-relaxed max-w-md"
+              className="mt-8 text-white/60 text-lg leading-relaxed max-w-md"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.06, ease }}
@@ -150,14 +153,14 @@ export function Hero() {
             >
               {[
                 { value: '20+', label: 'Years Serving SEQ' },
-                { value: '500+', label: 'Sites Cleaned' },
+                { value: '3', label: 'Specialist Services' },
                 { value: '100%', label: 'Gold Coast Owned' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-3xl font-extrabold text-white tracking-tightest leading-none">
                     {stat.value}
                   </p>
-                  <p className="text-xs text-white/40 tracking-widest uppercase mt-1">
+                  <p className="text-xs text-white/60 tracking-widest uppercase mt-1">
                     {stat.label}
                   </p>
                 </div>
@@ -172,13 +175,13 @@ export function Hero() {
 
       {/* ── LOCALLY OWNED BADGE ──────────────────────────────────────────── */}
       <motion.div
-        className="absolute bottom-16 right-5 sm:right-8 lg:right-10 z-30 bg-orange-500 text-white px-5 py-4 shadow-2xl"
+        className="absolute bottom-16 right-5 sm:right-8 lg:right-10 z-30 bg-brand-500 text-asphalt px-5 py-4 shadow-2xl"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 1.9, ease }}
       >
         <p className="text-xs font-bold tracking-[0.15em] uppercase">Gold Coast Owned</p>
-        <p className="text-xs text-white/70 mt-0.5">Queensland, Australia</p>
+        <p className="text-xs text-asphalt/80 mt-0.5">Since 2004</p>
       </motion.div>
 
       {/* ── SCROLL INDICATOR ─────────────────────────────────────────────── */}
@@ -189,12 +192,12 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 2.0, ease }}
         aria-hidden="true"
       >
-        <span className="text-white/25 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+        <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ChevronDown className="w-4 h-4 text-white/25" />
+          <ChevronDown className="w-4 h-4 text-white/60" />
         </motion.div>
       </motion.div>
     </section>

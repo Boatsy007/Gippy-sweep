@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
 import { Logo } from '../Logo'
+import { site, phoneHref } from '../../site'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
@@ -14,6 +15,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -27,6 +29,15 @@ export function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
+  // Keep the hidden menu out of the tab order, and let Escape close it
+  useEffect(() => {
+    menuRef.current?.toggleAttribute('inert', !open)
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
   return (
     <>
       <header
@@ -37,7 +48,7 @@ export function Navbar() {
         }`}
       >
         <div className="section-container">
-          <div className="flex items-center justify-between h-18 py-4">
+          <div className="flex items-center justify-between py-4">
             <a href="#" aria-label="SWEPT — Home">
               <Logo size="sm" inverted={!scrolled && !open} />
             </a>
@@ -60,15 +71,17 @@ export function Navbar() {
             </nav>
 
             <div className="hidden lg:flex items-center gap-4">
-              <a
-                href="tel:+61412345678"
-                className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
-                  scrolled ? 'text-asphalt/70 hover:text-asphalt' : 'text-white/70 hover:text-white'
-                }`}
-              >
-                <Phone className="w-4 h-4" aria-hidden="true" />
-                0412 345 678
-              </a>
+              {site.phone && (
+                <a
+                  href={phoneHref()}
+                  className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
+                    scrolled ? 'text-asphalt/70 hover:text-asphalt' : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  <Phone className="w-4 h-4" aria-hidden="true" />
+                  {site.phone}
+                </a>
+              )}
               <a href="#contact" className="btn-primary text-xs px-6 py-3">
                 Get a Quote
               </a>
@@ -93,6 +106,7 @@ export function Navbar() {
       {/* Mobile menu overlay */}
       <div
         id="mobile-menu"
+        ref={menuRef}
         className={`fixed inset-0 z-40 bg-cream lg:hidden transition-all duration-300 ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
@@ -105,7 +119,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-3xl font-extrabold tracking-tightest text-asphalt py-3 border-b border-zinc-100 hover:text-orange-500 transition-colors"
+                className="text-3xl font-extrabold tracking-tightest text-asphalt py-3 border-b border-zinc-100 hover:text-brand-500 transition-colors"
                 style={{ transitionDelay: open ? `${i * 50}ms` : '0ms' }}
               >
                 {link.label}
@@ -114,10 +128,12 @@ export function Navbar() {
           </nav>
 
           <div className="mt-auto pt-10 flex flex-col gap-4">
-            <a href="tel:+61412345678" className="btn-outline-dark justify-center">
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              0412 345 678
-            </a>
+            {site.phone && (
+              <a href={phoneHref()} className="btn-outline-dark justify-center">
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                {site.phone}
+              </a>
+            )}
             <a href="#contact" className="btn-primary justify-center" onClick={() => setOpen(false)}>
               Get a Free Quote
             </a>

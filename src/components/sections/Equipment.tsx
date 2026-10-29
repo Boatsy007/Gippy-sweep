@@ -69,9 +69,9 @@ export function Equipment() {
                 <h3 className="text-3xl font-extrabold text-white tracking-headline leading-tight mb-4">
                   RCM Mille<br />
                   Commercial Ride-On<br />
-                  <span className="text-orange-500">Sweeper</span>
+                  <span className="text-brand-500">Sweeper</span>
                 </h3>
-                <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-md">
+                <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-md">
                   We operate a professional RCM Mille ride-on sweeper, trusted worldwide for its
                   exceptional performance on large commercial hard surfaces. Designed in Italy and
                   built for demanding environments, it delivers powerful dust control, efficient
@@ -82,22 +82,22 @@ export function Equipment() {
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   {specs.map((spec) => (
                     <div key={spec.label} className="border border-white/10 px-4 py-3">
-                      <p className="text-[10px] text-white/30 uppercase tracking-widest mb-1">{spec.label}</p>
+                      <p className="text-[10px] text-white/60 uppercase tracking-widest mb-1">{spec.label}</p>
                       <p className="text-white text-sm font-semibold">{spec.value}</p>
                     </div>
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
                   {statStrip.map((s) => (
-                    <span key={s} className="flex items-center gap-2 text-white/50 text-xs">
-                      <span className="w-1 h-1 bg-orange-500 rounded-full shrink-0" aria-hidden="true" />
+                    <span key={s} className="flex items-center gap-2 text-white/60 text-xs">
+                      <span className="w-1 h-1 bg-brand-500 rounded-full shrink-0" aria-hidden="true" />
                       {s}
                     </span>
                   ))}
                 </div>
                 <a
                   href="#gallery"
-                  className="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors duration-150 self-start"
+                  className="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold hover:text-brand-300 transition-colors duration-150 self-start"
                 >
                   See the RCM Mille in Action
                   <span aria-hidden="true">→</span>
@@ -105,7 +105,11 @@ export function Equipment() {
               </div>
               <div className="min-h-[240px] lg:min-h-[480px] relative overflow-hidden">
                 <motion.img
-                  src="/equipment-rcm-mille.png"
+                  src="/equipment-rcm-mille-800.webp"
+                  srcSet="/equipment-rcm-mille-800.webp 800w, /equipment-rcm-mille.webp 1536w"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  width={1536}
+                  height={1024}
                   alt="RCM Mille ride-on sweeper in a polished warehouse facility"
                   className="absolute inset-0 w-full h-full object-cover object-[55%_50%]"
                   loading="lazy"
@@ -113,7 +117,7 @@ export function Equipment() {
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
                 />
-                <div className="absolute inset-0 bg-black/12 pointer-events-none" aria-hidden="true" />
+                <div className="absolute inset-0 bg-black/10 pointer-events-none" aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -124,8 +128,8 @@ export function Equipment() {
           {highlights.map((h, i) => (
             <AnimateInView key={h.title} delay={i * 0.1} direction="up">
               <div className="flex flex-col gap-4">
-                <div className="w-12 h-12 bg-orange-500/8 flex items-center justify-center">
-                  <h.icon className="w-6 h-6 text-orange-500" aria-hidden="true" />
+                <div className="w-12 h-12 bg-brand-500/10 flex items-center justify-center">
+                  <h.icon className="w-6 h-6 text-brand-500" aria-hidden="true" />
                 </div>
                 <h3 className="text-base font-bold text-asphalt">{h.title}</h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">{h.description}</p>

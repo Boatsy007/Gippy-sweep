@@ -23,8 +23,13 @@
     max-width: 100%;
   }
 
+  /* Keep anchored sections clear of the fixed header */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-orange-500;
+    @apply outline-2 outline-offset-2 outline-brand-500;
   }
 
   /* Smooth scroll with reduced motion override */
@@ -52,7 +57,7 @@
   }
 
   .eyebrow {
-    @apply text-xs font-bold tracking-[0.2em] uppercase text-orange-500;
+    @apply text-xs font-bold tracking-[0.2em] uppercase text-brand-700;
   }
 
   .display-xl {
@@ -68,7 +73,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2;
+    @apply inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-asphalt font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
   }
 
   .btn-outline-light {
@@ -76,6 +81,6 @@
   }
 
   .btn-outline-dark {
-    @apply inline-flex items-center gap-2 border-2 border-asphalt hover:border-orange-500 hover:text-orange-500 text-asphalt font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asphalt focus-visible:ring-offset-2;
+    @apply inline-flex items-center gap-2 border-2 border-asphalt hover:border-brand-500 hover:text-brand-500 text-asphalt font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asphalt focus-visible:ring-offset-2;
   }
 }

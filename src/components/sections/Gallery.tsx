@@ -1,41 +1,25 @@
 import { motion } from 'framer-motion'
 import { AnimateInView } from '../ui/AnimateInView'
-import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
-const galleryItems: {
-  label: string
-  ratio: string
-  src?: string
-  objectPosition?: string
-  hoverDuration?: number
-  entryScale?: boolean
-}[] = [
-  { label: 'Carpark before and after — Traralgon', ratio: '4/3', src: '/results-before-after.png' },
-  { label: 'Construction site sweep — Sale', ratio: '3/4' },
-  { label: 'Warehouse floor — Morwell', ratio: '4/3' },
+const galleryItems = [
   {
-    label: 'Shopping centre carpark — Bairnsdale',
-    ratio: '3/4',
-    src: '/gallery-shopping-centre.png',
+    name: 'results-before-after',
+    alt: 'Commercial car park before and after a mechanical sweep',
+    caption: 'Car park — before and after',
+    objectPosition: 'center',
+  },
+  {
+    name: 'gallery-shopping-centre',
+    alt: 'RCM Mille sweeper working in a shopping centre car park',
+    caption: 'Shopping centre car park',
     objectPosition: '50% 40%',
-    hoverDuration: 0.6,
-    entryScale: true,
   },
-  { label: 'Road sweeping — Latrobe Valley', ratio: '16/9' },
-  { label: 'Industrial estate — Moe', ratio: '4/3' },
   {
-    label: 'Grain shed yard — Leongatha',
-    ratio: '3/4',
-    src: '/gallery-grain-shed.png',
+    name: 'gallery-grain-shed',
+    alt: 'Ride-on sweeper clearing an industrial yard',
+    caption: 'Industrial yard',
     objectPosition: '50% 45%',
-    hoverDuration: 0.6,
-    entryScale: true,
   },
-  { label: 'Event venue preparation', ratio: '4/3' },
-  { label: 'Sweeper detail shot', ratio: '1/1' },
-  { label: 'Night sweep — commercial precinct', ratio: '16/9' },
-  { label: 'Before: debris-heavy site', ratio: '4/3' },
-  { label: 'After: clean result delivered', ratio: '4/3' },
 ]
 
 export function Gallery() {
@@ -49,66 +33,36 @@ export function Gallery() {
           </h2>
           <p className="mt-5 text-zinc-500 text-base leading-relaxed">
             Every job we complete is an example of what professional sweeping looks like.
-            Photography coming soon — image placeholders represent real job types.
           </p>
         </AnimateInView>
 
-        {/* CSS columns masonry */}
-        <div
-          className="columns-2 md:columns-3 lg:columns-4 gap-3"
-          role="list"
-          aria-label="Gallery of completed sweeping jobs"
-        >
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {galleryItems.map((item, i) => (
-            <AnimateInView
-              key={item.label}
-              delay={i * 0.04}
-              direction="up"
-              className="break-inside-avoid mb-3"
-            >
-              <div role="listitem">
-                {item.src ? (
-                  <div
-                    className="w-full overflow-hidden"
-                    style={{ aspectRatio: item.ratio }}
-                  >
+            <li key={item.name}>
+              <AnimateInView delay={i * 0.08} direction="up">
+                <figure>
+                  <div className="aspect-[4/3] overflow-hidden">
                     <motion.img
-                      src={item.src}
-                      alt={item.label}
+                      src={`/${item.name}-800.webp`}
+                      srcSet={`/${item.name}-800.webp 800w, /${item.name}.webp 1536w`}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      width={1536}
+                      height={1024}
+                      alt={item.alt}
                       className="w-full h-full object-cover"
-                      style={{ objectPosition: item.objectPosition ?? 'center' }}
+                      style={{ objectPosition: item.objectPosition }}
                       loading="lazy"
-                      {...(item.entryScale
-                        ? {
-                            initial: { opacity: 0, scale: 0.98 },
-                            whileInView: { opacity: 1, scale: 1.0 },
-                            viewport: { once: true, amount: 0.2 },
-                          }
-                        : {})}
+                      decoding="async"
                       whileHover={{ scale: 1.03 }}
-                      transition={{
-                        opacity: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-                        scale: { duration: item.hoverDuration ?? 0.5, ease: 'easeOut' },
-                      }}
+                      transition={{ duration: 0.6, ease: 'easeOut' }}
                     />
                   </div>
-                ) : (
-                  <ImagePlaceholder
-                    label={item.label}
-                    aspectRatio={item.ratio}
-                    className="w-full"
-                  />
-                )}
-              </div>
-            </AnimateInView>
+                  <figcaption className="mt-3 text-sm font-semibold text-asphalt">{item.caption}</figcaption>
+                </figure>
+              </AnimateInView>
+            </li>
           ))}
-        </div>
-
-        <AnimateInView className="text-center mt-12">
-          <p className="text-sm text-zinc-400">
-            Photography being captured across active job sites — check back soon.
-          </p>
-        </AnimateInView>
+        </ul>
       </div>
     </section>
   )

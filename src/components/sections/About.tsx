@@ -1,5 +1,5 @@
 import { AnimateInView } from '../ui/AnimateInView'
-import { ImagePlaceholder } from '../ui/ImagePlaceholder'
+import { site } from '../../site'
 
 const milestones = [
   { year: '2004', event: 'Established on the Gold Coast, providing commercial sweeping services to businesses across South East Queensland.' },
@@ -25,7 +25,7 @@ export function About() {
 
           {/* Left — story */}
           <AnimateInView direction="left">
-            <div className="prose prose-zinc max-w-none">
+            <div className="">
               <p className="text-lg text-zinc-600 leading-relaxed mb-6">
                 For over 20 years, Swept has been helping businesses across South East
                 Queensland maintain cleaner, safer and more professional commercial properties.
@@ -49,10 +49,10 @@ export function About() {
                 <AnimateInView key={m.year} delay={i * 0.1} direction="left">
                   <div className="relative">
                     <span
-                      className="absolute -left-[29px] top-1 w-3 h-3 bg-orange-500 rounded-full ring-4 ring-cream"
+                      className="absolute -left-[29px] top-1 w-3 h-3 bg-brand-500 rounded-full ring-4 ring-cream"
                       aria-hidden="true"
                     />
-                    <p className="text-xs font-bold text-orange-500 tracking-widest uppercase mb-1">
+                    <p className="text-xs font-bold text-brand-700 tracking-widest uppercase mb-1">
                       {m.year}
                     </p>
                     <p className="text-sm text-zinc-500 leading-relaxed">{m.event}</p>
@@ -62,28 +62,25 @@ export function About() {
             </div>
           </AnimateInView>
 
-          {/* Right — photos */}
+          {/* Right — key facts + owner quote */}
           <AnimateInView direction="right">
-            <div className="grid grid-cols-2 gap-3">
-              <ImagePlaceholder
-                label="Owner operator portrait — Gold Coast"
-                aspectRatio="3/4"
-                className="col-span-2"
-              />
-              <ImagePlaceholder
-                label="Team in the field"
-                aspectRatio="1/1"
-              />
-              <ImagePlaceholder
-                label="South East Queensland — local roots"
-                aspectRatio="1/1"
-              />
+            <div className="grid grid-cols-3 gap-px bg-zinc-200 border border-zinc-200 mb-4">
+              {[
+                { value: '20+', label: 'Years in business' },
+                { value: '2004', label: 'Established' },
+                { value: '7', label: 'Regions serviced' },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-white p-6 text-center">
+                  <p className="text-3xl font-extrabold text-asphalt tracking-tightest">{stat.value}</p>
+                  <p className="text-xs text-zinc-500 uppercase tracking-widest mt-1">{stat.label}</p>
+                </div>
+              ))}
             </div>
 
             {/* Owner quote */}
-            <blockquote className="mt-8">
+            <blockquote className="mt-12">
               <div
-                className="text-7xl font-extrabold text-orange-500/20 leading-none mb-1 select-none"
+                className="text-7xl font-extrabold text-brand-500/20 leading-none mb-1 select-none"
                 aria-hidden="true"
               >
                 &ldquo;
@@ -94,8 +91,8 @@ export function About() {
                 look the way it should. That standard hasn't changed.
               </p>
               <footer className="flex items-center gap-3 text-sm font-semibold text-asphalt">
-                <span className="w-8 h-px bg-orange-500 shrink-0" aria-hidden="true" />
-                [Owner Name], Founder &amp; Director, SWEPT
+                <span className="w-8 h-px bg-brand-500 shrink-0" aria-hidden="true" />
+                {site.ownerName && `${site.ownerName}, `}Founder &amp; Director, SWEPT
               </footer>
             </blockquote>
           </AnimateInView>

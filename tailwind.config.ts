@@ -7,10 +7,12 @@ export default {
       colors: {
         asphalt: '#111827',
         cream: '#FFFFFF',
-        orange: {
+        brand: {
           400: '#60C3F0',
           500: '#3BAEE9',
           600: '#2090CC',
+          /** Text and links on light backgrounds (5.9:1 on white) */
+          700: '#0F6A9C',
         },
       },
       fontFamily: {

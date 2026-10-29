@@ -1,6 +1,5 @@
 import { Check, ArrowRight } from 'lucide-react'
 import { AnimateInView } from '../ui/AnimateInView'
-import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
 const groundsServices = [
   {
@@ -61,7 +60,7 @@ export function Grounds() {
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          {/* Left — sticky info + placeholder */}
+          {/* Left — sticky info */}
           <AnimateInView direction="left" className="lg:sticky lg:top-28">
             <p className="eyebrow mb-5">Grounds by Swept</p>
             <h2 id="grounds-heading" className="display-md text-asphalt mb-6">
@@ -75,12 +74,6 @@ export function Grounds() {
               and external site maintenance, our team keeps car parks, hardstands, walkways and
               shared outdoor areas looking sharp across South East Queensland.
             </p>
-            <div className="relative w-full aspect-[3/4] overflow-hidden">
-              <ImagePlaceholder
-                label="Grounds Maintenance Image Placeholder"
-                aspectRatio="fill"
-              />
-            </div>
           </AnimateInView>
 
           {/* Right — service list + trust block + CTAs */}
@@ -89,11 +82,11 @@ export function Grounds() {
               <AnimateInView key={service.title} delay={i * 0.08} direction="up">
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
-                    <span className="w-6 h-6 bg-orange-500 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3.5 h-3.5 text-white" aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="text-lg font-bold text-asphalt mb-2 group-hover:text-orange-500 transition-colors duration-200">
+                      <h3 className="text-lg font-bold text-asphalt mb-2 group-hover:text-brand-500 transition-colors duration-200">
                         {service.title}
                       </h3>
                       <p className="text-zinc-500 text-sm leading-relaxed">{service.description}</p>
@@ -109,7 +102,7 @@ export function Grounds() {
                   <p className="text-asphalt font-semibold text-sm mb-2">
                     Sweeping handles the surface. Washd handles the deep clean. Grounds keeps the site looking sharp between visits.
                   </p>
-                  <p className="text-zinc-400 text-xs leading-relaxed">
+                  <p className="text-zinc-500 text-xs leading-relaxed">
                     One team. Three specialist services. Cleaner commercial properties.
                   </p>
                 </div>

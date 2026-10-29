@@ -55,31 +55,6 @@ const services = [
     description:
       'Tailored weekly, fortnightly or monthly service schedules for ongoing site maintenance — with fixed pricing and priority scheduling.',
   },
-  {
-    title: 'Commercial Pressure Cleaning',
-    description:
-      'Commercial pressure cleaning for car parks, loading docks, bin bays and hard surfaces — delivered through Washd by Swept, our specialist pressure cleaning division.',
-  },
-  {
-    title: 'Wash-Down Services',
-    description:
-      'Industrial and commercial wash-down programs for warehouse floors, resort complexes and body corporate properties — scheduled through Washd by Swept.',
-  },
-  {
-    title: 'Commercial Grounds Maintenance',
-    description:
-      'Litter picking, leaf blowing, weed control and external site tidy-ups for commercial properties across South East Queensland — delivered through Grounds by Swept.',
-  },
-  {
-    title: 'Litter & Leaf Control',
-    description:
-      'Systematic litter removal and leaf blowing for car parks, walkways and shared outdoor areas — keeping your site presentable between major cleans.',
-  },
-  {
-    title: 'Weed Control',
-    description:
-      'Professional weed management for kerbs, expansion joints and hardstand edges — preventing growth that undermines property presentation and safety.',
-  },
 ]
 
 export function Services() {
@@ -113,7 +88,11 @@ export function Services() {
                 }}
               >
                 <img
-                  src="/services-carpark.png"
+                  src="/services-carpark-800.webp"
+                  srcSet="/services-carpark-800.webp 800w, /services-carpark.webp 1448w"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  width={1448}
+                  height={1086}
                   alt="Aerial view of RCM Mille commercial sweeper working in a car park — before and after sweep clearly visible"
                   className="w-full h-full object-cover object-[45%_35%]"
                   loading="lazy"
@@ -133,11 +112,11 @@ export function Services() {
               <AnimateInView key={service.title} delay={i * 0.08} direction="up">
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
-                    <span className="w-6 h-6 bg-orange-500 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3.5 h-3.5 text-white" aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="text-lg font-bold text-asphalt mb-2 group-hover:text-orange-500 transition-colors duration-200">
+                      <h3 className="text-lg font-bold text-asphalt mb-2 group-hover:text-brand-500 transition-colors duration-200">
                         {service.title}
                       </h3>
                       <p className="text-zinc-500 text-sm leading-relaxed">{service.description}</p>
@@ -149,9 +128,15 @@ export function Services() {
 
             <AnimateInView>
               <div className="pt-8">
+                <p className="text-sm text-zinc-500 mb-5">
+                  Need a deeper clean or ongoing grounds care? See{' '}
+                  <a href="#washd" className="font-semibold text-brand-700 hover:underline">Washd pressure cleaning</a>
+                  {' '}and{' '}
+                  <a href="#grounds" className="font-semibold text-brand-700 hover:underline">Grounds maintenance</a>.
+                </p>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-orange-500 hover:text-orange-600 transition-colors duration-150"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-asphalt transition-colors duration-150"
                 >
                   Get a quote for your site
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />

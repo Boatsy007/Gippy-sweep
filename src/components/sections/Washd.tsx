@@ -1,6 +1,5 @@
 import { Check, ArrowRight } from 'lucide-react'
 import { AnimateInView } from '../ui/AnimateInView'
-import { ImagePlaceholder } from '../ui/ImagePlaceholder'
 
 const washdServices = [
   {
@@ -56,7 +55,7 @@ export function Washd() {
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          {/* Left — sticky info + placeholder */}
+          {/* Left — sticky info */}
           <AnimateInView direction="left" className="lg:sticky lg:top-28">
             <p className="eyebrow mb-5">Washd by Swept</p>
             <h2 id="washd-heading" className="display-md text-asphalt mb-6">
@@ -70,12 +69,6 @@ export function Washd() {
               from basement car parks and loading docks to bin bays, resort complexes, warehouse
               floors, retail centres and commercial facades across South East Queensland.
             </p>
-            <div className="relative w-full aspect-[3/4] overflow-hidden">
-              <ImagePlaceholder
-                label="Pressure Cleaning Image Placeholder"
-                aspectRatio="fill"
-              />
-            </div>
           </AnimateInView>
 
           {/* Right — service list + trust block + CTAs */}
@@ -84,11 +77,11 @@ export function Washd() {
               <AnimateInView key={service.title} delay={i * 0.08} direction="up">
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
-                    <span className="w-6 h-6 bg-orange-500 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3.5 h-3.5 text-white" aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="text-lg font-bold text-asphalt mb-2 group-hover:text-orange-500 transition-colors duration-200">
+                      <h3 className="text-lg font-bold text-asphalt mb-2 group-hover:text-brand-500 transition-colors duration-200">
                         {service.title}
                       </h3>
                       <p className="text-zinc-500 text-sm leading-relaxed">{service.description}</p>
@@ -102,10 +95,10 @@ export function Washd() {
               <div className="pt-8">
                 <div className="mb-8 p-6 bg-white border border-zinc-200">
                   <p className="text-asphalt font-semibold text-sm mb-2">
-                    One team. Two specialist services. Cleaner commercial properties.
+                    One team. Three specialist services. Cleaner commercial properties.
                   </p>
-                  <p className="text-zinc-400 text-xs leading-relaxed">
-                    Mechanical sweeping for regular maintenance. Washd for deeper commercial cleans.
+                  <p className="text-zinc-500 text-xs leading-relaxed">
+                    Mechanical sweeping for regular maintenance. Washd for deeper commercial cleans. Grounds for everything in between.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">

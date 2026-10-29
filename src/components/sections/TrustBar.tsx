@@ -33,12 +33,12 @@ export function TrustBar() {
             <AnimateInView key={item.label} delay={i * 0.08} direction="up">
               <div className="flex flex-col lg:flex-row items-start lg:items-center gap-3 lg:gap-4 lg:px-8">
                 <item.icon
-                  className="w-7 h-7 text-orange-500 shrink-0"
+                  className="w-7 h-7 text-brand-500 shrink-0"
                   aria-hidden="true"
                 />
                 <div>
                   <p className="text-white text-sm font-semibold leading-tight">{item.label}</p>
-                  <p className="text-white/40 text-xs mt-0.5 leading-snug">{item.detail}</p>
+                  <p className="text-white/60 text-xs mt-0.5 leading-snug">{item.detail}</p>
                 </div>
               </div>
             </AnimateInView>

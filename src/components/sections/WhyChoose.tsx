@@ -10,7 +10,7 @@ function ReasonNumber({ number, cardDelay }: { number: string; cardDelay: number
   return (
     <motion.span
       ref={ref}
-      className="text-5xl font-extrabold tracking-tightest leading-none text-white/8 group-hover:text-orange-500/20 transition-colors duration-200 block mb-6"
+      className="text-5xl font-extrabold tracking-tightest leading-none text-white/10 group-hover:text-brand-500/20 transition-colors duration-200 block mb-6"
       aria-hidden="true"
       initial={{ opacity: 0, y: 10 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -71,7 +71,7 @@ export function WhyChoose() {
     <section className="section-pad bg-asphalt" aria-labelledby="why-heading">
       <div className="section-container">
         <AnimateInView className="max-w-2xl mb-16">
-          <p className="eyebrow mb-5" style={{ color: '#3BAEE9' }}>
+          <p className="eyebrow text-brand-500 mb-5">
             Why SWEPT
           </p>
           <h2 id="why-heading" className="display-md text-white">
@@ -85,7 +85,7 @@ export function WhyChoose() {
               <div className="bg-asphalt p-8 lg:p-10 group hover:bg-zinc-900 transition-colors duration-200 h-full">
                 <ReasonNumber number={reason.number} cardDelay={i * 0.08} />
                 <h3 className="text-lg font-bold text-white mb-3">{reason.title}</h3>
-                <p className="text-white/45 text-sm leading-relaxed">{reason.description}</p>
+                <p className="text-white/60 text-sm leading-relaxed">{reason.description}</p>
               </div>
             </AnimateInView>
           ))}

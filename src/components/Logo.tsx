@@ -6,7 +6,7 @@ interface LogoProps {
   size?: 'sm' | 'md' | 'lg'
 }
 
-// Logo PNGs are 1080×1080 square exports from Canva.
+// Logo images are square exports from Canva (resized to 400×400 WebP).
 // "Swept. SERVICES" content spans ~22–73% vertically (centre ≈ 47.2%).
 // We scale the image to fill the container width (W×W rendered),
 // then shift up so the content centre aligns with the container centre.
@@ -25,10 +25,9 @@ export function Logo({ className = '', inverted = false, size = 'md' }: LogoProp
     <div
       className={`overflow-hidden shrink-0 ${className}`}
       style={{ width: w, height: h }}
-      aria-label="Swept. Services"
     >
       <img
-        src={inverted ? '/logo-white.png' : '/logo-dark.png'}
+        src={inverted ? '/logo-white.webp' : '/logo-dark.webp'}
         alt="Swept. Services"
         width={w}
         height={w}
