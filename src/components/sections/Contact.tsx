@@ -1,15 +1,10 @@
-import { useState, FormEvent } from 'react'
+import { useState, useEffect, FormEvent } from 'react'
 import { ArrowRight, Phone, Mail, CheckCircle2 } from 'lucide-react'
 import { site, phoneHref } from '../../site'
+import { serviceBrands, brandById } from '../../serviceBrands'
+import { onQuoteServiceRequested } from '../../quote'
 
-const serviceOptions = [
-  'Commercial sweeping',
-  'Pressure cleaning (Washed)',
-  'Grounds maintenance (Grounds)',
-  'Commercial cleaning (Cleaned)',
-  'Regular service plan',
-  'Not sure yet',
-]
+const serviceOptions = [...serviceBrands.map((b) => b.quoteOption), 'Regular service plan', 'Not sure yet']
 
 const fieldClass =
   'w-full bg-white/5 border border-white/15 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500'
@@ -25,7 +20,7 @@ function buildMailto(data: Record<string, string>) {
     `Email: ${data.email}`,
     `Phone: ${data.phone}`,
     `Site location: ${data.location}`,
-    `Service: ${data.service}`,
+    `Services: ${data.services}`,
     '',
     data.message,
   ].join('\n')
@@ -34,10 +29,28 @@ function buildMailto(data: Record<string, string>) {
 
 export function Contact() {
   const [status, setStatus] = useState<Status>('idle')
+  const [services, setServices] = useState<string[]>([])
+
+  // "Request … Quote" buttons elsewhere on the page tick their service here
+  useEffect(
+    () =>
+      onQuoteServiceRequested((id) => {
+        const option = brandById[id].quoteOption
+        setServices((current) => (current.includes(option) ? current : [...current, option]))
+      }),
+    [],
+  )
+
+  function toggleService(option: string) {
+    setServices((current) =>
+      current.includes(option) ? current.filter((o) => o !== option) : [...current, option],
+    )
+  }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
+    data.services = services.length ? services.join(', ') : 'Not specified'
 
     if (!site.formEndpoint) {
       window.location.href = buildMailto(data)
@@ -164,12 +177,25 @@ export function Contact() {
                   <label htmlFor="q-location" className={labelClass}>Site suburb *</label>
                   <input id="q-location" name="location" required placeholder="e.g. Southport" className={fieldClass} />
                 </div>
-                <div>
-                  <label htmlFor="q-service" className={labelClass}>Service needed</label>
-                  <select id="q-service" name="service" className={`${fieldClass} [&>option]:text-asphalt`} defaultValue={serviceOptions[0]}>
-                    {serviceOptions.map((o) => <option key={o}>{o}</option>)}
-                  </select>
-                </div>
+                <fieldset>
+                  <legend className={labelClass}>Services needed <span className="font-normal text-white/60">(select any)</span></legend>
+                  <div className="grid sm:grid-cols-2 gap-2">
+                    {serviceOptions.map((o) => (
+                      <label
+                        key={o}
+                        className="flex items-center gap-3 rounded-md border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white cursor-pointer has-[:checked]:border-brand-500 has-[:checked]:bg-brand-500/10 transition-colors"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={services.includes(o)}
+                          onChange={() => toggleService(o)}
+                          className="h-4 w-4 shrink-0 accent-brand-500"
+                        />
+                        {o}
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
                 <div>
                   <label htmlFor="q-message" className={labelClass}>About your site</label>
                   <textarea

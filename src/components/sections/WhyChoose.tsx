@@ -38,9 +38,9 @@ const reasons = [
   },
   {
     number: '07',
-    title: 'Recurring Maintenance Programs',
+    title: 'One Point of Contact',
     description:
-      'Weekly, fortnightly or monthly programs with priority scheduling, consistent operators and bundled pricing for long-term clients.',
+      'Sweeping, pressure cleaning, grounds maintenance and commercial cleaning from one provider — fewer contractors to coordinate across your sites.',
   },
 ]
 

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
-const headlineWords = ['COMMERCIAL', 'SWEEPING', 'DONE', 'RIGHT.']
+const headlineLines = ['Setting the', 'Standard in', 'Commercial', 'Property Care.']
 
 export function Hero() {
   return (
@@ -84,19 +84,20 @@ export function Hero() {
             <p
               className="eyebrow text-brand-500 mb-8"
             >
-              Commercial Sweeping — South East Queensland
+              Gold Coast &amp; South East Queensland
             </p>
 
+            {/* Sized so the longest line ("PROPERTY CARE.") fits the text column at every width */}
             <h1
-              className="display-xl text-white mb-0"
-              aria-label="Commercial sweeping done right."
+              className="text-[2.5rem] sm:text-[3.5rem] lg:text-[3.25rem] xl:text-[4.25rem] font-extrabold tracking-tightest leading-none uppercase text-white mb-0"
+              aria-label="Setting the Standard in Commercial Property Care."
             >
-              {headlineWords.map((word) => (
+              {headlineLines.map((line, i) => (
                 <span
-                  key={word}
-                  className={word === 'RIGHT.' ? 'block text-brand-500' : 'block'}
+                  key={line}
+                  className={i === headlineLines.length - 1 ? 'block text-brand-500' : 'block'}
                 >
-                  {word}
+                  {line}
                 </span>
               ))}
             </h1>
@@ -104,9 +105,9 @@ export function Hero() {
             <p
               className="mt-8 text-white/60 text-lg leading-relaxed max-w-md"
             >
-              Professional commercial sweeping across South East Queensland.
-              Shopping centres. Industrial sites. Construction projects.
-              Councils. Warehouses. Body corporates.
+              Commercial sweeping, pressure cleaning, grounds maintenance and commercial
+              cleaning for car parks, warehouses, shopping centres, offices and strata
+              properties — four specialist services, one point of contact.
             </p>
 
             <div
@@ -127,7 +128,7 @@ export function Hero() {
             >
               {[
                 { value: '20+', label: 'Years Serving SEQ' },
-                { value: '3', label: 'Specialist Services' },
+                { value: '4', label: 'Specialist Services' },
                 { value: '100%', label: 'Gold Coast Owned' },
               ].map((stat) => (
                 <div key={stat.label}>
@@ -152,7 +153,7 @@ export function Hero() {
         className="absolute bottom-16 right-5 sm:right-8 lg:right-10 z-30 bg-brand-500 text-asphalt px-5 py-4 shadow-2xl"
       >
         <p className="text-xs font-bold tracking-[0.15em] uppercase">Gold Coast Owned</p>
-        <p className="text-xs text-asphalt/80 mt-0.5">Since 2004</p>
+        <p className="text-xs text-asphalt/80 mt-0.5">Over 20 years</p>
       </div>
 
       {/* ── SCROLL INDICATOR ─────────────────────────────────────────────── */}

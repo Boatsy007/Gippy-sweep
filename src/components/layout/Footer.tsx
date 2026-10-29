@@ -1,20 +1,12 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { Logo } from '../Logo'
 import { site, phoneHref } from '../../site'
+import { serviceBrands } from '../../serviceBrands'
 
 const services = [
-  { label: 'Commercial Carpark Sweeping', href: '#services' },
-  { label: 'Industrial Sweeping', href: '#services' },
-  { label: 'Warehouse Sweeping', href: '#services' },
-  { label: 'Construction Site Sweeping', href: '#services' },
-  { label: 'Body Corporate Sweeping', href: '#services' },
-  { label: 'Scheduled Maintenance Programs', href: '#services' },
-  { label: 'Washed by Swept', href: '#washd' },
-  { label: 'Pressure Cleaning', href: '#washd' },
-  { label: 'Grounds by Swept', href: '#grounds' },
-  { label: 'Grounds Maintenance', href: '#grounds' },
-  { label: 'Cleaned by Swept', href: '#cleaned' },
-  { label: 'Commercial Cleaning', href: '#cleaned' },
+  { label: 'All Services', href: '#services' },
+  ...serviceBrands.map((b) => ({ label: `${b.name} — ${b.label}`, href: `#${b.id}` })),
+  { label: 'Regular Service Plans', href: '#plans' },
 ]
 
 const industries = [
@@ -51,8 +43,8 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Logo inverted size="sm" />
             <p className="mt-6 text-sm leading-relaxed text-white/60 max-w-xs">
-              Commercial sweeping, pressure cleaning and grounds maintenance across South East
-              Queensland. Gold Coast owned and operated for over 20 years.
+              Commercial sweeping, pressure cleaning, grounds maintenance and commercial cleaning
+              across South East Queensland. Gold Coast owned and operated for over 20 years.
             </p>
             {socialLinks.length > 0 && (
               <div className="flex gap-4 mt-8">

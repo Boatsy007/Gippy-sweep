@@ -86,8 +86,8 @@ export function Industries() {
             Built for South East<br />Queensland's industries.
           </h2>
           <p className="mt-5 text-zinc-500 text-base leading-relaxed">
-            From construction sites to shopping centres — if it's hard-surface and in South East Queensland,
-            we sweep it.
+            From construction sites and shopping centres to offices and strata complexes — we look after
+            commercial properties across the Gold Coast and South East Queensland.
           </p>
         </div>
 

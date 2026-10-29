@@ -4,10 +4,8 @@ import { Footer } from './components/layout/Footer'
 import { Hero } from './components/sections/Hero'
 import { TrustBar } from './components/sections/TrustBar'
 import { ServicePlans } from './components/sections/ServicePlans'
-import { Services } from './components/sections/Services'
-import { Washd } from './components/sections/Washd'
-import { Grounds } from './components/sections/Grounds'
-import { Cleaned } from './components/sections/Cleaned'
+import { ServicesOverview } from './components/sections/ServicesOverview'
+import { ServiceSection } from './components/sections/ServiceSection'
 import { Industries } from './components/sections/Industries'
 import { WhyChoose } from './components/sections/WhyChoose'
 import { Equipment } from './components/sections/Equipment'
@@ -15,6 +13,7 @@ import { Gallery } from './components/sections/Gallery'
 import { About } from './components/sections/About'
 import { Faq } from './components/sections/Faq'
 import { Contact } from './components/sections/Contact'
+import { serviceBrands } from './serviceBrands'
 
 export default function App() {
   return (
@@ -30,11 +29,11 @@ export default function App() {
         <main id="main-content">
           <Hero />
           <TrustBar />
+          <ServicesOverview />
           <ServicePlans />
-          <Services />
-          <Washd />
-          <Grounds />
-          <Cleaned />
+          {serviceBrands.map((brand, i) => (
+            <ServiceSection key={brand.id} brand={brand} tinted={i % 2 === 1} />
+          ))}
           <Industries />
           <WhyChoose />
           <Equipment />

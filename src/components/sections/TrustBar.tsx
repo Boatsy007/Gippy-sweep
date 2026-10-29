@@ -1,4 +1,4 @@
-import { ShieldCheck, Clock, MapPin, Star } from 'lucide-react'
+import { ShieldCheck, Clock, MapPin, Layers } from 'lucide-react'
 
 const items = [
   {
@@ -17,9 +17,9 @@ const items = [
     detail: 'Day, night & weekends',
   },
   {
-    icon: Star,
-    label: 'South East Queensland',
-    detail: "SEQ's commercial sweeping specialist",
+    icon: Layers,
+    label: 'Four Specialist Services',
+    detail: 'One point of contact',
   },
 ]
 
