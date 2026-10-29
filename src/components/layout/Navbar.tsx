@@ -12,6 +12,8 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const fade = 'transition-opacity duration-500 ease-out'
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -38,19 +40,32 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  // Logo and text switch to dark when the light header background is showing
+  const dark = scrolled || open
+
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-cream/90 backdrop-blur-md border-b border-zinc-200/60 shadow-sm'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="section-container">
+      <header className="fixed top-0 left-0 right-0 z-50">
+        {/* Background layer fades in as a whole, so the colour, blur, border and
+            shadow arrive together instead of each snapping on separately */}
+        <div
+          className={`absolute inset-0 bg-cream/90 backdrop-blur-md border-b border-zinc-200/60 shadow-sm ${fade} ${
+            scrolled ? 'opacity-100' : 'opacity-0'
+          }`}
+          aria-hidden="true"
+        />
+        <div className="section-container relative">
           <div className="flex items-center justify-between py-4">
             <a href="#" aria-label="SWEPT — Home">
-              <Logo size="sm" inverted={!scrolled && !open} />
+              {/* Both logo colours stay mounted and crossfade */}
+              <span className="relative block">
+                <Logo size="sm" className={`${fade} ${dark ? 'opacity-100' : 'opacity-0'}`} />
+                <Logo
+                  size="sm"
+                  inverted
+                  className={`absolute inset-0 ${fade} ${dark ? 'opacity-0' : 'opacity-100'}`}
+                />
+              </span>
             </a>
 
             {/* Desktop nav */}
@@ -59,7 +74,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-semibold tracking-wide transition-colors duration-200 ${
+                  className={`text-sm font-semibold tracking-wide transition-colors duration-500 ease-out ${
                     scrolled
                       ? 'text-asphalt/70 hover:text-asphalt'
                       : 'text-white/70 hover:text-white'
@@ -74,7 +89,7 @@ export function Navbar() {
               {site.phone && (
                 <a
                   href={phoneHref()}
-                  className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
+                  className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-500 ease-out ${
                     scrolled ? 'text-asphalt/70 hover:text-asphalt' : 'text-white/70 hover:text-white'
                   }`}
                 >
@@ -89,8 +104,8 @@ export function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className={`lg:hidden p-2 -mr-2 transition-colors duration-200 ${
-                scrolled ? 'text-asphalt' : 'text-white'
+              className={`lg:hidden p-2 -mr-2 transition-colors duration-500 ease-out ${
+                dark ? 'text-asphalt' : 'text-white'
               }`}
               onClick={() => setOpen(!open)}
               aria-label={open ? 'Close menu' : 'Open menu'}

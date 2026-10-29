@@ -41,7 +41,7 @@ export function Gallery() {
             <li key={item.name}>
               <AnimateInView delay={i * 0.08} direction="up">
                 <figure>
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="aspect-[4/3] overflow-hidden bg-zinc-200">
                     <motion.img
                       src={`/${item.name}-800.webp`}
                       srcSet={`/${item.name}-800.webp 800w, /${item.name}.webp 1536w`}

@@ -75,17 +75,11 @@ export function Services() {
               SWEPT operates commercial-grade mechanical sweepers designed for South East
               Queensland's industrial, construction, retail and council environments.
             </p>
-            <div className="relative w-full aspect-[3/4] overflow-hidden">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-zinc-200">
               <motion.div
                 className="absolute inset-0 cursor-default"
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1.0 }}
                 whileHover={{ scale: 1.03 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  opacity: { duration: 0.8, ease },
-                  scale: { duration: 0.6, ease },
-                }}
+                transition={{ duration: 0.6, ease }}
               >
                 <img
                   src="/services-carpark-800.webp"
@@ -108,8 +102,8 @@ export function Services() {
 
           {/* Right — service list */}
           <div className="space-y-0 divide-y divide-zinc-100">
-            {services.map((service, i) => (
-              <AnimateInView key={service.title} delay={i * 0.08} direction="up">
+            {services.map((service) => (
+              <AnimateInView key={service.title} direction="up">
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
                     <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">

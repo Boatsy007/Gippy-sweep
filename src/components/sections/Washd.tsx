@@ -73,8 +73,8 @@ export function Washd() {
 
           {/* Right — service list + trust block + CTAs */}
           <div className="space-y-0 divide-y divide-zinc-200">
-            {washdServices.map((service, i) => (
-              <AnimateInView key={service.title} delay={i * 0.08} direction="up">
+            {washdServices.map((service) => (
+              <AnimateInView key={service.title} direction="up">
                 <div className="py-8 group">
                   <div className="flex items-start gap-4">
                     <span className="w-6 h-6 bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">

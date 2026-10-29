@@ -45,9 +45,8 @@ export function About() {
 
             {/* Timeline */}
             <div className="relative pl-6 border-l-2 border-zinc-200 space-y-8">
-              {milestones.map((m, i) => (
-                <AnimateInView key={m.year} delay={i * 0.1} direction="left">
-                  <div className="relative">
+              {milestones.map((m) => (
+                <div key={m.year} className="relative">
                     <span
                       className="absolute -left-[29px] top-1 w-3 h-3 bg-brand-500 rounded-full ring-4 ring-cream"
                       aria-hidden="true"
@@ -57,7 +56,6 @@ export function About() {
                     </p>
                     <p className="text-sm text-zinc-500 leading-relaxed">{m.event}</p>
                   </div>
-                </AnimateInView>
               ))}
             </div>
           </AnimateInView>

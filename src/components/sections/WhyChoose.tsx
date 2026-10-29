@@ -1,25 +1,4 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { AnimateInView } from '../ui/AnimateInView'
-
-const ease = [0.22, 1, 0.36, 1] as const
-
-function ReasonNumber({ number, cardDelay }: { number: string; cardDelay: number }) {
-  const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true, amount: 0.5 })
-  return (
-    <motion.span
-      ref={ref}
-      className="text-5xl font-extrabold tracking-tightest leading-none text-white/10 group-hover:text-brand-500/20 transition-colors duration-200 block mb-6"
-      aria-hidden="true"
-      initial={{ opacity: 0, y: 10 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ duration: 0.5, delay: cardDelay + 0.18, ease }}
-    >
-      {number}
-    </motion.span>
-  )
-}
 
 const reasons = [
   {
@@ -81,9 +60,14 @@ export function WhyChoose() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           {reasons.map((reason, i) => (
-            <AnimateInView key={reason.number} delay={i * 0.08} direction="up">
+            <AnimateInView key={reason.number} delay={(i % 3) * 0.08} direction="up">
               <div className="bg-asphalt p-8 lg:p-10 group hover:bg-zinc-900 transition-colors duration-200 h-full">
-                <ReasonNumber number={reason.number} cardDelay={i * 0.08} />
+                <span
+                  className="text-5xl font-extrabold tracking-tightest leading-none text-white/10 group-hover:text-brand-500/20 transition-colors duration-300 block mb-6"
+                  aria-hidden="true"
+                >
+                  {reason.number}
+                </span>
                 <h3 className="text-lg font-bold text-white mb-3">{reason.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{reason.description}</p>
               </div>
