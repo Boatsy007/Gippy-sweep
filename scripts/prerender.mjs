@@ -4,9 +4,9 @@
 //    then hydrates this markup instead of building the page from an empty <div>.
 // 2. Fills the site address (VITE_SITE_URL in .env) into the static text files
 //    that Vite copies from public/ untouched.
-// 3. Writes every Cleaned by Swept page to dist/cleaned/<path>/index.html, with
-//    its own <head> in place of the commercial one, plus the cleaning site's
-//    robots.txt, sitemap.xml and llms.txt.
+// 3. Writes every page of each division site (Cleaned by Swept, Grounds by Swept)
+//    to dist/<site>/<path>/index.html, with its own <head> in place of the
+//    commercial one, plus that site's robots.txt, sitemap.xml and llms.txt.
 import { readFile, writeFile, rm, mkdir } from 'node:fs/promises'
 import { loadEnv } from 'vite'
 
@@ -42,7 +42,7 @@ for (const name of ['index.html', 'robots.txt', 'sitemap.xml', 'llms.txt']) {
     throw new Error(`prerender: ${name} still contains ${PLACEHOLDER}`)
   }
 }
-// 3. Cleaned by Swept
+// 3. Division sites
 // Strip the commercial page's own SEO tags from the shell; shared tags (charset,
 // viewport, favicon, fonts, scripts, styles) stay.
 let shell = template
@@ -56,20 +56,30 @@ for (const re of [
   /\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
   /\s*<!--[\s\S]*?-->/g,
 ]) shell = shell.replace(re, '')
-if (/SWEPT \||application\/ld\+json|og:title/.test(shell)) throw new Error('prerender: commercial SEO tags left in the Cleaned page shell')
+if (/SWEPT \||application\/ld\+json|og:title/.test(shell)) throw new Error('prerender: commercial SEO tags left in the division page shell')
 
-const cleanedDir = new URL('cleaned/', dist)
-const pages = ssr.renderCleaned()
-for (const page of pages) {
-  const html = shell
-    .replace(/(<meta name="viewport"[^>]*>)/, (m) => `${m}\n${page.head}`)
-    .replace(rootDiv, () => `<div id="root" data-site="cleaned">${page.html}</div>`)
-  const dir = new URL(`.${page.path}`, cleanedDir)
-  await mkdir(dir, { recursive: true })
-  await writeFile(new URL('index.html', dir), html)
+// Each division site: pages under dist/<site>/, marked with data-site so
+// src/main.tsx loads that site's code instead of the commercial app.
+const divisions = [
+  { site: 'cleaned', name: 'Cleaned by Swept', pages: ssr.renderCleaned, files: ssr.cleanedFiles, config: ssr.cleanedConfig },
+  { site: 'grounds', name: 'Grounds by Swept', pages: ssr.renderGrounds, files: ssr.groundsFiles, config: ssr.groundsConfig },
+]
+const summary = []
+for (const d of divisions) {
+  const dir = new URL(`${d.site}/`, dist)
+  const pages = d.pages()
+  for (const page of pages) {
+    const html = shell
+      .replace(/(<meta name="viewport"[^>]*>)/, (m) => `${m}\n${page.head}`)
+      .replace(rootDiv, () => `<div id="root" data-site="${d.site}">${page.html}</div>`)
+    const pageDir = new URL(`.${page.path}`, dir)
+    await mkdir(pageDir, { recursive: true })
+    await writeFile(new URL('index.html', pageDir), html)
+  }
+  for (const [name, body] of Object.entries(d.files())) await writeFile(new URL(name, dir), body)
+  const { base, url, noindex } = d.config
+  summary.push(`prerender: ${pages.length} ${d.name} pages at ${base || '/'} (${url})${noindex ? ' – noindex' : ''}`)
 }
-for (const [name, body] of Object.entries(ssr.cleanedFiles())) await writeFile(new URL(name, cleanedDir), body)
 
-const { base, url, noindex } = ssr.cleanedConfig
 console.log(`prerender: dist/index.html written; site URL ${siteUrl}`)
-console.log(`prerender: ${pages.length} Cleaned by Swept pages at ${base || '/'} (${url})${noindex ? ' – noindex' : ''}`)
+for (const line of summary) console.log(line)

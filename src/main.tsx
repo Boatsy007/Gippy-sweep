@@ -7,13 +7,17 @@ import { startAnimatedFavicon } from './animatedFavicon'
 const root = document.getElementById('root')
 if (!root) throw new Error('Root element not found')
 
-// Cleaned by Swept pages are prerendered with data-site="cleaned" and load their own
-// code-split bundle. In dev (no prerender) they're recognised by the /cleaned path.
-const isCleaned =
-  root.dataset.site === 'cleaned' || (import.meta.env.DEV && window.location.pathname.startsWith('/cleaned'))
+// Division sites (Cleaned by Swept, Grounds by Swept) are prerendered with
+// data-site="<site>" and load their own code-split bundle. In dev (no prerender)
+// they're recognised by their path prefix.
+const site =
+  root.dataset.site ??
+  (import.meta.env.DEV ? ['cleaned', 'grounds'].find((s) => window.location.pathname.startsWith(`/${s}`)) : undefined)
 
-if (isCleaned) {
+if (site === 'cleaned') {
   import('./cleaned/client').then((m) => m.startCleaned(root))
+} else if (site === 'grounds') {
+  import('./grounds/client').then((m) => m.startGrounds(root))
 } else {
   const app = (
     <StrictMode>

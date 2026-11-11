@@ -24,6 +24,16 @@ export default {
           600: '#7C3AED',
           700: '#6D28D9',
         },
+        /** Grounds by Swept accent (from the Grounds logo's lime-to-forest range) */
+        grounds: {
+          50: '#F3FAE9',
+          100: '#E2F3CC',
+          300: '#BEF264',
+          400: '#A3E635',
+          500: '#43A047',
+          600: '#2E7D32',
+          700: '#1B5E20',
+        },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],

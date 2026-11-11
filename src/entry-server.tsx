@@ -6,6 +6,11 @@ import { cleanedRoutes } from './cleaned/routes'
 import { headTags } from './cleaned/head'
 import { llmsTxt, robotsTxt, sitemapXml } from './cleaned/files'
 import { BASE, CLEANED_URL, NOINDEX, absUrl } from './cleaned/lib/paths'
+import { GroundsApp } from './grounds/GroundsApp'
+import { groundsRoutes } from './grounds/routes'
+import { headTags as groundsHead } from './grounds/head'
+import * as groundsText from './grounds/files'
+import * as groundsPaths from './grounds/lib/paths'
 
 /** Renders the page to HTML at build time (see scripts/prerender.mjs). */
 export function render() {
@@ -30,3 +35,18 @@ export const cleanedConfig = { base: BASE, url: CLEANED_URL, noindex: NOINDEX }
 
 /** robots.txt, sitemap.xml and llms.txt for the cleaning site. */
 export const cleanedFiles = () => ({ 'robots.txt': robotsTxt(), 'sitemap.xml': sitemapXml(), 'llms.txt': llmsTxt() })
+
+/** Grounds by Swept: every page with its rendered body and <head> tags. */
+export function renderGrounds() {
+  return groundsRoutes().map((r) => ({
+    path: r.path,
+    html: renderToString(<GroundsApp path={r.path} />),
+    head: groundsHead(r.meta),
+    url: groundsPaths.absUrl(r.path),
+  }))
+}
+
+export const groundsConfig = { base: groundsPaths.BASE, url: groundsPaths.GROUNDS_URL, noindex: groundsPaths.NOINDEX }
+
+/** robots.txt, sitemap.xml and llms.txt for the grounds site. */
+export const groundsFiles = () => ({ 'robots.txt': groundsText.robotsTxt(), 'sitemap.xml': groundsText.sitemapXml(), 'llms.txt': groundsText.llmsTxt() })

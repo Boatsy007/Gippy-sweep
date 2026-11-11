@@ -10,19 +10,19 @@ export const commercialCrumbs = [{ name: 'Home', path: '/' }, { name: 'Commercia
 
 const commercialSite = (id: string) => `${COMMERCIAL_URL === '/' ? '' : COMMERCIAL_URL}/#${id}`
 
-/** Other Swept divisions, linked back to the commercial site rather than duplicated here. */
+/** Other Swept divisions: their own website where they have one, otherwise the commercial site. */
 function SweptDivisions({ only }: { only?: string[] }) {
   const list = serviceBrands.filter((b) => b.id !== 'cleaned' && (!only || only.includes(b.id)))
   return (
     <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {list.map((b) => (
         <li key={b.id}>
-          <a href={commercialSite(b.id)} className="group flex h-full flex-col border border-zinc-100 bg-white p-5 hover:border-cleaned-500/40 transition-colors">
+          <a href={b.website?.url ?? commercialSite(b.id)} className="group flex h-full flex-col border border-zinc-100 bg-white p-5 hover:border-cleaned-500/40 transition-colors">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">{b.name}</span>
             <span className="mt-1 font-bold text-asphalt">{b.label}</span>
             <span className="mt-2 text-sm text-zinc-500 leading-relaxed flex-1">{b.summary}</span>
             <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cleaned-700">
-              On the Swept website <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+              {b.website ? b.website.label : 'On the Swept website'} <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </span>
           </a>
         </li>

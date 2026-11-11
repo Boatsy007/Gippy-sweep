@@ -1,56 +1,65 @@
 /**
- * Vercel Routing Middleware – serves Cleaned by Swept on its own hostname.
+ * Vercel Routing Middleware – serves each Swept division site on its own hostname.
  *
- * INACTIVE until CLEANED_HOST is set in Vercel (e.g. "cleaned.swept.com.au").
- * Without it every request passes straight through, so the commercial site and
- * the /cleaned preview pages behave exactly as they do today.
+ *   CLEANED_HOST  e.g. "cleaned.swept.com.au"  -> pages under /cleaned
+ *   GROUNDS_HOST  e.g. "grounds.swept.com.au"  -> pages under /grounds
  *
- * Once set:
- *  - On CLEANED_HOST, page requests map onto the prerendered pages under /cleaned
- *    (cleaned.swept.com.au/residential/ -> /cleaned/residential/). Shared files
+ * INACTIVE until a host is set in Vercel. Without them every request passes
+ * straight through, so the commercial site and the /cleaned and /grounds preview
+ * pages behave exactly as they do today. Each division switches on separately.
+ *
+ * Once a division's host is set:
+ *  - On that host, page requests map onto the prerendered pages under its prefix
+ *    (grounds.swept.com.au/residential/ -> /grounds/residential/). Shared files
  *    (/assets/, /api/, favicon, fonts, images) are served as they are.
- *  - On CLEANED_HOST, a /cleaned/... page URL redirects to the clean URL, so no
+ *  - On that host, a /<prefix>/... page URL redirects to the clean URL, so no
  *    page is published at two addresses.
- *  - On the production commercial host, /cleaned/... pages redirect to
- *    CLEANED_HOST (preview deployments keep serving /cleaned for review).
+ *  - On any other production host, /<prefix>/... pages redirect to the division
+ *    host (preview deployments keep serving the prefix for review).
  *
- * See docs/CLEANED-LAUNCH.md for the full launch steps.
+ * See docs/CLEANED-LAUNCH.md and docs/GROUNDS-LAUNCH.md for the launch steps.
  */
 
 const env = (name: string): string | undefined => (globalThis as unknown as { process?: { env: Record<string, string | undefined> } }).process?.env[name]
 
-/** Files that belong to the cleaning site even though they have an extension. */
-const CLEANED_FILES = new Set(['/robots.txt', '/sitemap.xml', '/llms.txt'])
-const PREFIX = '/cleaned'
+/** Files that belong to a division site even though they have an extension. */
+const SITE_FILES = new Set(['/robots.txt', '/sitemap.xml', '/llms.txt'])
+const SITES = [
+  { hostVar: 'CLEANED_HOST', prefix: '/cleaned' },
+  { hostVar: 'GROUNDS_HOST', prefix: '/grounds' },
+]
 
-const isPage = (pathname: string) => !/\.[a-z0-9]+$/i.test(pathname) || CLEANED_FILES.has(pathname)
-const underPrefix = (pathname: string) => pathname === PREFIX || pathname.startsWith(`${PREFIX}/`)
-const stripPrefix = (pathname: string) => pathname.slice(PREFIX.length) || '/'
+const isPage = (pathname: string) => !/\.[a-z0-9]+$/i.test(pathname) || SITE_FILES.has(pathname)
+const underPrefix = (pathname: string, prefix: string) => pathname === prefix || pathname.startsWith(`${prefix}/`)
+const stripPrefix = (pathname: string, prefix: string) => pathname.slice(prefix.length) || '/'
 
 const next = () => new Response(null, { headers: { 'x-middleware-next': '1' } })
 const rewrite = (url: URL) => new Response(null, { headers: { 'x-middleware-rewrite': url.toString() } })
 
 export default function middleware(request: Request): Response {
-  const cleanedHost = env('CLEANED_HOST')
-  if (!cleanedHost) return next()
+  const active = SITES.map((s) => ({ ...s, host: env(s.hostVar)?.toLowerCase() })).filter((s) => s.host)
+  if (!active.length) return next()
 
   const url = new URL(request.url)
   const host = (request.headers.get('host') ?? url.host).toLowerCase()
 
-  if (host === cleanedHost.toLowerCase()) {
-    if (underPrefix(url.pathname)) {
-      // /cleaned/images/... etc. are real files; /cleaned/<page> is a duplicate address
-      if (!isPage(stripPrefix(url.pathname))) return next()
-      return Response.redirect(new URL(stripPrefix(url.pathname) + url.search, url), 308)
+  const own = active.find((s) => s.host === host)
+  if (own) {
+    const { prefix } = own
+    if (underPrefix(url.pathname, prefix)) {
+      // /<prefix>/images/... etc. are real files; /<prefix>/<page> is a duplicate address
+      if (!isPage(stripPrefix(url.pathname, prefix))) return next()
+      return Response.redirect(new URL(stripPrefix(url.pathname, prefix) + url.search, url), 308)
     }
     if (!isPage(url.pathname)) return next()
     const target = new URL(url)
-    target.pathname = `${PREFIX}${url.pathname}`
+    target.pathname = `${prefix}${url.pathname}`
     return rewrite(target)
   }
 
-  if (env('VERCEL_ENV') === 'production' && underPrefix(url.pathname) && isPage(stripPrefix(url.pathname))) {
-    return Response.redirect(`https://${cleanedHost}${stripPrefix(url.pathname)}${url.search}`, 301)
+  if (env('VERCEL_ENV') === 'production') {
+    const site = active.find((s) => underPrefix(url.pathname, s.prefix) && isPage(stripPrefix(url.pathname, s.prefix)))
+    if (site) return Response.redirect(`https://${site.host}${stripPrefix(url.pathname, site.prefix)}${url.search}`, 301)
   }
   return next()
 }
