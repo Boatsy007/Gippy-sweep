@@ -6,8 +6,8 @@
 
 import { CLEANED_URL, href as cleanedHref } from './cleaned/lib/paths'
 
-/** Cleaned by Swept home: /cleaned/ until the subdomain launches, then its own address. */
-const cleanedHome = cleanedHref('/') === '/' ? `${CLEANED_URL}/` : cleanedHref('/')
+/** Cleaned by Swept pages: under /cleaned/ until the subdomain launches, then its own address. */
+const cleanedLink = (path: string) => (cleanedHref('/') === '/' ? `${CLEANED_URL}${cleanedHref(path)}` : cleanedHref(path))
 
 export type ServiceId = 'sweeping' | 'scrubbed' | 'washed' | 'grounds' | 'cleaned' | 'marked'
 
@@ -41,7 +41,7 @@ export interface ServiceBrand {
   crossLink: { before: string; target: ServiceId; linkText: string; after: string }
   image?: { src: string; srcSet: string; width: number; height: number; alt: string; position: string }
   /** The division's own website, if it has one (Cleaned by Swept) */
-  website?: { url: string; label: string }
+  website?: { url: string; label: string; quoteUrl: string }
 }
 
 export const serviceBrands: ServiceBrand[] = [
@@ -361,7 +361,7 @@ export const serviceBrands: ServiceBrand[] = [
       },
     ],
     quoteOption: 'Commercial cleaning (Cleaned)',
-    website: { url: cleanedHome, label: 'Visit Cleaned by Swept' },
+    website: { url: cleanedLink('/'), label: 'Visit Cleaned by Swept', quoteUrl: cleanedLink('/quote?type=commercial') },
     crossLink: { before: 'Looking after the outside too? Add ', target: 'grounds', linkText: 'Grounds maintenance', after: ' or Washed exterior cleaning.' },
   },
   {

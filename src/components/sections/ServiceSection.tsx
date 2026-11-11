@@ -105,7 +105,11 @@ export function ServiceSection({ brand, tinted = false }: ServiceSectionProps) {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a href="#contact" className="btn-primary" onClick={() => preselectQuoteService(brand.id)}>
+                  <a
+                    href={brand.website?.quoteUrl ?? '#contact'}
+                    className="btn-primary"
+                    onClick={brand.website ? undefined : () => preselectQuoteService(brand.id)}
+                  >
                     Request {quoteName} Quote
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>

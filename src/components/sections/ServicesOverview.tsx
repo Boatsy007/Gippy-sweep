@@ -43,13 +43,17 @@ export function ServicesOverview() {
                 <h3 className="text-sm font-bold text-asphalt mb-1.5">{brand.label}</h3>
                 <p className="text-xs text-zinc-500 leading-relaxed flex-1">{brand.summary}</p>
                 <div className="mt-6 flex items-center justify-between gap-3 text-sm font-semibold">
-                  <a href={brand.website?.url ?? `#${brand.id}`} className="text-brand-700 hover:text-asphalt transition-colors duration-150">
+                  {/* A division with its own website: the whole card opens it (stretched link) */}
+                  <a
+                    href={brand.website?.url ?? `#${brand.id}`}
+                    className={`text-brand-700 hover:text-asphalt transition-colors duration-150 ${brand.website ? "after:absolute after:inset-0 after:content-['']" : ''}`}
+                  >
                     View services<span className="sr-only"> — {brand.label}</span>
                   </a>
                   <a
-                    href="#contact"
-                    onClick={() => preselectQuoteService(brand.id)}
-                    className="inline-flex items-center gap-1 text-asphalt hover:text-brand-700 transition-colors duration-150"
+                    href={brand.website?.quoteUrl ?? '#contact'}
+                    onClick={brand.website ? undefined : () => preselectQuoteService(brand.id)}
+                    className="relative z-10 inline-flex items-center gap-1 text-asphalt hover:text-brand-700 transition-colors duration-150"
                   >
                     Get a quote<span className="sr-only"> for {brand.label}</span>
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />

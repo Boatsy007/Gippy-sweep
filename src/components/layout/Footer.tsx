@@ -5,7 +5,7 @@ import { serviceBrands } from '../../serviceBrands'
 
 const services = [
   { label: 'All Services', href: '#services' },
-  ...serviceBrands.map((b) => ({ label: `${b.name} — ${b.label}`, href: `#${b.id}` })),
+  ...serviceBrands.map((b) => ({ label: `${b.name} — ${b.label}`, href: b.website?.url ?? `#${b.id}` })),
   { label: 'Regular Service Plans', href: '#plans' },
 ]
 
