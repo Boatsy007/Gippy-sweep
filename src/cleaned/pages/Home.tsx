@@ -28,7 +28,9 @@ function Hero() {
         </div>
         <div className="absolute inset-0 bg-asphalt/25 z-10 pointer-events-none" />
         <div className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none hidden lg:block" style={{ background: 'linear-gradient(to right, #111827, transparent)' }} />
-        <div className="absolute inset-x-0 top-0 h-3/4 z-10 pointer-events-none lg:hidden" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.88) 0%, rgba(17,24,39,0.6) 45%, transparent 100%)' }} />
+        <div className="absolute inset-0 z-10 pointer-events-none lg:hidden" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.9) 0%, rgba(17,24,39,0.72) 50%, rgba(17,24,39,0.82) 100%)' }} />
+        {/* Fade the image into the dark background so it never butts against the section below */}
+        <div className="absolute inset-x-0 bottom-0 h-40 lg:h-48 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, #111827 0%, rgba(17,24,39,0.6) 45%, transparent 100%)' }} />
       </div>
       <div className="absolute top-0 inset-x-0 h-[3px] bg-cleaned-500 z-30" aria-hidden="true" />
 
@@ -94,7 +96,7 @@ function Choose() {
     },
   ]
   return (
-    <section id="choose" className="bg-asphalt pb-20 lg:pb-28" aria-label="Choose your cleaning">
+    <section id="choose" className="bg-asphalt pt-12 lg:pt-16 pb-20 lg:pb-28" aria-label="Choose your cleaning">
       <div className="section-container">
         <div className="grid md:grid-cols-2 gap-px bg-white/10">
           {cards.map((c) => (

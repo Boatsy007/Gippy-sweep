@@ -33,6 +33,8 @@ function Hero() {
         <div className="absolute inset-0 z-10 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 70% 30%, rgba(0,229,255,0.22), transparent 60%)' }} />
         <div className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none hidden lg:block" style={{ background: 'linear-gradient(to right, #111827, transparent)' }} />
         <div className="absolute inset-0 z-10 pointer-events-none lg:hidden" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.92) 0%, rgba(17,24,39,0.8) 55%, rgba(17,24,39,0.6) 100%)' }} />
+        {/* Fade the image into the dark background so it never butts against the section below */}
+        <div className="absolute inset-x-0 bottom-0 h-40 lg:h-48 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, #111827 0%, rgba(17,24,39,0.6) 45%, transparent 100%)' }} />
         <div className="absolute inset-0 z-20 hidden lg:flex items-center justify-center pointer-events-none">
           <img src="/logo-washed-white.webp" alt="" width={522} height={160} className="w-[min(70%,420px)] h-auto opacity-90 drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]" />
         </div>
@@ -101,7 +103,7 @@ function Choose() {
     },
   ]
   return (
-    <section id="choose" className="bg-asphalt pb-20 lg:pb-28" aria-label="Choose your pressure cleaning">
+    <section id="choose" className="bg-asphalt pt-12 lg:pt-16 pb-20 lg:pb-28" aria-label="Choose your pressure cleaning">
       <div className="section-container">
         <div className="grid md:grid-cols-2 gap-px bg-white/10">
           {cards.map((c) => (
