@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from 'react'
 import { Menu, X, Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react'
 import { A } from './ui'
+import { SweptByline, SweptFooterLink } from '../components/SweptMark'
 import { COMMERCIAL_URL } from './lib/paths'
 import { site, telHref } from './lib/site'
 import { services, servicePath } from './lib/services'
@@ -33,7 +34,7 @@ function ScrubbedLogo({ white = false, className = '' }: { white?: boolean; clas
         className="block w-auto h-11 lg:h-[68px]"
         draggable={false}
       />
-      <span className={`eyebrow pb-1 lg:pb-2 ${white ? 'text-scrubbed-300' : 'text-scrubbed-700'}`}>by Swept</span>
+      <SweptByline white={white} byClass={white ? 'text-scrubbed-300' : 'text-scrubbed-700'} />
     </span>
   )
 }
@@ -131,6 +132,9 @@ export function Header({ current }: { current: string }) {
             ))}
           </nav>
           <div className="mt-auto pt-10 flex flex-col gap-4">
+            <a href={sweptHome} className="inline-flex items-center justify-center gap-2 py-2 text-sm font-semibold text-zinc-600 hover:text-asphalt">
+              Visit <img src="/logo-dark.webp" alt="Swept" width={571} height={160} className="h-5 w-auto" /> <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+            </a>
             {site.phone && (
               <a href={telHref(site.phone)} className="btn-outline-dark justify-center">
                 <Phone className="w-4 h-4" aria-hidden="true" />
@@ -153,6 +157,8 @@ function FooterColumn({ title, children }: { title: string; children: ReactNode 
     </div>
   )
 }
+
+const sweptHome = COMMERCIAL_URL === '/' ? '/' : `${COMMERCIAL_URL}/`
 
 const footLink = 'text-sm hover:text-white transition-colors duration-150'
 
@@ -188,6 +194,7 @@ export function Footer() {
                 <span>{site.responseHours}</span>
               </li>
             </ul>
+            <SweptFooterLink href={sweptHome} accentClass="text-scrubbed-300" />
           </div>
 
           <FooterColumn title="Services">
@@ -219,7 +226,7 @@ export function Footer() {
           <div className="flex flex-wrap justify-center gap-6">
             <A to="/privacy" className="text-xs text-white/60 hover:text-white transition-colors duration-150">Privacy</A>
             <A to="/contact" className="text-xs text-white/60 hover:text-white transition-colors duration-150">Contact</A>
-            <a href={COMMERCIAL_URL === '/' ? '/' : `${COMMERCIAL_URL}/`} className="inline-flex items-center gap-1 text-xs text-white/60 hover:text-white transition-colors duration-150">
+            <a href={sweptHome} className="inline-flex items-center gap-1 text-xs text-white/60 hover:text-white transition-colors duration-150">
               Swept Commercial Property Care <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
             </a>
           </div>
