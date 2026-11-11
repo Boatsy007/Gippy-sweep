@@ -4,7 +4,7 @@
 //    then hydrates this markup instead of building the page from an empty <div>.
 // 2. Fills the site address (VITE_SITE_URL in .env) into the static text files
 //    that Vite copies from public/ untouched.
-// 3. Writes every page of each division site (Cleaned, Grounds and Washed by Swept)
+// 3. Writes every page of each division site (Cleaned, Grounds, Washed and Scrubbed by Swept)
 //    to dist/<site>/<path>/index.html, with its own <head> in place of the
 //    commercial one, plus that site's robots.txt, sitemap.xml and llms.txt.
 import { readFile, writeFile, rm, mkdir } from 'node:fs/promises'
@@ -64,6 +64,7 @@ const divisions = [
   { site: 'cleaned', name: 'Cleaned by Swept', pages: ssr.renderCleaned, files: ssr.cleanedFiles, config: ssr.cleanedConfig },
   { site: 'grounds', name: 'Grounds by Swept', pages: ssr.renderGrounds, files: ssr.groundsFiles, config: ssr.groundsConfig },
   { site: 'washed', name: 'Washed by Swept', pages: ssr.renderWashed, files: ssr.washedFiles, config: ssr.washedConfig },
+  { site: 'scrubbed', name: 'Scrubbed by Swept', pages: ssr.renderScrubbed, files: ssr.scrubbedFiles, config: ssr.scrubbedConfig },
 ]
 const summary = []
 for (const d of divisions) {

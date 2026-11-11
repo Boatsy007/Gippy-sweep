@@ -66,7 +66,7 @@ export function About() {
         <div className="section-container grid lg:grid-cols-[1fr_1.5fr] gap-12">
           <h2 id="limits-h" className="display-md text-asphalt">Honest about what we don&apos;t do</h2>
           <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
-            <p>We prune small trees, palms and shrubs within safe reach. We don&apos;t climb or fell large trees, grind stumps or work near overhead power lines – for those jobs you need a qualified arborist or an authorised contractor, and we&apos;ll tell you if that&apos;s what your job needs.</p>
+            <p>We clean surfaces – we don&apos;t seal pavers, oil or stain decks, or strip sound coatings. Some old oil, rust and tannin stains won&apos;t lift completely, and if a surface is already damaged or flaking we&apos;ll point it out before we start rather than after.</p>
             <p>If something on your scope isn&apos;t done right, tell us. We&apos;d rather hear about it and fix it than have you quietly unhappy.</p>
           </div>
         </div>

@@ -45,6 +45,17 @@ export default {
           600: '#0057E0',
           700: '#0046B8',
         },
+        /** Scrubbed by Swept accent (from the Scrubbed logo's aqua-to-teal range) */
+        scrubbed: {
+          50: '#ECFDFA',
+          100: '#CCF7F0',
+          300: '#5EEAD4',
+          400: '#2DD4BF',
+          500: '#14A3B8',
+          /** White text on this passes AA (5.8:1) */
+          600: '#0B6E88',
+          700: '#0A6178',
+        },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],

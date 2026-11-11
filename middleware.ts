@@ -4,9 +4,10 @@
  *   CLEANED_HOST  e.g. "cleaned.swept.com.au"  -> pages under /cleaned
  *   GROUNDS_HOST  e.g. "grounds.swept.com.au"  -> pages under /grounds
  *   WASHED_HOST   e.g. "washed.swept.com.au"   -> pages under /washed
+ *   SCRUBBED_HOST e.g. "scrubbed.swept.com.au" -> pages under /scrubbed
  *
  * INACTIVE until a host is set in Vercel. Without them every request passes
- * straight through, so the commercial site and the /cleaned, /grounds and /washed preview
+ * straight through, so the commercial site and the /cleaned, /grounds, /washed and /scrubbed preview
  * pages behave exactly as they do today. Each division switches on separately.
  *
  * Once a division's host is set:
@@ -18,7 +19,7 @@
  *  - On any other production host, /<prefix>/... pages redirect to the division
  *    host (preview deployments keep serving the prefix for review).
  *
- * See docs/CLEANED-LAUNCH.md, docs/GROUNDS-LAUNCH.md and docs/WASHED-LAUNCH.md.
+ * See docs/CLEANED-LAUNCH.md, GROUNDS-LAUNCH.md, WASHED-LAUNCH.md and SCRUBBED-LAUNCH.md.
  */
 
 const env = (name: string): string | undefined => (globalThis as unknown as { process?: { env: Record<string, string | undefined> } }).process?.env[name]
@@ -29,6 +30,7 @@ const SITES = [
   { hostVar: 'CLEANED_HOST', prefix: '/cleaned' },
   { hostVar: 'GROUNDS_HOST', prefix: '/grounds' },
   { hostVar: 'WASHED_HOST', prefix: '/washed' },
+  { hostVar: 'SCRUBBED_HOST', prefix: '/scrubbed' },
 ]
 
 const isPage = (pathname: string) => !/\.[a-z0-9]+$/i.test(pathname) || SITE_FILES.has(pathname)
