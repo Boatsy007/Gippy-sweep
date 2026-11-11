@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, type ReactNode } from 'react'
 import { Menu, X, Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react'
 import { A } from './ui'
 import { SweptByline, SweptFooterLink } from '../components/SweptMark'
+import { useOverLight } from '../components/useOverLight'
 import { COMMERCIAL_URL } from './lib/paths'
 import { site, telHref } from './lib/site'
 import { services, servicePath } from './lib/services'
@@ -10,7 +11,7 @@ import { areas, areaPath } from './lib/areas'
 
 /* Header and footer for Washed by Swept. Structure, classes and behaviour mirror
    the Swept commercial Navbar and Footer (src/components/layout) — glass bar that
-   is dark over the hero and light once scrolled, the same mobile menu and the
+   is dark over dark sections and light over light ones, the same mobile menu and the
    same dark footer — with the Washed logo and blue accent. */
 
 export const navLinks = [
@@ -42,16 +43,11 @@ function WashedLogo({ white = false, className = '' }: { white?: boolean; classN
 }
 
 export function Header({ current }: { current: string }) {
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const headerRef = useRef<HTMLElement>(null)
+  // Light glass only while a light section is under the header
+  const scrolled = useOverLight(headerRef)
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -71,7 +67,7 @@ export function Header({ current }: { current: string }) {
 
   return (
     <>
-      <header className={`glass fixed top-0 left-0 right-0 z-50 ${dark ? 'glass-light' : 'glass-dark'}`}>
+      <header ref={headerRef} className={`glass fixed top-0 left-0 right-0 z-50 ${dark ? 'glass-light' : 'glass-dark'}`}>
         <div className="section-container">
           <div className="flex items-center justify-between py-4 lg:py-3">
             <A to="/" aria-label="Washed by Swept — Home">
