@@ -1,4 +1,4 @@
-import { serviceBrands, type ServiceBrand } from '../serviceBrands'
+import { allServiceBrands as serviceBrands, type ServiceBrand } from '../serviceBrands'
 
 interface BrandLogoProps {
   brand: ServiceBrand

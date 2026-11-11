@@ -2,7 +2,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { commercialHub, commercialPages, commercialPath, type CommercialPage } from '../lib/commercial'
 import { COMMERCIAL_URL } from '../lib/paths'
 import { site } from '../lib/site'
-import { serviceBrands } from '../../serviceBrands'
+import { activeServiceIds, serviceBrands } from '../../serviceBrands'
 import { A, Card, CheckItem, CtaBand, Eyebrow, Faqs, Icon, PageHero, SectionHeading } from '../ui'
 
 export const commercialCrumbs = [{ name: 'Home', path: '/' }, { name: 'Commercial', path: '/commercial' }]
@@ -135,7 +135,7 @@ export function CommercialHub() {
 
       <section className="section-pad bg-zinc-50" aria-labelledby="div-h">
         <div className="section-container">
-          <SectionHeading id="div-h" eyebrow="Part of Swept" title="More than pressure cleaning" intro="Washed by Swept is one of six Swept commercial property services. For the rest of your site, the other Swept divisions can help through the same point of contact." />
+          <SectionHeading id="div-h" eyebrow="Part of Swept" title="More than pressure cleaning" intro="Washed by Swept is one of Swept’s commercial property services. For the rest of your site, the other Swept divisions can help through the same point of contact." />
           <SweptDivisions />
         </div>
       </section>
@@ -189,7 +189,7 @@ export function CommercialPageView({ p }: { p: CommercialPage }) {
         </div>
       </section>
 
-      {p.divisions.length > 0 && (
+      {p.divisions.some((d) => activeServiceIds.has(d)) && (
         <section className="section-pad bg-white" aria-labelledby="p-div-h">
           <div className="section-container">
             <SectionHeading id="p-div-h" eyebrow="Also from Swept" title="Related Swept services" intro="Specialist services for the rest of the site, through the same point of contact." />

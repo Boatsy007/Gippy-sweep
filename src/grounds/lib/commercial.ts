@@ -36,7 +36,7 @@ const sharedFaqs: Faq[] = [
   { q: 'Do you provide a written scope?', a: 'Yes. Every site gets a written scope listing the areas and tasks included and how often each is done, so everyone knows what to expect on each visit.' },
   { q: 'Can you work around our trading or operating hours?', a: 'Yes. Tell us your opening hours, quiet times and any areas we need to avoid, and we will plan visits around them.' },
   { q: 'Are you insured?', a: 'Yes. Swept holds current public liability insurance. We can provide a certificate of currency on request.' },
-  { q: 'Can you look after the inside of the property as well?', a: 'Yes. Cleaned by Swept handles commercial cleaning, and the other Swept divisions cover sweeping, pressure cleaning, floor scrubbing and line marking – all through the same point of contact.' },
+  { q: 'Can Swept look after the rest of the site?', a: 'Yes. Swept also provides commercial sweeping, and Washed by Swept handles pressure cleaning – all through the same point of contact.' },
 ]
 
 export const commercialHub = {

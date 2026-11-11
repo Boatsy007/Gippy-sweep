@@ -105,9 +105,9 @@ export function Hero() {
             <p
               className="mt-8 text-white/60 text-lg leading-relaxed max-w-md"
             >
-              Commercial sweeping, floor scrubbing, pressure cleaning, grounds maintenance,
-              cleaning and line marking for car parks, warehouses, shopping centres, offices
-              and strata properties — six specialist services, one point of contact.
+              Commercial sweeping, pressure cleaning and grounds maintenance for car parks,
+              warehouses, shopping centres, offices and strata properties — three specialist
+              services, one point of contact.
             </p>
 
             <div

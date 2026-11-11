@@ -4,7 +4,7 @@ const milestones = [
   { label: 'Gold Coast roots', event: 'Established on the Gold Coast, providing commercial sweeping services to businesses across South East Queensland.' },
   { label: 'Growing across SEQ', event: 'Expanded service area to cover Brisbane, Logan, Ipswich and the broader South East Queensland corridor.' },
   { label: 'Investing in equipment', event: 'Invested in modern commercial-grade mechanical sweeping equipment with advanced dust suppression capability.' },
-  { label: 'Today', event: 'Commercial sweeping alongside Scrubbed floor scrubbing, Washed pressure cleaning, Grounds maintenance, Cleaned commercial cleaning and Marked line marking — six specialist services brought together under one provider.' },
+  { label: 'Today', event: 'Commercial sweeping alongside Washed pressure cleaning and Grounds maintenance — three specialist services brought together under one provider.' },
 ]
 
 export function About() {
@@ -31,8 +31,8 @@ export function About() {
               </p>
               <p className="text-zinc-500 leading-relaxed mb-6">
                 Built on long-term client relationships and reliable service, Swept today
-                provides commercial sweeping, floor scrubbing, pressure cleaning, grounds
-                maintenance, commercial cleaning and line marking for shopping centres, warehouses,
+                provides commercial sweeping, pressure cleaning and grounds maintenance for
+                shopping centres, warehouses,
                 industrial facilities, offices, body corporates and commercial sites throughout the region.
               </p>
               <p className="text-zinc-500 leading-relaxed mb-10">

@@ -17,11 +17,11 @@ export function ServicesOverview() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="eyebrow mb-5">Our Services</p>
           <h2 id="services-heading" className="display-md text-asphalt">
-            Six specialist services.<br />One point of contact.
+            Three specialist services.<br />One point of contact.
           </h2>
           <p className="mt-5 text-zinc-500 text-base leading-relaxed">
-            SWEPT brings commercial sweeping, floor scrubbing, pressure cleaning, grounds maintenance,
-            commercial cleaning and line marking together under one provider — so facility, strata and property managers across
+            SWEPT brings commercial sweeping, pressure cleaning and grounds maintenance together under one
+            provider — so facility, strata and property managers across
             the Gold Coast and South East Queensland can look after the whole site with one call.
           </p>
         </div>

@@ -164,7 +164,6 @@ export const commercialPages: CommercialPage[] = [
     faqs: [
       { q: 'Can you work around deliveries and shifts?', a: 'Yes. Tell us when the docks are busiest and which areas must stay open, and we will plan around them.' },
       { q: 'Do you follow site inductions and safety rules?', a: 'Yes. Let us know about inductions, sign-in, PPE and traffic management rules for your site, and we will follow them.' },
-      { q: 'Can you scrub warehouse floors instead?', a: 'For regular machine scrubbing of large internal floors, Scrubbed – another Swept division – may suit better. We can quote both.' },
       ...sharedFaqs.slice(0, 1),
       ...sharedFaqs.slice(3, 5),
     ],

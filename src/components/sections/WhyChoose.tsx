@@ -40,7 +40,7 @@ const reasons = [
     number: '07',
     title: 'One Point of Contact',
     description:
-      'Sweeping, floor scrubbing, pressure cleaning, grounds maintenance, cleaning and line marking from one provider — fewer contractors to coordinate across your sites.',
+      'Sweeping, pressure cleaning and grounds maintenance from one provider — fewer contractors to coordinate across your sites.',
   },
 ]
 

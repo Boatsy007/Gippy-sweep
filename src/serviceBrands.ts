@@ -1,5 +1,5 @@
 /**
- * The six SWEPT service identities. Every place a service appears — the overview
+ * The SWEPT service identities (some may be paused – see `paused`). Every place a service appears — the overview
  * cards, the service sections, the footer and the quote form — reads from this
  * list, so the brands stay consistent with each other.
  */
@@ -48,9 +48,12 @@ export interface ServiceBrand {
   image?: { src: string; srcSet: string; width: number; height: number; alt: string; position: string }
   /** The division's own website, if it has one (Cleaned, Grounds, Washed and Scrubbed by Swept) */
   website?: { url: string; label: string; quoteUrl: string }
+  /** Temporarily hidden from the Swept website and from division-site cross-links. Delete the flag to bring it back. */
+  paused?: boolean
 }
 
-export const serviceBrands: ServiceBrand[] = [
+/** Every Swept service, including paused ones. */
+export const allServiceBrands: ServiceBrand[] = [
   {
     id: 'sweeping',
     name: 'SWEPT',
@@ -114,7 +117,7 @@ export const serviceBrands: ServiceBrand[] = [
       },
     ],
     quoteOption: 'Commercial sweeping (SWEPT)',
-    crossLink: { before: 'Hard floors need more than a sweep? Pair regular sweeping with ', target: 'scrubbed', linkText: 'Scrubbed floor scrubbing', after: '.' },
+    crossLink: { before: 'Need a deeper clean than a sweep? Pair regular sweeping with ', target: 'washed', linkText: 'Washed pressure cleaning', after: '.' },
     image: {
       src: '/services-carpark-800.webp',
       srcSet: '/services-carpark-800.webp 800w, /services-carpark.webp 1448w',
@@ -126,6 +129,7 @@ export const serviceBrands: ServiceBrand[] = [
   },
   {
     id: 'scrubbed',
+    paused: true,
     name: 'Scrubbed',
     label: 'Commercial Floor Scrubbing',
     logo: { src: '/logo-scrubbed.webp', aspect: 3.2875, xHeight: 0.2938, baseline: 0.6687 },
@@ -323,11 +327,12 @@ export const serviceBrands: ServiceBrand[] = [
       },
     ],
     quoteOption: 'Grounds maintenance (Grounds)',
-    crossLink: { before: 'Inside and out — combine Grounds with ', target: 'cleaned', linkText: 'Cleaned commercial cleaning', after: '.' },
+    crossLink: { before: 'Keep paths and hardstands clean too — combine Grounds with ', target: 'washed', linkText: 'Washed pressure cleaning', after: '.' },
     website: { url: groundsLink('/'), label: 'Visit Grounds by Swept', quoteUrl: groundsLink('/quote?type=commercial') },
   },
   {
     id: 'cleaned',
+    paused: true,
     name: 'Cleaned',
     label: 'Commercial Cleaning',
     logo: { src: '/logo-cleaned.webp', aspect: 3.59375, xHeight: 0.356, baseline: 0.675 },
@@ -375,6 +380,7 @@ export const serviceBrands: ServiceBrand[] = [
   },
   {
     id: 'marked',
+    paused: true,
     name: 'Marked',
     label: 'Commercial Line Marking',
     logo: { src: '/logo-marked.webp', aspect: 3.4813, xHeight: 0.375, baseline: 0.7438 },
@@ -427,4 +433,10 @@ export const serviceBrands: ServiceBrand[] = [
   },
 ]
 
-export const brandById = Object.fromEntries(serviceBrands.map((b) => [b.id, b])) as Record<ServiceId, ServiceBrand>
+/** The services shown on the Swept website right now (paused ones left out). */
+export const serviceBrands: ServiceBrand[] = allServiceBrands.filter((b) => !b.paused)
+
+/** IDs of the services currently shown. */
+export const activeServiceIds = new Set<string>(serviceBrands.map((b) => b.id))
+
+export const brandById = Object.fromEntries(allServiceBrands.map((b) => [b.id, b])) as Record<ServiceId, ServiceBrand>

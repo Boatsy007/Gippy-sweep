@@ -260,7 +260,7 @@ export const services: Service[] = [
     faqs: [
       { q: 'How far ahead should I book?', a: 'As soon as you know your listing or vacate date. We will confirm whether we can meet it when we quote.' },
       { q: 'Is an exterior clean required at the end of a lease?', a: 'It depends on your tenancy agreement and the condition the property was in when you moved in. Check your entry condition report, or ask your property manager.' },
-      { q: 'Can you clean inside as well?', a: 'Washed by Swept cleans exteriors. For inside, Cleaned by Swept – another Swept division – does bond and end-of-lease cleaning.' },
+      { q: 'Can you clean inside as well?', a: 'No. Washed by Swept cleans exteriors only – driveways, paths, outdoor areas and the outside of the house.' },
     ],
     recurring: false,
     icon: 'key',

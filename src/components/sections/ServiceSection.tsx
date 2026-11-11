@@ -94,7 +94,7 @@ export function ServiceSection({ brand, tinted = false }: ServiceSectionProps) {
               <div className="pt-8">
                 <div className={`mb-8 p-6 border border-zinc-200 ${tinted ? 'bg-white' : 'bg-zinc-50'}`}>
                   <p className="text-asphalt font-semibold text-sm mb-2">
-                    Six specialist services. One point of contact.
+                    Three specialist services. One point of contact.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
                     {cross.before}

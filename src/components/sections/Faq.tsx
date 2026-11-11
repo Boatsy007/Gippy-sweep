@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react'
 export const faqs = [
   {
     q: 'What services does SWEPT provide?',
-    a: 'SWEPT provides six specialist commercial property services across the Gold Coast and South East Queensland: commercial sweeping, commercial floor scrubbing (Scrubbed), commercial pressure cleaning (Washed), commercial grounds maintenance (Grounds), commercial cleaning (Cleaned) and commercial line marking (Marked) — all through one point of contact.',
+    a: 'SWEPT provides three specialist commercial property services across the Gold Coast and South East Queensland: commercial sweeping, commercial pressure cleaning (Washed) and commercial grounds maintenance (Grounds) — all through one point of contact.',
   },
   {
     q: 'What areas does SWEPT service?',
