@@ -4,6 +4,11 @@
  * list, so the brands stay consistent with each other.
  */
 
+import { CLEANED_URL, href as cleanedHref } from './cleaned/lib/paths'
+
+/** Cleaned by Swept home: /cleaned/ until the subdomain launches, then its own address. */
+const cleanedHome = cleanedHref('/') === '/' ? `${CLEANED_URL}/` : cleanedHref('/')
+
 export type ServiceId = 'sweeping' | 'scrubbed' | 'washed' | 'grounds' | 'cleaned' | 'marked'
 
 export interface ServiceItem {
@@ -35,6 +40,8 @@ export interface ServiceBrand {
   quoteOption: string
   crossLink: { before: string; target: ServiceId; linkText: string; after: string }
   image?: { src: string; srcSet: string; width: number; height: number; alt: string; position: string }
+  /** The division's own website, if it has one (Cleaned by Swept) */
+  website?: { url: string; label: string }
 }
 
 export const serviceBrands: ServiceBrand[] = [
@@ -354,6 +361,7 @@ export const serviceBrands: ServiceBrand[] = [
       },
     ],
     quoteOption: 'Commercial cleaning (Cleaned)',
+    website: { url: cleanedHome, label: 'Visit Cleaned by Swept' },
     crossLink: { before: 'Looking after the outside too? Add ', target: 'grounds', linkText: 'Grounds maintenance', after: ' or Washed exterior cleaning.' },
   },
   {

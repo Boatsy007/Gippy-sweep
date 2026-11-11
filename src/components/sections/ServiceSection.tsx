@@ -109,8 +109,9 @@ export function ServiceSection({ brand, tinted = false }: ServiceSectionProps) {
                     Request {quoteName} Quote
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>
-                  <a href="#services" className="btn-outline-dark">
-                    View All Services
+                  {/* A division with its own website links there instead of back to the overview */}
+                  <a href={brand.website?.url ?? '#services'} className="btn-outline-dark">
+                    {brand.website?.label ?? 'View All Services'}
                   </a>
                 </div>
               </div>

@@ -43,7 +43,7 @@ export function ServicesOverview() {
                 <h3 className="text-sm font-bold text-asphalt mb-1.5">{brand.label}</h3>
                 <p className="text-xs text-zinc-500 leading-relaxed flex-1">{brand.summary}</p>
                 <div className="mt-6 flex items-center justify-between gap-3 text-sm font-semibold">
-                  <a href={`#${brand.id}`} className="text-brand-700 hover:text-asphalt transition-colors duration-150">
+                  <a href={brand.website?.url ?? `#${brand.id}`} className="text-brand-700 hover:text-asphalt transition-colors duration-150">
                     View services<span className="sr-only"> — {brand.label}</span>
                   </a>
                   <a
