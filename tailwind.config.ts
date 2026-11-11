@@ -14,6 +14,16 @@ export default {
           /** Text and links on light backgrounds (5.9:1 on white) */
           700: '#0F6A9C',
         },
+        /** Cleaned by Swept accent (from the Cleaned logo's violet range) */
+        cleaned: {
+          50: '#F5F3FF',
+          100: '#EDE9FE',
+          300: '#C4B5FD',
+          400: '#A78BFA',
+          500: '#8B5CF6',
+          600: '#7C3AED',
+          700: '#6D28D9',
+        },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
