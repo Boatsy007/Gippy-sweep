@@ -34,6 +34,17 @@ export default {
           600: '#2E7D32',
           700: '#1B5E20',
         },
+        /** Washed by Swept accent (from the Washed logo's cyan-to-blue range) */
+        washed: {
+          50: '#EAF4FF',
+          100: '#D3E8FF',
+          300: '#67E8F9',
+          400: '#22D3EE',
+          500: '#0A84FF',
+          /** White text on this passes AA (6.1:1) */
+          600: '#0057E0',
+          700: '#0046B8',
+        },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],

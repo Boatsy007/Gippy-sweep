@@ -6,10 +6,12 @@
 
 import { CLEANED_URL, href as cleanedHref } from './cleaned/lib/paths'
 import { GROUNDS_URL, href as groundsHref } from './grounds/lib/paths'
+import { WASHED_URL, href as washedHref } from './washed/lib/paths'
 
 /** Cleaned by Swept pages: under /cleaned/ until the subdomain launches, then its own address. */
 const cleanedLink = (path: string) => (cleanedHref('/') === '/' ? `${CLEANED_URL}${cleanedHref(path)}` : cleanedHref(path))
 const groundsLink = (path: string) => (groundsHref('/') === '/' ? `${GROUNDS_URL}${groundsHref(path)}` : groundsHref(path))
+const washedLink = (path: string) => (washedHref('/') === '/' ? `${WASHED_URL}${washedHref(path)}` : washedHref(path))
 
 export type ServiceId = 'sweeping' | 'scrubbed' | 'washed' | 'grounds' | 'cleaned' | 'marked'
 
@@ -42,7 +44,7 @@ export interface ServiceBrand {
   quoteOption: string
   crossLink: { before: string; target: ServiceId; linkText: string; after: string }
   image?: { src: string; srcSet: string; width: number; height: number; alt: string; position: string }
-  /** The division's own website, if it has one (Cleaned by Swept, Grounds by Swept) */
+  /** The division's own website, if it has one (Cleaned, Grounds and Washed by Swept) */
   website?: { url: string; label: string; quoteUrl: string }
 }
 
@@ -242,6 +244,7 @@ export const serviceBrands: ServiceBrand[] = [
     ],
     quoteOption: 'Pressure cleaning (Washed)',
     crossLink: { before: 'Keep surfaces clean between washes with regular ', target: 'sweeping', linkText: 'SWEPT commercial sweeping', after: '.' },
+    website: { url: washedLink('/'), label: 'Visit Washed by Swept', quoteUrl: washedLink('/quote?type=commercial') },
   },
   {
     id: 'grounds',

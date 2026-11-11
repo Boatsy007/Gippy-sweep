@@ -113,6 +113,11 @@
     @apply inline-flex items-center gap-2 bg-grounds-600 hover:bg-grounds-700 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grounds-500 focus-visible:ring-offset-2;
   }
 
+  /* Washed by Swept: same button geometry as .btn-primary, blue accent */
+  .btn-washed {
+    @apply inline-flex items-center gap-2 bg-washed-600 hover:bg-washed-700 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-washed-500 focus-visible:ring-offset-2;
+  }
+
   .btn-outline-light {
     @apply inline-flex items-center gap-2 border border-white/25 hover:border-white/60 hover:bg-white/10 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2;
   }

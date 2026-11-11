@@ -11,6 +11,11 @@ import { groundsRoutes } from './grounds/routes'
 import { headTags as groundsHead } from './grounds/head'
 import * as groundsText from './grounds/files'
 import * as groundsPaths from './grounds/lib/paths'
+import { WashedApp } from './washed/WashedApp'
+import { washedRoutes } from './washed/routes'
+import { headTags as washedHead } from './washed/head'
+import * as washedText from './washed/files'
+import * as washedPaths from './washed/lib/paths'
 
 /** Renders the page to HTML at build time (see scripts/prerender.mjs). */
 export function render() {
@@ -50,3 +55,18 @@ export const groundsConfig = { base: groundsPaths.BASE, url: groundsPaths.GROUND
 
 /** robots.txt, sitemap.xml and llms.txt for the grounds site. */
 export const groundsFiles = () => ({ 'robots.txt': groundsText.robotsTxt(), 'sitemap.xml': groundsText.sitemapXml(), 'llms.txt': groundsText.llmsTxt() })
+
+/** Washed by Swept: every page with its rendered body and <head> tags. */
+export function renderWashed() {
+  return washedRoutes().map((r) => ({
+    path: r.path,
+    html: renderToString(<WashedApp path={r.path} />),
+    head: washedHead(r.meta),
+    url: washedPaths.absUrl(r.path),
+  }))
+}
+
+export const washedConfig = { base: washedPaths.BASE, url: washedPaths.WASHED_URL, noindex: washedPaths.NOINDEX }
+
+/** robots.txt, sitemap.xml and llms.txt for the pressure cleaning site. */
+export const washedFiles = () => ({ 'robots.txt': washedText.robotsTxt(), 'sitemap.xml': washedText.sitemapXml(), 'llms.txt': washedText.llmsTxt() })
